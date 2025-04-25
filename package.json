@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vitepress dev --host 0.0.0.0",
     "build": "cross-env NODE_ENV=production vitepress build",
+    "cloudflare": "cross-env NODE_ENV=cloudflare vitepress build",
     "preview": "cross-env NODE_ENV=production vitepress preview"
   },
   "keywords": [],
