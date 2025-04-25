@@ -36,3 +36,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./.vitepress/dist
+
+      - name: cloudflare
+        uses: cloudflare/wrangler-action@v3.1.0
