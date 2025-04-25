@@ -23,10 +23,10 @@ export default defineConfig({
             issueTerm: 'pathname'
         },
         nav: [
-            { text: '首页', link: '/' },
-            { text: '分类', link: '/pages/category' },
-            { text: '归档', link: '/pages/archives' },
-            { text: '标签', link: '/pages/tags' },
+            { text: '首页', link: '/blog' },
+            { text: '分类', link: '/blog/pages/category' },
+            { text: '归档', link: '/blog/pages/archives' },
+            { text: '标签', link: '/blog/pages/tags' },
             // { text: 'About', link: '/pages/about' }
             // { text: 'Airene', link: 'http://airene.net' }  -- External link test
         ],
