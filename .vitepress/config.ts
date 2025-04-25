@@ -5,12 +5,13 @@ import { getPosts } from './theme/serverUtils'
 const pageSize = 10
 
 // const isProd = process.env.NODE_ENV === 'production'
-const isCloudflare = process.env.NODE_ENV === 'cloudflare'
+const isCloudflare = process.env.isFlare === 'true'
 const isProd = true
 
 export default defineConfig({
     title: 'wei',
     base: isCloudflare ? '/' : '/blog/',
+    // base: '/',
     cacheDir: './node_modules/vitepress_cache',
     description: 'vitepress,blog,blog-theme',
     ignoreDeadLinks: true,
