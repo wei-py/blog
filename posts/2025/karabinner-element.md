@@ -5,6 +5,7 @@ category: 配置
 tags:
 - mac
 - keymap
+- setting
 description: mac 快捷键 修改光标为 vim 操作
 ---
 # karabinner-element

@@ -5,6 +5,7 @@ category: 配置
 tags:
 - mac
 - keymap
+- setting
 description: mac 快捷键 快捷激活应用
 ---
 

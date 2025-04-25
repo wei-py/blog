@@ -5,6 +5,7 @@ category: 配置
 tags:
   - vscode
   - setting
+  - keymap
 description: vscode 配置
 ---
 

@@ -5,6 +5,7 @@ category: 配置
 tags:
 - window
 - keymap
+- setting
 description: window 快捷键 修改光标为 vim 操作
 ---
 
