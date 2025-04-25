@@ -9,7 +9,7 @@ const isProd = true
 
 export default defineConfig({
     title: 'wei',
-    base: '/',
+    base: '/blog/',
     cacheDir: './node_modules/vitepress_cache',
     description: 'vitepress,blog,blog-theme',
     ignoreDeadLinks: true,
