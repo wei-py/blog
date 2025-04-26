@@ -1,8 +1,12 @@
 ---
 title: 注册域名
 date: 2025-04-27
+category: 域名
 tags:
   - domain
+  - pages
+  - cloudflare
+  - hostinger
 ---
 
 ## 厂商 
