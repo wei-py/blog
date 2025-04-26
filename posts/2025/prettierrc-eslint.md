@@ -1,6 +1,6 @@
 ---
 title: prettierrc eslint 的使用 
-date: 2023-06-13 17:11:00
+date: 2025-04-26
 category:
   - 工具
 tags:
