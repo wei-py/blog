@@ -21,21 +21,21 @@ description: vscode 配置
   "editor.fontFamily": "FiraCode Nerd Font",
   "editor.fontSize": 17,
   "editor.lineNumbers": "relative",
+  "editor.tabSize": 2,
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.cursorSurroundingLines": 50,
   "editor.fontLigatures": true,
   "editor.accessibilitySupport": "on",
+  "editor.formatOnSave": true,
 
   // 终端外观
   "terminal.integrated.fontFamily": "FiraCode Nerd Font",
   "terminal.integrated.defaultProfile.windows": "Git Bash",
-
-  // 代码相关设置
-  "editor.tabSize": 2,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "security.workspace.trust.untrustedFiles": "open",
 
   // 代码格式化设置
+  // prettier.eslintIntegration 已弃用，请使用 prettier-eslint 扩展或在 .prettierrc 中配置
   "eslint.validate": [
     "javascript",
     "javascriptreact",
@@ -45,7 +45,8 @@ description: vscode 配置
     "html"
   ],
   "[vue]": {
-    "editor.defaultFormatter": "Vue.volar"
+    // "editor.defaultFormatter": "Vue.volar",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -57,7 +58,7 @@ description: vscode 配置
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -148,6 +149,6 @@ description: vscode 配置
     "<C-z>": false,
     "<C-j>": false,
     "<C-d>": false
-  }
+  },
 }
 ```
