@@ -2,13 +2,13 @@
 title: prettierrc eslint 的使用 
 date: 2025-04-26
 category:
-  - 工具
+- 工具
 tags:
-	- eslint
-  - prettier
-  - 工具
-  - 工程化 
-  - 前端
+- eslint
+- prettier
+- 工具
+- 工程化 
+- 前端
 ---
 
 ## 安装
