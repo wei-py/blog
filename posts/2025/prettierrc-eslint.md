@@ -1,5 +1,5 @@
 ---
-title: prettierrc 的使用 
+title: prettierrc eslint 的使用 
 date: 2023-06-13 17:11:00
 category:
   - 工具
@@ -16,7 +16,7 @@ pnpm add
 eslint prettier 
 eslint-plugin-vue vue-eslint-parser
 eslint-config-prettier eslint-plugin-prettier
-@eslint/js --save-dev
+@eslint/js globals --save-dev
 ```
 
 ## .prettierrc.js
