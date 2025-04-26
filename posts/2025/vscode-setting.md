@@ -11,16 +11,62 @@ description: vscode 配置
 
 ```json
 {
+  // VSCode 外观设置
+  // 主题相关
   "workbench.colorTheme": "Github Light Theme - Gray",
+  "workbench.iconTheme": "atom-font-icons",
+  "workbench.layoutControl.enabled": false,
+
+  // 编辑器外观
   "editor.fontFamily": "FiraCode Nerd Font",
   "editor.fontSize": 17,
-  "terminal.integrated.defaultProfile.windows": "Git Bash",
-  "terminal.integrated.fontFamily": "FiraCode Nerd Font",
-  "editor.tabSize": 2,
+  "editor.lineNumbers": "relative",
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.cursorSurroundingLines": 50,
   "editor.fontLigatures": true,
+  "editor.accessibilitySupport": "on",
+
+  // 终端外观
+  "terminal.integrated.fontFamily": "FiraCode Nerd Font",
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+
+  // 代码相关设置
+  "editor.tabSize": 2,
   "javascript.updateImportsOnFileMove.enabled": "always",
+  "security.workspace.trust.untrustedFiles": "open",
+
+  // 代码格式化设置
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue",
+    "html"
+  ],
+  "[vue]": {
+    "editor.defaultFormatter": "Vue.volar"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // Vim 设置
   "vim.incsearch": true,
   "vim.useSystemClipboard": true,
   "vim.useCtrlKeys": true,
@@ -102,39 +148,6 @@ description: vscode 配置
     "<C-z>": false,
     "<C-j>": false,
     "<C-d>": false
-  },
-  "[vue]": {
-    "editor.defaultFormatter": "Vue.volar"
-  },
-  "editor.lineNumbers": "relative",
-  "editor.accessibilitySupport": "on",
-  "extensions.allowed": "*",
-  "window.menuBarVisibility": "compact",
-  "workbench.layoutControl.enabled": false,
-  "AI.chatLanguage": "简体中文",
-  "workbench.iconTheme": "atom-font-icons",
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "hediet.vscode-drawio.resizeImages": null,
-  "security.workspace.trust.untrustedFiles": "open",
-  "[lua]": {
-    "editor.defaultFormatter": "sumneko.lua"
   }
 }
 ```
