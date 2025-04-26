@@ -11,10 +11,10 @@ tags:
 
 ## 厂商 
 ### hostinger
-地址 https://hpanel.hostinger.com
-使用 outlook 注册即可
-费用 10元/年
-支付方式 支付宝
+- 地址 https://hpanel.hostinger.com
+- 使用 outlook 注册即可
+- 费用 10元/年
+- 支付方式 支付宝
 
 ## DNS
 ### Cloudflare
