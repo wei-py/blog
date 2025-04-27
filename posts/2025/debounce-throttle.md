@@ -1,6 +1,6 @@
 ---
 title: 手写防抖和节流
-date: 2025年4月27日
+date: 2025-04-27
 category: 算法
 tags:
   - js
