@@ -7,7 +7,9 @@ tags:
   - pages
   - blog
 ---
+
 ## deploy.yml
+
 ```yaml
 name: deploy
 on:
@@ -49,16 +51,17 @@ jobs:
           publish_dir: ./.vitepress/dist
 ```
 
+## vitepress config
 
-## vitepress config 
 ```js
-const isCloudflare = process.env.isFlare === 'true'
+const isCloudflare = process.env.isFlare === "true";
 export default defineConfig({
-  base: isCloudflare ? '/' : '/blog/',
-})
+	base: isCloudflare ? "/" : "/blog/"
+});
 ```
 
 ## package.json
+
 ```json
 "scripts": {
   "cloudflare": "cross-env isFlare=true vitepress build",

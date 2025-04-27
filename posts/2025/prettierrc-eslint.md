@@ -1,26 +1,28 @@
 ---
-title: prettierrc eslint 的使用 
+title: prettierrc eslint 的使用
 date: 2025-04-26
 category:
-- 工具
+  - 工具
 tags:
-- eslint
-- prettier
-- 工具
-- 工程化 
-- 前端
+  - eslint
+  - prettier
+  - 工具
+  - 工程化
+  - 前端
 ---
 
 ## 安装
+
 ```shell
-pnpm add 
-eslint prettier 
+pnpm add
+eslint prettier
 eslint-plugin-vue vue-eslint-parser
 eslint-config-prettier eslint-plugin-prettier
 @eslint/js globals --save-dev
 ```
 
 ## .prettierrc.js
+
 ```js
 //此处的规则供参考，其中多半其实都是默认值，可以根据个人习惯改写
 export default {
@@ -69,6 +71,7 @@ export default {
 ```
 
 ## eslint.config.js
+
 ```js
 // eslint.config.js
 import globals from "globals";
@@ -132,39 +135,41 @@ export default [
 ```
 
 ## package.json
+
 ```json
 {
-  "scripts": {
-    "lint": "eslint src",
-    "lint:fix": "eslint src --fix",
-    "format": "prettier --write ."
-  }
+	"scripts": {
+		"lint": "eslint src",
+		"lint:fix": "eslint src --fix",
+		"format": "prettier --write ."
+	}
 }
 ```
 
 ## vscode settings.json
+
 ```json
 {
-    "eslint.validate": [
-        "javascript",
-        "javascriptreact",
-        "typescript",
-        "typescriptreact",
-        "vue",
-        "html"
-    ],
-    "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true
-    },
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[vue]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+	"eslint.validate": [
+		"javascript",
+		"javascriptreact",
+		"typescript",
+		"typescriptreact",
+		"vue",
+		"html"
+	],
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true
+	},
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[vue]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	}
 }
 ```

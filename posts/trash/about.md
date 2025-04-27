@@ -10,10 +10,10 @@ comment: true
 
 ---
 
--   👋 Hi, I'm [ your name ]
--   🚀️ I'm currently working as [ your position ]
--   📮️ How to reach me: [your Github](https://github.com)
--   📖 My motto: [ your motto ]
+- 👋 Hi, I'm [ your name ]
+- 🚀️ I'm currently working as [ your position ]
+- 📮️ How to reach me: [your Github](https://github.com)
+- 📖 My motto: [ your motto ]
 
 ---
 
@@ -108,4 +108,3 @@ comment: true
   <img src="https://img.shields.io/badge/-PyCharm-C0C0C0?logo=PyCharm&logoColor=000" alt="PyCharm" style="display: inline-block;" />&nbsp;
   <img src="https://img.shields.io/badge/-Android%20Studio-C0C0C0?logo=Android-Studio&logoColor=3DDC84" alt="Android Studio" style="display: inline-block;" />&nbsp;
 </p>
-

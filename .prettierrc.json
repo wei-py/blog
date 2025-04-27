@@ -1,42 +1,42 @@
 {
-    "printWidth": 140,
-    "tabWidth": 2,
-    "useTabs": true,
-    "singleQuote": false,
-    "quoteProps": "as-needed",
-    "trailingComma": "none",
-    "bracketSpacing": true,
-    "jsxBracketSameLine": false,
-    "arrowParens": "always",
-    "rangeStart": 0,
-    "requirePragma": false,
-    "insertPragma": false,
-    "proseWrap": "preserve",
-    "htmlWhitespaceSensitivity": "ignore",
-    "vueIndentScriptAndStyle": false,
-    "endOfLine": "auto",
-    "semi": true,
-    "usePrettierrc": true,
-    "overrides": [
-        {
-            "files": "*.json",
-            "options": {
-                "tabWidth": 2
-            }
-        },
-        {
-            "files": "*.md",
-            "options": {
-                "printWidth": 100
-            }
-        },
-        {
-            "files": "*.vue",
-            "options": {
-                "singleQuote": false,
-                "semi": true,
-                "tabWidth": 2
-            }
-        }
-    ]
+	"printWidth": 140,
+	"tabWidth": 2,
+	"useTabs": true,
+	"singleQuote": false,
+	"quoteProps": "as-needed",
+	"trailingComma": "none",
+	"bracketSpacing": true,
+	"jsxBracketSameLine": false,
+	"arrowParens": "always",
+	"rangeStart": 0,
+	"requirePragma": false,
+	"insertPragma": false,
+	"proseWrap": "preserve",
+	"htmlWhitespaceSensitivity": "ignore",
+	"vueIndentScriptAndStyle": false,
+	"endOfLine": "auto",
+	"semi": true,
+	"usePrettierrc": true,
+	"overrides": [
+		{
+			"files": "*.json",
+			"options": {
+				"tabWidth": 2
+			}
+		},
+		{
+			"files": "*.md",
+			"options": {
+				"printWidth": 100
+			}
+		},
+		{
+			"files": "*.vue",
+			"options": {
+				"singleQuote": false,
+				"semi": true,
+				"tabWidth": 2
+			}
+		}
+	]
 }

@@ -27,13 +27,13 @@ cat ~/.ssh/id_rsa.pub
 ```shell
 # 初始化远程仓库
 git remote add origin https://github.com/你的用户名/仓库名.git
- 
+
 # 添加Gitee地址
 git remote set-url --add origin https://gitee.com/你的用户名/仓库名.git
- 
+
 # 验证配置
 git remote -v
- 
+
 origin  https://github.com/your-username/your-repo-name.git (fetch)
 origin  https://github.com/your-username/your-repo-name.git (push)
 origin  https://gitee.com/your-username/your-repo-name.git (push)  # 如果设置了同步推送
@@ -42,4 +42,5 @@ gitee   https://gitee.com/your-username/your-repo-name.git (push)
 ```
 
 ## 参考
+
 - https://blog.csdn.net/weixin_44120543/article/details/147124135

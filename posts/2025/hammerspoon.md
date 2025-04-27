@@ -1,20 +1,22 @@
 ---
 date: 2025-04-25
-title: hammerspoon 配置 
+title: hammerspoon 配置
 category: 配置
 tags:
-- mac
-- keymap
-- setting
+  - mac
+  - keymap
+  - setting
 description: mac 快捷键 快捷激活应用
 ---
 
 # hammerspoon
 
 ## 修改文件的所在位置
+
 ~/.hammerspoon 目录下 init.lua 文件
 
 ## 配置
+
 ```lua
 -- 定义超级键 capslock
 local hyper = { "alt", "ctrl", "cmd" }

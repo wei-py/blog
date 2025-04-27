@@ -3,9 +3,9 @@ title: 手写防抖和节流
 date: 2025年4月27日
 category: 算法
 tags:
-    - js
-    - 防抖
-    - 节流
+  - js
+  - 防抖
+  - 节流
 ---
 
 # 手写防抖和节流
@@ -15,145 +15,145 @@ tags:
 ```js
 // 此处的三个参数上文都有解释
 const debounce = function (func, wait, immediate) {
-    // timeout 表示定时器
-    // result 表示 func 执行返回值
-    let timeout, result
+	// timeout 表示定时器
+	// result 表示 func 执行返回值
+	let timeout, result;
 
-    // 定时器计时结束后
-    // 1、清空计时器，使之不影响下次连续事件的触发
-    // 2、触发执行 func
-    const later = function (context, args) {
-        timeout = null
-        // if (args) 判断是为了过滤立即触发的
-        // 关联在于 delay 和 restArguments
-        if (args) result = func.apply(context, args)
-    }
+	// 定时器计时结束后
+	// 1、清空计时器，使之不影响下次连续事件的触发
+	// 2、触发执行 func
+	const later = function (context, args) {
+		timeout = null;
+		// if (args) 判断是为了过滤立即触发的
+		// 关联在于 delay 和 restArguments
+		if (args) result = func.apply(context, args);
+	};
 
-    // 将 debounce 处理结果当作函数返回
-    let debounced = restArguments(function (args) {
-        if (timeout) clearTimeout(timeout)
-        if (immediate) {
-            // 第一次触发后会设置 timeout，
-            // 根据 timeout 是否为空可以判断是否是首次触发
-            let callNow = !timeout
-            timeout = setTimeout(later, wait)
-            if (callNow) result = func.apply(this, args)
-        } else {
-            // 设置定时器
-            timeout = delay(later, wait, this, args)
-        }
+	// 将 debounce 处理结果当作函数返回
+	let debounced = restArguments(function (args) {
+		if (timeout) clearTimeout(timeout);
+		if (immediate) {
+			// 第一次触发后会设置 timeout，
+			// 根据 timeout 是否为空可以判断是否是首次触发
+			let callNow = !timeout;
+			timeout = setTimeout(later, wait);
+			if (callNow) result = func.apply(this, args);
+		} else {
+			// 设置定时器
+			timeout = delay(later, wait, this, args);
+		}
 
-        return result
-    })
+		return result;
+	});
 
-    // 新增 手动取消
-    debounced.cancel = function () {
-        clearTimeout(timeout)
-        timeout = null
-    }
+	// 新增 手动取消
+	debounced.cancel = function () {
+		clearTimeout(timeout);
+		timeout = null;
+	};
 
-    return debounced
-}
+	return debounced;
+};
 
 // 根据给定的毫秒 wait 延迟执行函数 func
 const delay = restArguments(function (func, wait, args) {
-    return setTimeout(function () {
-        return func.apply(null, args)
-    }, wait)
-})
+	return setTimeout(function () {
+		return func.apply(null, args);
+	}, wait);
+});
 ```
 
 ## 节流
 
 ```js
 const throttle = function (func, wait, options) {
-    let timeout = null
-    let result = null
-    let context = null
-    let args = null
+	let timeout = null;
+	let result = null;
+	let context = null;
+	let args = null;
 
-    // 上一次执行回调的时间戳
-    let previous = 0
+	// 上一次执行回调的时间戳
+	let previous = 0;
 
-    // 无传入参数时，初始化 options 为空对象
-    if (!options) options = {}
+	// 无传入参数时，初始化 options 为空对象
+	if (!options) options = {};
 
-    const later = function () {
-        // 当设置 { leading: false } 时
-        // 每次触发回调函数后设置 previous 为 0
-        // 不然为当前时间
-        previous = options.leading === false ? 0 : Date.now()
+	const later = function () {
+		// 当设置 { leading: false } 时
+		// 每次触发回调函数后设置 previous 为 0
+		// 不然为当前时间
+		previous = options.leading === false ? 0 : Date.now();
 
-        // 防止内存泄漏，置为 null 便于后面根据 !timeout 设置新的 timeout
-        timeout = null
+		// 防止内存泄漏，置为 null 便于后面根据 !timeout 设置新的 timeout
+		timeout = null;
 
-        // 执行函数
-        result = func.apply(context, args)
-        if (!timeout) {
-            context = null
-            args = null
-        }
-    }
+		// 执行函数
+		result = func.apply(context, args);
+		if (!timeout) {
+			context = null;
+			args = null;
+		}
+	};
 
-    // 每次触发事件回调都执行这个函数
-    // 函数内判断是否执行 func
-    // func 才是我们业务层代码想要执行的函数
-    const throttled = function () {
-        // 记录当前时间
-        let now = Date.now()
+	// 每次触发事件回调都执行这个函数
+	// 函数内判断是否执行 func
+	// func 才是我们业务层代码想要执行的函数
+	const throttled = function () {
+		// 记录当前时间
+		let now = Date.now();
 
-        // 第一次执行时（此时 previous 为 0，之后为上一次时间戳）
-        // 并且设置了 { leading: false }（表示第一次回调不执行）
-        // 此时设置 previous 为当前值，表示刚执行过，本次就不执行了
-        if (!previous && options.leading === false) {
-            previous = now
-        }
+		// 第一次执行时（此时 previous 为 0，之后为上一次时间戳）
+		// 并且设置了 { leading: false }（表示第一次回调不执行）
+		// 此时设置 previous 为当前值，表示刚执行过，本次就不执行了
+		if (!previous && options.leading === false) {
+			previous = now;
+		}
 
-        // 距离下次触发 func 还需要等待的时间
-        let remaining = wait - (now - previous)
-        context = this
-        args = arguments
+		// 距离下次触发 func 还需要等待的时间
+		let remaining = wait - (now - previous);
+		context = this;
+		args = arguments;
 
-        // 要么是到了间隔时间了，随即触发方法（remaining <= 0）
-        // 要么是没有传入 {leading: false}，且第一次触发回调，即立即触发
-        // 此时 previous 为 0，wait - (now - previous) 也满足 <= 0
-        // 之后便会把 previous 值迅速置为 now
-        if (remaining <= 0 || remaining > wait) {
-            if (timeout) {
-                clearTimeout(timeout)
+		// 要么是到了间隔时间了，随即触发方法（remaining <= 0）
+		// 要么是没有传入 {leading: false}，且第一次触发回调，即立即触发
+		// 此时 previous 为 0，wait - (now - previous) 也满足 <= 0
+		// 之后便会把 previous 值迅速置为 now
+		if (remaining <= 0 || remaining > wait) {
+			if (timeout) {
+				clearTimeout(timeout);
 
-                // clearTimeout(timeout) 并不会把 timeout 设为 null
-                // 手动设置，便于后续判断
-                timeout = null
-            }
+				// clearTimeout(timeout) 并不会把 timeout 设为 null
+				// 手动设置，便于后续判断
+				timeout = null;
+			}
 
-            // 设置 previous 为当前时间
-            previous = now
+			// 设置 previous 为当前时间
+			previous = now;
 
-            // 执行 func 函数
-            result = func.apply(context, args)
-            if (!timeout) {
-                context = null
-                args = null
-            }
-        } else if (!timeout && options.trailing !== false) {
-            // 最后一次需要触发的情况
-            // 如果已经存在一个定时器，则不会进入该 if 分支
-            // 如果 {trailing: false}，即最后一次不需要触发了，也不会进入这个分支
-            // 间隔 remaining milliseconds 后触发 later 方法
-            timeout = setTimeout(later, remaining)
-        }
-        return result
-    }
+			// 执行 func 函数
+			result = func.apply(context, args);
+			if (!timeout) {
+				context = null;
+				args = null;
+			}
+		} else if (!timeout && options.trailing !== false) {
+			// 最后一次需要触发的情况
+			// 如果已经存在一个定时器，则不会进入该 if 分支
+			// 如果 {trailing: false}，即最后一次不需要触发了，也不会进入这个分支
+			// 间隔 remaining milliseconds 后触发 later 方法
+			timeout = setTimeout(later, remaining);
+		}
+		return result;
+	};
 
-    // 手动取消
-    throttled.cancel = function () {
-        clearTimeout(timeout)
-        previous = 0
-        timeout = context = args = null
-    }
+	// 手动取消
+	throttled.cancel = function () {
+		clearTimeout(timeout);
+		previous = 0;
+		timeout = context = args = null;
+	};
 
-    // 执行 _.throttle 返回 throttled 函数
-    return throttled
-}
+	// 执行 _.throttle 返回 throttled 函数
+	return throttled;
+};
 ```
