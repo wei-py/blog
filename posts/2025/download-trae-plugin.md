@@ -32,4 +32,5 @@ https://marketplace.visualstudio.com/_apis/public/gallery/publishers/Hyzeta/vsex
 下载后 直接拖入 trae 插件位置
 
 ## vscode plugin api
+
 https://marketplace.visualstudio.com
