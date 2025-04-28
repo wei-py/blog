@@ -14,6 +14,43 @@ tags:
 
 ```js
 // 此处的三个参数上文都有解释
+/**
+ * 将函数包装为支持剩余参数的形式
+ * @param {Function} func 被包装的函数
+ * @param {Number} startIndex 从第几个位置开始收集剩余参数（默认为 func 的参数个数减一）
+ * @returns {Function} 包装后的函数
+ */
+function restArguments(func, startIndex) {
+	// 校验 func 是否为函数
+	if (typeof func !== "function") {
+		throw new TypeError("Expected a function");
+	}
+	// 确定从哪个位置开始收集剩余参数（默认是 func 的形参个数减一）
+	startIndex = startIndex == null ? func.length - 1 : +startIndex;
+
+	// 返回包装后的函数
+	return function () {
+		// 计算剩余参数的数量
+		const length = Math.max(arguments.length - startIndex, 0);
+		const rest = new Array(length);
+
+		// 收集剩余参数到 rest 数组
+		for (let i = 0; i < length; i++) {
+			rest[i] = arguments[i + startIndex];
+		}
+
+		// 构建参数列表：前 startIndex 个参数 + rest 数组作为最后一个参数
+		const args = new Array(startIndex + 1);
+		for (let i = 0; i < startIndex; i++) {
+			args[i] = arguments[i];
+		}
+		args[startIndex] = rest; // 将剩余参数数组作为最后一个参数
+
+		// 调用原函数并传递参数
+		return func.apply(this, args);
+	};
+}
+
 const debounce = function (func, wait, immediate) {
 	// timeout 表示定时器
 	// result 表示 func 执行返回值
@@ -30,12 +67,12 @@ const debounce = function (func, wait, immediate) {
 	};
 
 	// 将 debounce 处理结果当作函数返回
-	let debounced = restArguments(function (args) {
+	const debounced = restArguments(function (args) {
 		if (timeout) clearTimeout(timeout);
 		if (immediate) {
 			// 第一次触发后会设置 timeout，
 			// 根据 timeout 是否为空可以判断是否是首次触发
-			let callNow = !timeout;
+			const callNow = !timeout;
 			timeout = setTimeout(later, wait);
 			if (callNow) result = func.apply(this, args);
 		} else {
@@ -61,6 +98,13 @@ const delay = restArguments(function (func, wait, args) {
 		return func.apply(null, args);
 	}, wait);
 });
+
+// 测试代码
+const debounced = debounce(function () {
+	console.log("执行了");
+}, 1000);
+
+debounced();
 ```
 
 ## 节流
