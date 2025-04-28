@@ -16,7 +16,7 @@ tags:
 ```shell
 pnpm add
 eslint prettier
-eslint-plugin-vue vue-eslint-parser
+eslint-plugin-vue vue-eslint-parser @babel/eslint-parser
 eslint-config-prettier eslint-plugin-prettier
 @eslint/js globals --save-dev
 ```
