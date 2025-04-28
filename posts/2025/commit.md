@@ -31,47 +31,12 @@ pnpm install -D cz-git
   "config": {
     "commitizen": {
       "path": "node_modules/cz-git",
-      "czConfig": "./cz.config.js"
     }
   }
 }
 ```
 
-## .commitlintrc.mjs
-```js
-// .commitlintrc.js
-/** @type {import('cz-git').UserConfig} */
-import { defineConfig } from "cz-git";
-
-export default defineConfig({
-	rules: {
-		// 自定义规则
-		"type-enum": [2, "always", ["feat", "fix", "docs", "style", "refactor", "perf", "test", "build", "ci", "chore", "revert"]]
-	},
-	prompt: {
-		// cz-git 的定制化配置
-		scopes: ["global", "component", "utils", "styles"], // 可选范围列表
-		allowCustomScopes: true, // 允许自定义范围
-		allowEmptyScopes: false, // 禁止空范围
-		customScopesAlign: "bottom", // 自定义范围提示位置
-		useEmoji: true, // 启用 emoji 图标
-		emojiAlign: "center", // emoji 对齐方式
-		themeColorCode: "", // 主题色
-		allowTicketNumber: false, // 禁止关联工单号
-		confirmColorize: true, // 高亮确认信息
-		messages: {
-			type: "选择提交类型 (必选)",
-			scope: "选择或输入影响范围 (可选)",
-			subject: "简短描述变更 (必填)",
-			body: "详细描述 (换行使用 \\n) (可选)",
-			breaking: "列出破坏性变更 (可选)",
-			footer: "关联 ISSUE 或文档 (如 Closes #123) (可选)"
-		}
-	}
-});
-```
-
-## cz-config.js
+## commitlint.config.js
 ```js
 import { definePrompt } from "cz-git";
 
