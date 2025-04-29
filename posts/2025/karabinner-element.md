@@ -178,6 +178,21 @@ description: mac 快捷键 修改光标为 vim 操作
               },
               {
                 "from": {
+                  "key_code": ".",
+                  "modifiers": {
+                    "mandatory": ["left_command", "left_control", "left_option"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "l",
+                    "modifiers": ["left_command"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
                   "key_code": "p",
                   "modifiers": {
                     "mandatory": ["left_command", "left_control", "left_option"]
@@ -186,6 +201,21 @@ description: mac 快捷键 修改光标为 vim 操作
                 "to": [
                   {
                     "key_code": "p",
+                    "modifiers": ["left_command"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "a",
+                  "modifiers": {
+                    "mandatory": ["left_command", "left_control", "left_option"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "a",
                     "modifiers": ["left_command"]
                   }
                 ],
@@ -318,4 +348,6 @@ description: mac 快捷键 修改光标为 vim 操作
       "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
     }
   ]
-}``
+}
+
+```
