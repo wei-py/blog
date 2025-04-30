@@ -12,6 +12,7 @@ description: vscode 配置
 ```json
 {
 	// VSCode 外观设置
+	"application.extensionMarketUrl": "https://marketplace.visualstudio.com",
 	// 主题相关
 	"workbench.colorTheme": "Github Light Theme - Gray",
 	"workbench.iconTheme": "atom-font-icons",
@@ -26,7 +27,7 @@ description: vscode 配置
 	"editor.cursorSurroundingLines": 50,
 	"editor.fontLigatures": true,
 	"editor.accessibilitySupport": "on",
-	"editor.formatOnSave": true,
+	// "editor.formatOnSave": true,
 
 	// 终端外观
 	"terminal.integrated.fontFamily": "FiraCode Nerd Font",
@@ -64,6 +65,9 @@ description: vscode 配置
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[markdown]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 

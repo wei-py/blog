@@ -166,7 +166,7 @@ launchApp("o", "Trae")
 launchApp("u", "ziniaobrowser")
 launchApp("y", "Obsidian")
 launchApp("m", "NeteaseMusic")
-launchApp("p", "WeChat")
+launchApp("b", "WeChat")
 launchApp("e", "Finder")
 launchApp("n", "Warp")
 ```
