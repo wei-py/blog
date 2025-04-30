@@ -40,6 +40,11 @@ bindKeyStroke("1", { "ctrl", "shift" }, "tab")
 -- capslock + tab => commnand + tab
 bindKeyStroke("tab", { "cmd" }, "tab");
 
+bindKeyStroke(",", { "cmd" }, "u");
+bindKeyStroke(".", { "cmd" }, "j");
+bindKeyStroke(";", { "cmd" }, "l");
+
+
 -- capslock + w ==>  command + w
 -- bindKeyStroke("w", { "cmd" }, "w")
 
@@ -69,34 +74,34 @@ bindKeyStroke("tab", { "cmd" }, "tab");
 
 -- 调整窗口位置
 -- 左半屏幕
-hs.hotkey.bind(hyper, ";", function()
-    -- if allWindowsFilter:isWindowAllowed(hs.window.focusedWindow()) then
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-    f.x = max.x
-    f.y = max.y
-    f.w = max.w / 2
-    f.h = max.h
-    win:setFrame(f)
-    -- end
-end)
+-- hs.hotkey.bind(hyper, ";", function()
+--     -- if allWindowsFilter:isWindowAllowed(hs.window.focusedWindow()) then
+--     local win = hs.window.focusedWindow()
+--     local f = win:frame()
+--     local screen = win:screen()
+--     local max = screen:frame()
+--     f.x = max.x
+--     f.y = max.y
+--     f.w = max.w / 2
+--     f.h = max.h
+--     win:setFrame(f)
+--     -- end
+-- end)
 
 -- 右半屏幕
-hs.hotkey.bind(hyper, "'", function()
-    -- if allWindowsFilter:isWindowAllowed(hs.window.focusedWindow()) then
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-    f.x = max.x + (max.w / 2)
-    f.y = max.y
-    f.w = max.w / 2
-    f.h = max.h
-    win:setFrame(f)
-    -- end
-end)
+-- hs.hotkey.bind(hyper, "'", function()
+--     -- if allWindowsFilter:isWindowAllowed(hs.window.focusedWindow()) then
+--     local win = hs.window.focusedWindow()
+--     local f = win:frame()
+--     local screen = win:screen()
+--     local max = screen:frame()
+--     f.x = max.x + (max.w / 2)
+--     f.y = max.y
+--     f.w = max.w / 2
+--     f.h = max.h
+--     win:setFrame(f)
+--     -- end
+-- end)
 
 -- 全屏
 hs.hotkey.bind(hyper, "/", function()
@@ -167,6 +172,6 @@ launchApp("u", "ziniaobrowser")
 launchApp("y", "Obsidian")
 launchApp("m", "NeteaseMusic")
 launchApp("b", "WeChat")
-launchApp("e", "Finder")
+-- launchApp("e", "Finder")
 launchApp("n", "Warp")
 ```
