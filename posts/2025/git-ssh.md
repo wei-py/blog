@@ -1,8 +1,8 @@
 ---
-title: Git SSH
+title: git SSH
 date: 2023-06-13 17:11:00
 tags:
-  - Git
+  - git
   - SSH
 category:
   - 工具
