@@ -1,12 +1,11 @@
 ----
 title: git 工作流 
 date: 2025-05-03
-category: git
+categories: git
 tags:
   - git
   - gitflow
 description: git 工作流核心模型解析，基于 Git 教程完结篇实践总结
-
 ---
 
 # gitflow 工作流：企业级分支管理最佳实践
