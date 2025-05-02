@@ -1,7 +1,7 @@
 ----
 title: git 工作流 
 date: 2025-05-03
-categories: git
+category: git
 tags:
   - git
   - gitflow
