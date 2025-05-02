@@ -1,6 +1,7 @@
 ---
 title: Cloudflare Github Pages
 date: 2025-01-01
+categories: pages
 tags:
   - github
   - cloudflare
