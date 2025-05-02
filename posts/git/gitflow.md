@@ -43,7 +43,7 @@ git merge --no-ff feature/new-login  # 保留分支历史
 git branch -d feature/new-login
 ```
 
-####（2）发布分支（Release Branch）
+#### （2）发布分支（Release Branch）
 
 - **用途**：准备正式发布版本，命名规范 release/\*（如 release/v1.0.0）。
 - **核心操作**：
@@ -57,7 +57,7 @@ git branch -d feature/new-login
   git tag -a v1.0.0 -m "Release v1.0.0"
   ```
 
-####（3）热修复分支（Hotfix Branch）
+#### （3）热修复分支（Hotfix Branch）
 
 - **用途**：紧急修复生产环境 Bug，命名规范 hotfix/\*（如 hotfix/auth-bug）。
 - **紧急响应流程**：
