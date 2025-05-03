@@ -4,7 +4,7 @@ date: 2025-05-03
 category: 前端
 tags:
   - frontEnd
-  - review
+  - interview
   - vue3
   - proxy
 description: 在 Vue 3.0 中，**使用 `Proxy` 是为了实现更强大、更高效的响应式系统（Reactivity System）**。相比 Vue 2.x 中使用的 `Object.defineProperty`，Vue 3 使用 `Proxy` 带来了许多关键性的改进。

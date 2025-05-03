@@ -4,7 +4,7 @@ date: 2025-05-03
 category: 前端
 tags:
   - frontEnd
-  - review
+  - interview
 description: 事件坐标
 ---
 
