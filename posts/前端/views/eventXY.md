@@ -5,6 +5,7 @@ category: 前端
 tags:
   - reviews
   - frontEnd
+description: 事件坐标
 ---
 
 ## 事件坐标属性
