@@ -3,7 +3,7 @@ title: 事件坐标
 date: 2025-05-03
 category: 前端
 tags:
-  - reviews
+  - review
   - frontEnd
 description: 事件坐标
 ---

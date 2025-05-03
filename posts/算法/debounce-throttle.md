@@ -6,7 +6,7 @@ tags:
   - js
   - 防抖
   - 节流
-	- reviews
+	- review
   - frontEnd
 ---
 
