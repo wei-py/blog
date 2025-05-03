@@ -29,8 +29,7 @@ description: 事件坐标
 
 - 如果一个元素没有滚动条，那么它的 `scrollWidth` 和 `clientWidth` 应该是相等的，`scrollHeight` 和 `clientHeight` 也相等
 - `scrollHeight`: 因为子元素比父元素高，父元素不想被子元素撑的一样高就显示出了滚动条，在滚动的过程中本元素有部分被隐藏了，
-- `scrollHeight`代表包括当前不可见部分的元素的高度。而可见部分的高度其实就是`clientHeight`，也就是`scrollHeight`>=`clientHeight`恒成立。在有滚动条时讨论`scrollHeight`才有意义，在没有滚动条时`scrollHeight`==`clientHeight`恒成立。单位px，只读元素。 
-
+- `scrollHeight`代表包括当前不可见部分的元素的高度。而可见部分的高度其实就是`clientHeight`，也就是`scrollHeight`>=`clientHeight`恒成立。在有滚动条时讨论`scrollHeight`才有意义，在没有滚动条时`scrollHeight`==`clientHeight`恒成立。单位px，只读元素。
 
 ### 尺寸属性对比
 
