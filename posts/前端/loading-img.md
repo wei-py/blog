@@ -18,7 +18,7 @@ description: 网站开发中, 实现图片的懒加载
 
 #### 原理：
 
-通过监听 `scroll` 事件，并使用 `offsetTop`、`scrollTop` 等属性计算图片是否进入视口。使用 `data-src` 存储真实图片地址，避免提前加载 [[2]]。
+通过监听 `scroll` 事件，并使用 `offsetTop`、`scrollTop` 等属性计算图片是否进入视口。使用 `data-src` 存储真实图片地址，避免提前加载 。
 
 #### HTML 示例：
 
@@ -52,7 +52,7 @@ window.addEventListener("load", lazyLoad); // 页面加载时也检查一次
 
 #### 原理：
 
-与方案一类似，但使用 `getBoundingClientRect()` 获取元素相对于视口的位置，更精确判断是否进入可视区域，并加入节流函数优化性能 [[4]][[5]]。
+与方案一类似，但使用 `getBoundingClientRect()` 获取元素相对于视口的位置，更精确判断是否进入可视区域，并加入节流函数优化性能 。
 
 #### JavaScript 示例：
 
@@ -90,7 +90,7 @@ window.addEventListener("load", lazyLoad);
 
 #### 原理：
 
-使用现代浏览器提供的 `IntersectionObserver` API 监听元素是否进入视口，无需手动计算位置，性能更优 [[6]][[7]][[10]]。
+使用现代浏览器提供的 `IntersectionObserver` API 监听元素是否进入视口，无需手动计算位置，性能更优 。
 
 #### JavaScript 示例：
 
@@ -114,7 +114,7 @@ document.querySelectorAll(".lazy-img").forEach((img) => observer.observe(img));
 
 #### 原理：
 
-利用 `<img>` 和 `<iframe>` 的原生 `loading="lazy"` 属性实现懒加载，无需额外 JS 脚本，最简单的方式 [[9]]。
+利用 `<img>` 和 `<iframe>` 的原生 `loading="lazy"` 属性实现懒加载，无需额外 JS 脚本，最简单的方式 。
 
 #### HTML 示例：
 
@@ -137,4 +137,4 @@ document.querySelectorAll(".lazy-img").forEach((img) => observer.observe(img));
 
 > **推荐优先顺序**：  
 > 若需精细控制，建议使用 **IntersectionObserver API**；  
-> 若项目对兼容性和性能要求不高，可使用 **`loading="lazy"`** 快速实现 [[6]][[9]]。
+> 若项目对兼容性和性能要求不高，可使用 **`loading="lazy"`** 快速实现 。
