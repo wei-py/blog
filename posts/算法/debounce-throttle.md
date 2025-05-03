@@ -4,7 +4,6 @@ date: 2025-04-27
 category: 算法
 tags:
   - frontEnd
-	- interview
   - js
   - 防抖
   - 节流
