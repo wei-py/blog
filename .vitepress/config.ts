@@ -4,7 +4,6 @@ import { getPosts } from "./theme/serverUtils";
 //每页的文章数量
 const pageSize = 10;
 
-// const isProd = process.env.NODE_ENV === 'production'
 const isCloudflare = process.env.isFlare === "true";
 const isProd = true;
 
