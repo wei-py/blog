@@ -3,11 +3,12 @@ title: 手写防抖和节流
 date: 2025-04-27
 category: 算法
 tags:
+  - frontEnd
+	- review
   - js
   - 防抖
   - 节流
-	- review
-  - frontEnd
+description: 防抖和节流的实现
 ---
 
 # 手写防抖和节流
