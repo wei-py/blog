@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>图片懒加载方案一</title>
 	</head>
-	<body style="height: 120vh;">
+	<body style="height: 120vh">
 		<img data-src="https://cdn.pixabay.com/photo/2021/08/24/15/38/sand-6570980_960_720.jpg" src="" alt="1" />
 		<img data-src="https://cdn.pixabay.com/photo/2013/02/21/19/06/drink-84533_960_720.jpg" src="" alt="2" />
 		<script>
@@ -22,7 +22,7 @@
 					// 获取窗口的高度
 					const clientHeight = window.innerHeight;
 					console.log(offsetTop, scrollTop, clientHeight);
-					
+
 					// 判断图片是否进入视口
 					if (offsetTop < scrollTop + clientHeight) {
 						if (img.dataset.src) {
