@@ -16,6 +16,12 @@ tags:
 |pageXY|包含|包含|相对于整个文档的坐标，包括滚动部分|
 |screenXY|包含|包含|相对于屏幕的坐标|
 
+### 使用场景
+- `clientXY`: 适用于需要相对于视口位置的操作，如固定定位元素
+- `offsetXY`: 适用于元素内部交互，如拖拽组件
+- `pageXY`: 适用于需要考虑页面滚动的情况，如无限滚动加载
+- `screenXY`: 适用于需要与屏幕物理坐标交互的场景，如全屏应用
+
 ## 元素尺寸属性
 
 ### 尺寸关系
@@ -30,6 +36,45 @@ tags:
 |clientWidth/Height|包含|包含|不包含|不包含|
 |offsetWidth/Height|包含|包含|包含|不包含|
 |scrollWidth/Height|包含|包含|不包含|包含内容溢出部分|
+
+### 计算公式
+- `offsetWidth = width + padding-left + padding-right + border-left + border-right`
+- `offsetHeight = height + padding-top + padding-bottom + border-top + border-bottom`
+- `clientWidth = width + padding-left + padding-right`
+- `clientHeight = height + padding-top + padding-bottom`
+- `scrollWidth = 实际内容宽度（包括溢出部分）+ padding-left + padding-right`
+- `scrollHeight = 实际内容高度（包括溢出部分）+ padding-top + padding-bottom`
+
+### 获取元素位置
+- `element.getBoundingClientRect()`: 返回元素相对于视口的位置信息，包括 top、right、bottom、left、width、height 等属性
+- `element.offsetLeft/offsetTop`: 返回元素相对于 offsetParent 的左/上偏移量
+- `element.scrollLeft/scrollTop`: 元素内容的水平/垂直滚动像素数
+
+## 实际应用示例
+
+```javascript
+// 获取元素在页面中的绝对位置
+function getElementPosition(el) {
+  let left = 0, top = 0;
+  while(el) {
+    left += el.offsetLeft;
+    top += el.offsetTop;
+    el = el.offsetParent;
+  }
+  return { left, top };
+}
+
+// 判断元素是否在视口中可见
+function isElementInViewport(el) {
+  const rect = el.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+```
 
 ## 参考
 > https://github.com/niexia/niexia.github.io/issues/41
