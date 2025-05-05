@@ -3,35 +3,32 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>图片懒加载方案一</title>
+		<title>loading img</title>
+		<style>
+			.lazy-img {
+				width: 100px !important;
+				height: 100px !important;
+			}
+		</style>
 	</head>
-	<body style="height: 120vh">
-		<img data-src="https://cdn.pixabay.com/photo/2021/08/24/15/38/sand-6570980_960_720.jpg" src="" alt="1" />
-		<img data-src="https://cdn.pixabay.com/photo/2013/02/21/19/06/drink-84533_960_720.jpg" src="" alt="2" />
+	<body>
+		<img data-src="https://w.wallhaven.cc/full/rr/wallhaven-rrvp91.jpg" alt="Lazy Image" class="lazy-img" />
 		<script>
-			// 获取所有需要懒加载的图片
-			const images = document.querySelectorAll("img");
+			function lazyLoad() {
+				const images = document.querySelectorAll(".lazy-img");
+				const scrollTop = window.scrollY || window.pageYOffset;
+				const windowHeight = window.innerHeight;
+				console.log(images, scrollTop, windowHeight);
 
-			// 监听滚动事件
-			window.addEventListener("scroll", function () {
-				images.forEach(function (img) {
-					// 获取图片相对于文档顶部的偏移量
-					const offsetTop = img.offsetTop;
-					// 获取文档的滚动高度
-					const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-					// 获取窗口的高度
-					const clientHeight = window.innerHeight;
-
-					console.log(offsetTop, scrollTop, clientHeight);
-
-					// 判断图片是否进入视口
-					if (offsetTop < scrollTop + clientHeight) {
-						if (img.dataset.src) {
-							img.src = img.dataset.src;
-						}
+				images.forEach((img) => {
+					const offsetTop = img.getBoundingClientRect().top + scrollTop;
+					if (offsetTop < scrollTop + windowHeight && !img.src) {
+						img.src = img.dataset.src;
 					}
 				});
-			});
+			}
+			window.addEventListener("scroll", lazyLoad);
+			window.addEventListener("load", lazyLoad); // 页面加载时也检查一
 		</script>
 	</body>
 </html>
