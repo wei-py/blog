@@ -6,9 +6,27 @@ tags:
   - todo
 ---
 
-# 2025-04-27 todo
+# Todo
+
+## html 默认配置
+
+### 颜色默认配置
+
+body 默认有margin:0
 
 ## vue
 
-- vite.config.js 配置
-- 写一篇正则表达式的文章
+vite.config.js 配置
+
+## 图片相关
+
+图片懒加载
+
+图片轮播
+
+图片自适应
+
+## 模块化
+
+npm、yarn、pnpm 区别
+安装行为
