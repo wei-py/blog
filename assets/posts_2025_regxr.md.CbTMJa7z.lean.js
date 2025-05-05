@@ -1,1 +1,0 @@
-import{_ as e,c as t,o as r}from"./chunks/framework.Dtp82s2t.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"posts/2025/regxr.md","filePath":"posts/2025/regxr.md"}'),s={name:"posts/2025/regxr.md"};function a(o,c,n,p,_,d){return r(),t("div")}const f=e(s,[["render",a]]);export{m as __pageData,f as default};
