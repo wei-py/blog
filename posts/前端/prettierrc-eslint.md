@@ -18,6 +18,7 @@ pnpm add
 eslint prettier
 eslint-plugin-vue vue-eslint-parser @babel/eslint-parser
 eslint-config-prettier eslint-plugin-prettier
+eslint-plugin-markdown
 @eslint/js globals --save-dev
 ```
 
@@ -101,10 +102,18 @@ export default [
 	// 		"prettier/prettier": ["error", { tabWidth: 2 }]
 	// 	}
 	// },
+	// {
+	//   files: ["*.md"],
+	//   rules: {
+	//     "prettier/prettier": ["error", { ...prettierConfig, printWidth: 100 }]
+	//   }
+	// },
 	{
 		files: ["*.md"],
-		rules: {
-			"prettier/prettier": ["error", { ...prettierConfig, printWidth: 100 }]
+		plugins: { markdown: markdownPlugin },
+		languageOptions: {
+			parser: markdownPlugin.parsers.gfm,
+			sourceType: "module"
 		}
 	},
 	{
