@@ -31,3 +31,7 @@ vite.config.js 配置
 npm、yarn、pnpm 区别
 
 安装行为
+
+## 基于 Vite 的组件库工程化实战
+
+- 2025 年 5 月 6 日
