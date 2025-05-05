@@ -1,10 +1,12 @@
 ---
 title: vue 生命周期
 date: 2025-05-05
-categories:
+category:
   - 前端
 tags:
+  - life
   - vue
+  - frontEnd
 ---
 
 # Vue 生命周期详解：Vue2 与 Vue3 对比
