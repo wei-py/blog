@@ -33,9 +33,8 @@ tags:
 ### 加载渲染过程
 
 ```text
-父beforeCreate → 父created →
-父beforeMount → 子beforeCreate → 子created →
-子beforeMount → 子mounted →
+父beforeCreate → 父created → 父beforeMount →
+子beforeCreate → 子created → 子beforeMount → 子mounted →
 父mounted
 ```
 
