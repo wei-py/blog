@@ -2,6 +2,7 @@ import{_ as i,c as a,o as n,ah as t}from"./chunks/framework.Dtp82s2t.js";const g
 <span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">eslint</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> prettier</span></span>
 <span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">eslint-plugin-vue</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> vue-eslint-parser</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> @babel/eslint-parser</span></span>
 <span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">eslint-config-prettier</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> eslint-plugin-prettier</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">eslint-plugin-markdown</span></span>
 <span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">@eslint/js</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> globals</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> --save-dev</span></span></code></pre></div><h2 id="prettierrc-js" tabindex="-1">.prettierrc.js <a class="header-anchor" href="#prettierrc-js" aria-label="Permalink to &quot;.prettierrc.js&quot;">​</a></h2><div class="language-js vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">js</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">//此处的规则供参考，其中多半其实都是默认值，可以根据个人习惯改写</span></span>
 <span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">export</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> default</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> {</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">	printWidth: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">140</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">, </span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">// 指定行的最大长度</span></span>
@@ -73,10 +74,18 @@ import{_ as i,c as a,o as n,ah as t}from"./chunks/framework.Dtp82s2t.js";const g
 <span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">	// 		&quot;prettier/prettier&quot;: [&quot;error&quot;, { tabWidth: 2 }]</span></span>
 <span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">	// 	}</span></span>
 <span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">	// },</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">	// {</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">	//   files: [&quot;*.md&quot;],</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">	//   rules: {</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">	//     &quot;prettier/prettier&quot;: [&quot;error&quot;, { ...prettierConfig, printWidth: 100 }]</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">	//   }</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">	// },</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">	{</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">		files: [</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;*.md&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">],</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">		rules: {</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">			&quot;prettier/prettier&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">: [</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;error&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">, { </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">...</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">prettierConfig, printWidth: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">100</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> }]</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">		plugins: { markdown: markdownPlugin },</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">		languageOptions: {</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">			parser: markdownPlugin.parsers.gfm,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">			sourceType: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;module&quot;</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">		}</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">	},</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">	{</span></span>
