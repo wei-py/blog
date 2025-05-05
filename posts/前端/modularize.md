@@ -35,13 +35,13 @@ description: 前端模块化历程
 ```js
 // 立即执行函数创造私有作用域
 var Module = (function () {
-	const privateVar = "秘密数据";
+  const privateVar = "秘密数据";
 
-	return {
-		publicMethod: function () {
-			console.log(privateVar);
-		}
-	};
+  return {
+    publicMethod: function () {
+      console.log(privateVar);
+    }
+  };
 })();
 ```
 
@@ -55,7 +55,7 @@ IIFE（立即调用函数表达式）让开发者第一次拥有了私有作用�
 // server 端的模块化方案
 // math.js
 exports.add = function (a, b) {
-	return a + b;
+  return a + b;
 };
 
 // main.js
@@ -70,9 +70,9 @@ const { add } = require("./math");
 ```js
 // RequireJS 的模块定义
 define(["dependency"], function (dep) {
-	return {
-		// 模块逻辑
-	};
+  return {
+    // 模块逻辑
+  };
 });
 ```
 
@@ -83,8 +83,8 @@ define(["dependency"], function (dep) {
 ```js
 // SeaJS 的模块规范
 define(function (require, exports, module) {
-	const dep = require("./dep");
-	exports.feature = () => {};
+  const dep = require("./dep");
+  exports.feature = () => {};
 });
 ```
 
@@ -98,7 +98,7 @@ define(function (require, exports, module) {
 export const PI = 3.14;
 
 export default class Calculator {
-	//...
+  //...
 }
 
 // main.js
@@ -138,7 +138,7 @@ import _ from "lodash";
 ```jsx
 // Button.jsx
 export default function Button({ onClick }) {
-	return <button onClick={onClick}>点击</button>;
+  return <button onClick={onClick}>点击</button>;
 }
 
 // App.jsx
@@ -150,7 +150,7 @@ import Button from "./Button";
 ```vue
 <script>
 export default {
-	props: ["label"]
+  props: ["label"]
 };
 </script>
 ```
@@ -159,8 +159,8 @@ export default {
 
 ```ts
 @NgModule({
-	declarations: [AppComponent],
-	imports: [BrowserModule]
+  declarations: [AppComponent],
+  imports: [BrowserModule]
 })
 export class AppModule {}
 ```
@@ -189,12 +189,12 @@ const module = await import(`./feature-${version}.js`);
 
 ```js
 customElements.define(
-	"my-component",
-	class extends HTMLElement {
-		connectedCallback() {
-			this.innerHTML = "<p>Web Component</p>";
-		}
-	}
+  "my-component",
+  class extends HTMLElement {
+    connectedCallback() {
+      this.innerHTML = "<p>Web Component</p>";
+    }
+  }
 );
 ```
 

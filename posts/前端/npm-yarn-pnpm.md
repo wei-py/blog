@@ -88,7 +88,7 @@ description: npm、yarn、pnpm 的区别
   - 示例：
     ```json
     {
-    	"workspaces": ["packages/*"]
+      "workspaces": ["packages/*"]
     }
     ```
 
@@ -98,9 +98,9 @@ description: npm、yarn、pnpm 的区别
   - 示例：
     ```json
     {
-    	"workspaces": {
-    		"packages": ["packages/*"]
-    	}
+      "workspaces": {
+        "packages": ["packages/*"]
+      }
     }
     ```
 
@@ -109,9 +109,9 @@ description: npm、yarn、pnpm 的区别
   - 示例：
     ```json
     {
-    	"dependencies": {
-    		"my-utils": "workspace:packages/utils"
-    	}
+      "dependencies": {
+        "my-utils": "workspace:packages/utils"
+      }
     }
     ```
 

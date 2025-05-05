@@ -57,7 +57,7 @@ jobs:
 ```js
 const isCloudflare = process.env.isFlare === "true";
 export default defineConfig({
-	base: isCloudflare ? "/" : "/blog/"
+  base: isCloudflare ? "/" : "/blog/"
 });
 ```
 

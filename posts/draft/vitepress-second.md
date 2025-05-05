@@ -80,8 +80,8 @@ This is a dangerous warning
 
 ```js
 export default {
-	name: "MyComponent"
-	// ...
+  name: "MyComponent"
+  // ...
 };
 ```
 

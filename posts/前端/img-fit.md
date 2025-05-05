@@ -19,8 +19,8 @@ tags:
 
 ```css
 img {
-	width: 100%;
-	height: auto;
+  width: 100%;
+  height: auto;
 }
 ```
 
@@ -33,8 +33,8 @@ img {
 
 ```css
 img {
-	max-width: 100%;
-	height: auto;
+  max-width: 100%;
+  height: auto;
 }
 ```
 
@@ -49,9 +49,9 @@ img {
 
 ```css
 img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover; /* 或 contain、fill、none */
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 或 contain、fill、none */
 }
 ```
 
@@ -65,8 +65,8 @@ img {
 
 ```css
 img {
-	width: 100%;
-	aspect-ratio: 16 / 9; /* 按需设置 */
+  width: 100%;
+  aspect-ratio: 16 / 9; /* 按需设置 */
 }
 ```
 
@@ -81,19 +81,19 @@ HTML 中使用 `srcset` 和 `sizes` 属性，配合 CSS 实现更智能的响应
 
 ```html
 <img
-	src="image.jpg"
-	srcset="image-320w.jpg 320w, image-480w.jpg 480w, image-800w.jpg 800w"
-	sizes="(max-width: 600px) 100vw,
+  src="image.jpg"
+  srcset="image-320w.jpg 320w, image-480w.jpg 480w, image-800w.jpg 800w"
+  sizes="(max-width: 600px) 100vw,
          (max-width: 900px) 50vw,
          33vw"
-	alt="响应式图片"
+  alt="响应式图片"
 />
 ```
 
 ```css
 img {
-	width: 100%;
-	height: auto;
+  width: 100%;
+  height: auto;
 }
 ```
 
@@ -108,12 +108,12 @@ img {
 
 ```css
 .container {
-	width: 100%;
-	height: 400px;
-	background-image: url("image.jpg");
-	background-size: cover; /* 或 contain */
-	background-position: center;
-	background-repeat: no-repeat;
+  width: 100%;
+  height: 400px;
+  background-image: url("image.jpg");
+  background-size: cover; /* 或 contain */
+  background-position: center;
+  background-repeat: no-repeat;
 }
 ```
 
@@ -129,9 +129,9 @@ img {
 
 ```css
 img {
-	width: 100%;
-	height: auto;
-	display: block;
+  width: 100%;
+  height: auto;
+  display: block;
 }
 ```
 
@@ -141,16 +141,16 @@ img {
 
 ```css
 .avatar {
-	width: 100px;
-	aspect-ratio: 1 / 1;
-	border-radius: 50%;
-	overflow: hidden;
+  width: 100px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 .avatar img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 ```
 

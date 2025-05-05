@@ -1,34 +1,34 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>loading img</title>
-		<style>
-			.lazy-img {
-				width: 100px !important;
-				height: 100px !important;
-			}
-		</style>
-	</head>
-	<body>
-		<img data-src="https://w.wallhaven.cc/full/rr/wallhaven-rrvp91.jpg" alt="Lazy Image" class="lazy-img" />
-		<script>
-			function lazyLoad() {
-				const images = document.querySelectorAll(".lazy-img");
-				const scrollTop = window.scrollY || window.pageYOffset;
-				const windowHeight = window.innerHeight;
-				console.log(images, scrollTop, windowHeight);
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>loading img</title>
+    <style>
+      .lazy-img {
+        width: 100px !important;
+        height: 100px !important;
+      }
+    </style>
+  </head>
+  <body>
+    <img data-src="https://w.wallhaven.cc/full/rr/wallhaven-rrvp91.jpg" alt="Lazy Image" class="lazy-img" />
+    <script>
+      function lazyLoad() {
+        const images = document.querySelectorAll(".lazy-img");
+        const scrollTop = window.scrollY || window.pageYOffset;
+        const windowHeight = window.innerHeight;
+        console.log(images, scrollTop, windowHeight);
 
-				images.forEach((img) => {
-					const offsetTop = img.getBoundingClientRect().top + scrollTop;
-					if (offsetTop < scrollTop + windowHeight && !img.src) {
-						img.src = img.dataset.src;
-					}
-				});
-			}
-			window.addEventListener("scroll", lazyLoad);
-			window.addEventListener("load", lazyLoad); // 页面加载时也检查一
-		</script>
-	</body>
+        images.forEach((img) => {
+          const offsetTop = img.getBoundingClientRect().top + scrollTop;
+          if (offsetTop < scrollTop + windowHeight && !img.src) {
+            img.src = img.dataset.src;
+          }
+        });
+      }
+      window.addEventListener("scroll", lazyLoad);
+      window.addEventListener("load", lazyLoad); // 页面加载时也检查一
+    </script>
+  </body>
 </html>

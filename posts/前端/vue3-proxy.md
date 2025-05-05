@@ -74,14 +74,14 @@ Vue 3 的响应式系统可以支持 `Map`、`Set`、`WeakMap`、`WeakSet` 等�
 ```js
 let obj = { count: 0 };
 Object.defineProperty(obj, "count", {
-	get() {
-		console.log("访问了 count");
-		return val;
-	},
-	set(newVal) {
-		console.log("count 被修改");
-		val = newVal;
-	}
+  get() {
+    console.log("访问了 count");
+    return val;
+  },
+  set(newVal) {
+    console.log("count 被修改");
+    val = newVal;
+  }
 });
 ```
 
@@ -94,14 +94,14 @@ Object.defineProperty(obj, "count", {
 ```js
 let obj = { count: 0 };
 let proxy = new Proxy(obj, {
-	get(target, key, receiver) {
-		console.log(`访问了 ${key.toString()}`);
-		return Reflect.get(target, key, receiver);
-	},
-	set(target, key, value, receiver) {
-		console.log(`设置了 ${key.toString()}`);
-		return Reflect.set(target, key, value, receiver);
-	}
+  get(target, key, receiver) {
+    console.log(`访问了 ${key.toString()}`);
+    return Reflect.get(target, key, receiver);
+  },
+  set(target, key, value, receiver) {
+    console.log(`设置了 ${key.toString()}`);
+    return Reflect.set(target, key, value, receiver);
+  }
 });
 
 proxy.count; // 访问了 count

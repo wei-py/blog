@@ -35,17 +35,17 @@ tags:
 ```javascript
 // DOMContentLoaded：DOM 可用时立即执行
 document.addEventListener("DOMContentLoaded", function () {
-	console.log("DOM 已解析，但图片可能未加载");
-	// 此时可以安全操作 DOM
-	const element = document.getElementById("myElement");
+  console.log("DOM 已解析，但图片可能未加载");
+  // 此时可以安全操作 DOM
+  const element = document.getElementById("myElement");
 });
 
 // load：所有资源加载完成后执行
 window.addEventListener("load", function () {
-	console.log("所有资源（包括图片）已加载完成");
-	// 此时可以安全访问图片尺寸等
-	const image = document.getElementById("myImage");
-	console.log("图片宽度:", image.width);
+  console.log("所有资源（包括图片）已加载完成");
+  // 此时可以安全访问图片尺寸等
+  const image = document.getElementById("myImage");
+  console.log("图片宽度:", image.width);
 });
 ```
 

@@ -24,12 +24,12 @@ description: 网站开发中, 实现图片的懒加载
 
 ```javascript
 function lazyLoad() {
-	const images = document.querySelectorAll("img[data-src]");
-	images.forEach((img) => {
-		if (img.getBoundingClientRect().top < window.innerHeight) {
-			img.src = img.dataset.src;
-		}
-	});
+  const images = document.querySelectorAll("img[data-src]");
+  images.forEach((img) => {
+    if (img.getBoundingClientRect().top < window.innerHeight) {
+      img.src = img.dataset.src;
+    }
+  });
 }
 
 window.addEventListener("scroll", lazyLoad);
@@ -58,16 +58,16 @@ window.addEventListener("DOMContentLoaded", lazyLoad); // 初始加载
 
 ```javascript
 const observer = new IntersectionObserver(
-	(entries) => {
-		entries.forEach((entry) => {
-			if (entry.isIntersecting) {
-				const img = entry.target;
-				img.src = img.dataset.src;
-				observer.unobserve(img); // 加载后停止监听
-			}
-		});
-	},
-	{ rootMargin: "0px 0px 200px 0px" }
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        img.src = img.dataset.src;
+        observer.unobserve(img); // 加载后停止监听
+      }
+    });
+  },
+  { rootMargin: "0px 0px 200px 0px" }
 ); // 提前加载（可选）
 
 document.querySelectorAll("img[data-src]").forEach((img) => observer.observe(img));
@@ -156,15 +156,15 @@ document.querySelectorAll("img[data-src]").forEach((img) => observer.observe(img
 ```javascript
 // Vue3 组合式 API
 app.directive("lazy", {
-	mounted(el) {
-		const observer = new IntersectionObserver(([entry]) => {
-			if (entry.isIntersecting) {
-				el.src = el.dataset.src;
-				observer.disconnect();
-			}
-		});
-		observer.observe(el);
-	}
+  mounted(el) {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        el.src = el.dataset.src;
+        observer.disconnect();
+      }
+    });
+    observer.observe(el);
+  }
 });
 ```
 

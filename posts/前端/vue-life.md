@@ -58,7 +58,7 @@ tags:
 
 ```html
 <keep-alive>
-	<component :is="currentComponent" />
+  <component :is="currentComponent" />
 </keep-alive>
 ```
 
@@ -73,24 +73,24 @@ tags:
 
 ```js
 export default {
-	data() {
-		return { msg: "Hello" };
-	}, // 响应式数据初始化
-	computed: {
-		upper() {
-			return this.msg.toUpperCase();
-		}
-	}, // 在 created 后可用
-	watch: {
-		msg(newVal) {
-			/* 在 created 后生效 */
-		}
-	},
-	methods: {
-		greet() {
-			console.log(this.msg);
-		}
-	} // created 后可用
+  data() {
+    return { msg: "Hello" };
+  }, // 响应式数据初始化
+  computed: {
+    upper() {
+      return this.msg.toUpperCase();
+    }
+  }, // 在 created 后可用
+  watch: {
+    msg(newVal) {
+      /* 在 created 后生效 */
+    }
+  },
+  methods: {
+    greet() {
+      console.log(this.msg);
+    }
+  } // created 后可用
 };
 ```
 
@@ -138,26 +138,26 @@ onBeforeUnmount(() => {
 ```html
 <!-- 父组件模板 -->
 <template>
-	<div>
-		<Child v-if="showChild" />
-	</div>
+  <div>
+    <Child v-if="showChild" />
+  </div>
 </template>
 
 <script>
-	// Vue3 组合式 API 示例
-	export default {
-		components: { Child },
-		setup() {
-			const showChild = ref(true);
+  // Vue3 组合式 API 示例
+  export default {
+    components: { Child },
+    setup() {
+      const showChild = ref(true);
 
-			onBeforeMount(() => console.log("父组件 beforeMount"));
-			onMounted(() => console.log("父组件 mounted"));
-			onBeforeUpdate(() => console.log("父组件 beforeUpdate"));
-			onUpdated(() => console.log("父组件 updated"));
+      onBeforeMount(() => console.log("父组件 beforeMount"));
+      onMounted(() => console.log("父组件 mounted"));
+      onBeforeUpdate(() => console.log("父组件 beforeUpdate"));
+      onUpdated(() => console.log("父组件 updated"));
 
-			return { showChild };
-		}
-	};
+      return { showChild };
+    }
+  };
 </script>
 ```
 
@@ -170,9 +170,9 @@ onBeforeUnmount(() => {
 
 ```js
 import {
-	onBeforeMount,
-	onMounted
-	// ...其他钩子
+  onBeforeMount,
+  onMounted
+  // ...其他钩子
 } from "vue";
 ```
 
@@ -189,10 +189,10 @@ import {
 
 ```html
 <Suspense>
-	<template #default>
-		<AsyncComponent />
-	</template>
-	<template #fallback>Loading...</template>
+  <template #default>
+    <AsyncComponent />
+  </template>
+  <template #fallback>Loading...</template>
 </Suspense>
 ```
 
