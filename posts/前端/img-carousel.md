@@ -190,6 +190,193 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 ```
 
+### 二、原生实现（推荐）
+
+```html
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>图片轮播</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      .carousel {
+        position: relative;
+        max-width: 800px;
+        margin: 2rem auto;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .carousel-track {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .carousel-item {
+        min-width: 100%;
+        transition: opacity 0.5s;
+      }
+
+      .carousel-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .nav-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 1.2rem;
+        border-radius: 50%;
+      }
+
+      .prev {
+        left: 10px;
+      }
+
+      .next {
+        right: 10px;
+      }
+
+      .dots {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 8px;
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        background: #bbb;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .dot.active {
+        background: #333;
+      }
+
+      @media (max-width: 600px) {
+        .carousel-item img {
+          height: 200px;
+          object-fit: cover;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="carousel">
+      <div class="carousel-track">
+        <div class="carousel-item">
+          <img src="https://picsum.photos/800/400?random=1" alt="Slide 1" />
+        </div>
+        <div class="carousel-item">
+          <img src="https://picsum.photos/800/400?random=2" alt="Slide 2" />
+        </div>
+        <div class="carousel-item">
+          <img src="https://picsum.photos/800/400?random=3" alt="Slide 3" />
+        </div>
+      </div>
+
+      <button class="nav-button prev">&#10094;</button>
+      <button class="nav-button next">&#10095;</button>
+
+      <div class="dots">
+        <div class="dot active" data-index="0"></div>
+        <div class="dot" data-index="1"></div>
+        <div class="dot" data-index="2"></div>
+      </div>
+    </div>
+
+    <script>
+      const carousel = document.querySelector(".carousel");
+      const track = document.querySelector(".carousel-track");
+      const items = document.querySelectorAll(".carousel-item");
+      const dots = document.querySelectorAll(".dot");
+      const prevBtn = document.querySelector(".prev");
+      const nextBtn = document.querySelector(".next");
+
+      let currentIndex = 0;
+      let intervalId;
+
+      // 初始化位置
+      function updateCarousel() {
+        const offset = -currentIndex * 100;
+        track.style.transform = `translateX(${offset}%)`;
+
+        // 更新指示点
+        dots.forEach((dot) => dot.classList.remove("active"));
+        dots[currentIndex].classList.add("active");
+      }
+
+      // 自动播放
+      function startAutoPlay() {
+        intervalId = setInterval(() => {
+          currentIndex = (currentIndex + 1) % items.length;
+          updateCarousel();
+        }, 3000);
+      }
+
+      // 停止自动播放
+      function stopAutoPlay() {
+        clearInterval(intervalId);
+      }
+
+      // 点击指示点
+      dots.forEach((dot) => {
+        dot.addEventListener("click", () => {
+          currentIndex = parseInt(dot.dataset.index);
+          updateCarousel();
+          stopAutoPlay();
+          startAutoPlay();
+        });
+      });
+
+      // 点击左右按钮
+      prevBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + items.length) % items.length;
+        updateCarousel();
+        stopAutoPlay();
+        startAutoPlay();
+      });
+
+      nextBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % items.length;
+        updateCarousel();
+        stopAutoPlay();
+        startAutoPlay();
+      });
+
+      // 鼠标悬停暂停
+      carousel.addEventListener("mouseenter", stopAutoPlay);
+      carousel.addEventListener("mouseleave", startAutoPlay);
+
+      // 初始化
+      updateCarousel();
+      startAutoPlay();
+    </script>
+  </body>
+</html>
+```
+
 ---
 
 ### 三、第三方库方案（推荐）
