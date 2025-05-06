@@ -8,6 +8,8 @@
     "build": "cross-env NODE_ENV=production vitepress build",
     "cloudflare": "cross-env isFlare=true vitepress build",
     "preview": "cross-env NODE_ENV=production vitepress preview",
+    "lint": "eslint posts",
+    "lint:fix": "eslint posts --fix",
     "format": "prettier --write ."
   },
   "keywords": [],
@@ -24,6 +26,7 @@
     "cross-env": "^7.0.3",
     "eslint": "^9.25.1",
     "eslint-config-prettier": "^10.1.2",
+    "eslint-plugin-markdown": "^5.1.0",
     "eslint-plugin-prettier": "^5.2.6",
     "eslint-plugin-vue": "^9.33.0",
     "fs-extra": "^11.3.0",
