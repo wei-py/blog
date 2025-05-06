@@ -16,6 +16,10 @@ description:
 
 - Plate.js
 
+## 随机图片
+
+- https://picsum.photos
+
 ## dp 噩梦动态规划
 
 > https://www.bilibili.com/video/BV1GdLiz1EhV/?vd_source=0e4a6629d1d6bf13e3ce8bce47442ac8
