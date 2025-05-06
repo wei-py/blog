@@ -8,8 +8,6 @@ import prettierConfig from "./.prettierrc.js";
 // import vuePlugin from "eslint-plugin-vue";
 import markdownPlugin from "eslint-plugin-markdown";
 
-// console.log(markdownPlugin.parsers.gfm, 333333);
-
 export default [
   eslintJs.configs.recommended,
   // 解决 console window document process 等变量未定义的问题
