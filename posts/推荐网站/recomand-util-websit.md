@@ -20,6 +20,10 @@ description:
 
 - https://picsum.photos
 
+## ai 模型
+
+- https://huggingface.co
+
 ## dp 噩梦动态规划
 
 > https://www.bilibili.com/video/BV1GdLiz1EhV/?vd_source=0e4a6629d1d6bf13e3ce8bce47442ac8
