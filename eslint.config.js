@@ -35,11 +35,8 @@ export default [
   // },
   {
     files: ["*.md"],
-    plugins: { markdown: markdownPlugin },
-    languageOptions: {
-      parser: markdownPlugin.parsers.gfm,
-      sourceType: "module"
-    }
+    plugins: { markdown: markdownPlugin }
+    // languageOptions:
   },
   // {
   //   // 针对 Vue 文件的专属配置

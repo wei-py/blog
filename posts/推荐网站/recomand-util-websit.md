@@ -1,6 +1,6 @@
 ---
 date: 2025-04-25
-title: 推荐实用网站
+title: 推荐实用网站 - 前端
 category: 工具
 tags:
   - icon
@@ -15,6 +15,14 @@ description:
 ## 富文本
 
 - Plate.js
+
+## 随机图片
+
+- https://picsum.photos
+
+## ai 模型
+
+- https://huggingface.co
 
 ## dp 噩梦动态规划
 
