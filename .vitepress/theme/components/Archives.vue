@@ -3,12 +3,7 @@
     <div class="year">
       {{ yearList[0].frontMatter.date.split("-")[0] }}
     </div>
-    <a
-      :href="withBase(article.regularPath).replace(location.host === 'blog.xu-wei.site' ? '/blog' : '', '')"
-      v-for="(article, index) in yearList"
-      :key="index"
-      class="posts"
-    >
+    <a :href="withBase(article.regularPath)" v-for="(article, index) in yearList" :key="index" class="posts">
       <div class="post-container">
         <div class="post-dot"></div>
         {{ article.frontMatter.title }}

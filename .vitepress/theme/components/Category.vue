@@ -3,12 +3,7 @@
     <div class="category">
       {{ key }}
     </div>
-    <a
-      :href="withBase(article.regularPath).replace(location.host === 'blog.xu-wei.site' ? '/blog' : '', '')"
-      v-for="(article, index) in posts"
-      :key="index"
-      class="posts"
-    >
+    <a :href="withBase(article.regularPath)" v-for="(article, index) in posts" :key="index" class="posts">
       <div class="post-container">
         <div class="post-dot"></div>
         {{ article.frontMatter.title }}
