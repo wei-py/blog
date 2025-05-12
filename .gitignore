@@ -11,5 +11,6 @@ zsh_history.md
 /package-lock.json
 origin_theme.css
 .vitepress/cache
-trash/draft*
-posts/trash/draft*
+posts/trash/draft.js
+posts/trash/draft.md
+
