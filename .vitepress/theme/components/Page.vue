@@ -2,14 +2,16 @@
   <div v-for="(article, index) in posts" :key="index" class="post-list">
     <div class="post-header">
       <div class="post-title">
-        <a :href="withBase(article.regularPath)">{{ article.frontMatter.title }}</a>
+        <a :href="withBase(article.regularPath).replace(location.host === 'blog.xu-wei.site' ? '/blog' : '', '')">
+          {{ article.frontMatter.title }}
+        </a>
       </div>
     </div>
     <p class="describe" v-html="article.frontMatter.description"></p>
     <div class="post-info">
       {{ article.frontMatter.date }}
       <span v-for="item in article.frontMatter.tags">
-        <a :href="withBase(`/pages/tags.html?tag=${item}`)">{{ item }}</a>
+        <a :href="withBase(`/pages/tags.html?tag=${item}`).replace(location.host === 'blog.xu-wei.site' ? '/blog' : '', '')">{{ item }}</a>
       </span>
     </div>
   </div>
@@ -20,7 +22,7 @@
       :class="{ active: pageCurrent === i }"
       v-for="i in pagesNum"
       :key="i"
-      :href="withBase(i === 1 ? '/index.html' : `/page_${i}.html`)"
+      :href="withBase(i === 1 ? '/index.html' : `/page_${i}.html`).replace(location.host === 'blog.xu-wei.site' ? '/blog' : '', '')"
     >
       {{ i }}
     </a>

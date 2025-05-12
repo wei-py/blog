@@ -4,7 +4,9 @@
       <div style="padding-top: 20px" class="post-info" v-if="!$frontmatter.page">
         {{ $frontmatter.date?.substring(0, 10) }} &nbsp;&nbsp;
         <span v-for="item in $frontmatter.tags">
-          <a :href="withBase(`/pages/tags.html?tag=${item}`)">{{ item }}</a>
+          <a :href="withBase(`/pages/tags.html?tag=${item}`).replace(location.host === 'blog.xu-wei.site' ? '/blog' : '', '')">
+            {{ item }}
+          </a>
         </span>
       </div>
     </template>
