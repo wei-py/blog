@@ -68,3 +68,7 @@ export default defineConfig({
   "cloudflare": "cross-env isFlare=true vitepress build",
 }
 ```
+
+## 设置
+
+构建输出: blog

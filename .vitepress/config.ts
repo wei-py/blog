@@ -4,13 +4,10 @@ import { getPosts } from "./theme/serverUtils";
 //每页的文章数量
 const pageSize = 10;
 
-// const isCloudflare = process.env.isFlare === "true";
-// const isSite = location.host === "blog.xu-wei.site";
 const isProd = true;
 
 export default defineConfig({
   title: "wei",
-  // base: isSite ? "/" : "/blog/",
   base: "/",
   cacheDir: "./node_modules/vitepress_cache",
   description: "vitepress,blog,blog-theme",
