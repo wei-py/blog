@@ -12,22 +12,25 @@ description: vscode 配置
 ```json
 {
   // VSCode 外观设置
-  "application.extensionMarketUrl": "https://marketplace.visualstudio.com",
+  // 插件市场
+  "application.extensionMarketUrl": "https://marketplace.visualstudio.com/",
   // 主题相关
-  "workbench.colorTheme": "Github Light Theme - Gray",
+  "workbench.colorTheme": "dawn2_pure",
   "workbench.iconTheme": "atom-font-icons",
   "workbench.layoutControl.enabled": false,
 
   // 编辑器外观
-  "editor.fontFamily": "FiraCode Nerd Font",
+  "editor.fontFamily": "FiraCode Nerd Font, 萍方-简",
   "editor.fontSize": 17,
   "editor.lineNumbers": "relative",
   "editor.tabSize": 2,
+  "editor.fontWeight": "450",
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.cursorSurroundingLines": 50,
   "editor.fontLigatures": true,
   "editor.accessibilitySupport": "on",
-  // "editor.formatOnSave": true,
+  "editor.formatOnSave": true,
+  "editor.inlineSuggest.enabled": false,
 
   // 终端外观
   "terminal.integrated.fontFamily": "FiraCode Nerd Font",
@@ -67,9 +70,10 @@ description: vscode 配置
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[markdown]": {
+  "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "AI.toolcall.confirmMode": "autoRun",
 
   // Vim 设置
   "vim.incsearch": true,
