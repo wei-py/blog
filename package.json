@@ -10,7 +10,8 @@
     "preview": "cross-env NODE_ENV=production vitepress preview",
     "lint": "eslint posts",
     "lint:fix": "eslint posts --fix",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "test": "node ./posts/trash/draft.js"
   },
   "keywords": [],
   "author": "",
@@ -32,6 +33,7 @@
     "fs-extra": "^11.3.0",
     "globby": "^14.1.0",
     "gray-matter": "^4.0.3",
+    "h5pack": "^0.0.6",
     "prettier": "^3.5.3",
     "typescript": "^5.8.3",
     "vitepress": "^1.6.3",

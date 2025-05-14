@@ -1,0 +1,9 @@
+{
+  "entry": "./dist",
+  "name": "newApp",
+  "splash": "./dist/favicon.ico",
+  "output": "./",
+  "log": false,
+  "registry": "github",
+  "logo": "./dist/favicon.ico"
+}
