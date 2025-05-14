@@ -143,6 +143,12 @@ export default definePrompt({
 });
 ```
 
+## 其他
+
+### 使用 trae commit ai
+
+### 使用 vscode插件 git-commit-lint-vscode
+
 ## 参考
 
 > https://cz-git.qbb.sh/zh/guide/
