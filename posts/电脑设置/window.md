@@ -3,7 +3,8 @@ date: 2025-05-14
 title: window 配置
 category: 工具
 tags:
-  - windows
+  - window
+  - win11
   - setting
 description:
 ---
