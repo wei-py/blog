@@ -11,7 +11,7 @@
     "lint": "eslint posts",
     "lint:fix": "eslint posts --fix",
     "format": "prettier --write .",
-    "test": "node ./posts/trash/draft.js"
+    "test": "node ./posts/trash/draft.mjs"
   },
   "keywords": [],
   "author": "",
