@@ -36,4 +36,5 @@ npm、yarn、pnpm 区别
 
 - 2025 年 5 月 6 日
 
-买 漂白 茶叶
+- 为什么要用 setTimeout 模拟 setInterval ?
+  > https://segmentfault.com/a/1190000038829248

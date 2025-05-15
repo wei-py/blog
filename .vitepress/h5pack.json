@@ -1,6 +1,6 @@
 {
   "entry": "./dist",
-  "name": "newApp",
+  "name": "blog",
   "splash": "./dist/favicon.ico",
   "output": "./",
   "log": false,
