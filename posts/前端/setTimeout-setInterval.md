@@ -1,6 +1,6 @@
 ---
 title: 为什么要用 setTimeout 模拟 setInterval
-date: 2025-04-27
+date: 2025-05-16
 category: frontEnd
 tags:
   - frontEnd
