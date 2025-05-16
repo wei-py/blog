@@ -34,6 +34,10 @@
   display: none !important;
 }
 
+.VPContent {
+  padding-left: 10vw !important
+}
+
 :root {
   --un-preset-theme-colors-shadow: 0 0 0;
   --un-preset-theme-colors-shadow--alpha: 0.04;
@@ -115,6 +119,7 @@ h3 {
 .aside {
   position: fixed !important;
   right: 24px;
+  padding-left: 0 !important;
 }
 .VPDoc {
   padding-top: 10px !important;
