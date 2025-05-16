@@ -45,46 +45,32 @@ JSONP 全称是 JSON with Padding，它不是一种正式的数据格式，而�
 
 ## 四、前端使用 JSONP 示例
 
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>JSONP Example</title>
-  </head>
-  <body>
-    <h1>JSONP Demo</h1>
-    <script>
-      // 定义回调函数
-      function handleResponse(data) {
-        console.log("接收到数据:", data);
-        alert("用户名: " + data.username);
-      }
+```js
+const jsonp = (url, params, cbName) => {
+  return new Promise((resolve, reject) => {
+    const script = document.createElement("script");
+    window[cbName] = (data) => {
+      resolve(data);
+      document.body.removeChild(script);
+    };
+    params = { ...params, callback: cbName };
+    const arr = Object.keys(params).map((key) => `${key}=${params[key]}`);
+    script.src = `${url}?${arr.join("&")}`;
+    document.body.appendChild(script);
+  });
+};
 
-      // 创建 script 标签
-      var script = document.createElement("script");
-      script.src = "http://example.com/api?callback=handleResponse";
-      document.body.appendChild(script);
-    </script>
-  </body>
-</html>
-```
+const url = "https://api.flickr.com/services/feeds/photos_public.gne";
 
-### 后端响应示例（PHP 示例）：
+const param = {
+  tags: "cat",
+  tagmode: "any",
+  format: "json"
+};
 
-```php
-<?php
-$callback = $_GET['callback'];
-$data = array('username' => '张三', 'age' => 25);
-
-// 返回 JSONP 格式
-echo $callback . '(' . json_encode($data) . ');';
-?>
-```
-
-输出结果为：
-
-```javascript
-handleResponse({ username: "张三", age: 25 });
+jsonp(url, param, "jsonFlickrFeed").then((data) => {
+  console.log(data, "返回数据");
+});
 ```
 
 ---
