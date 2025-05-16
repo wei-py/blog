@@ -1,4 +1,17 @@
+#app {
+  background-size: 7px 7px;
+  background-image:
+    linear-gradient(to right, var(--uno-colors-shadow) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--uno-colors-shadow) 1px, transparent 1px);
+}
+
 :root {
+  --un-preset-theme-colors-shadow: 0 0 0;
+  --un-preset-theme-colors-shadow--alpha: 0.04;
+  --un-preset-theme-colors-background: 255 255 255;
+  --un-preset-theme-colors-primary: 46 64 91;
+  --uno-colors-shadow: rgb(var(--un-preset-theme-colors-shadow) / var(--un-preset-theme-colors-shadow--alpha, 1));
+
   --vp-c-brand: #2563eb !important;
   --vp-c-brand-light: var(--vp-c-brand);
   --vp-c-brand-lighter: var(--vp-c-brand);
@@ -16,6 +29,7 @@
 .dark {
   --vp-c-brand: #3b82f6;
   --bt-theme-title: #fff;
+  --un-preset-theme-colors-shadow: 255 255 255;
 }
 
 /* theme reset start */
