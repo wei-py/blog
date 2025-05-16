@@ -9,7 +9,7 @@
     linear-gradient(to bottom, var(--uno-colors-shadow) 1px, transparent 1px) !important;
 }
 
-.VPSidebarItem h2  {
+.VPSidebarItem h2 {
   border-bottom: transparent !important;
 }
 
@@ -35,7 +35,7 @@
 }
 
 .VPContent {
-  padding:0 10px !important
+  padding: 0 10vw !important;
 }
 .content-body {
   padding-right: 30px !important;
@@ -71,7 +71,7 @@
 /* theme reset start */
 
 .Layout {
-  min-height: calc(100vh - 78px) !important; 
+  min-height: calc(100vh - 78px) !important;
   /* reduce copyright */
 }
 
