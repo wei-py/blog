@@ -13,12 +13,14 @@ description: vscode 配置
 {
   // VSCode 外观设置
   // 插件市场
-  "application.extensionMarketUrl": "https://marketplace.visualstudio.com/",
+  // "application.extensionMarketUrl": "https://marketplace.visualstudio.com/",
   // 主题相关
   "workbench.colorTheme": "dawn2_pure",
   "workbench.iconTheme": "atom-font-icons",
-  "workbench.layoutControl.enabled": false,
   "workbench.navigationControl.enabled": false,
+  "workbench.layoutControl.enabled": false,
+  "workbench.activityBar.location": "top",
+  "window.commandCenter": false,
   "window.menuBarVisibility": "compact",
 
   // 编辑器外观
@@ -27,20 +29,22 @@ description: vscode 配置
   "editor.lineNumbers": "relative",
   "editor.tabSize": 2,
   "editor.fontWeight": "450",
-  "editor.lineHeight": 1.5,
-  "editor.minimap.enabled": true,
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.cursorSurroundingLines": 50,
   "editor.fontLigatures": true,
   "editor.accessibilitySupport": "on",
   "editor.formatOnSave": true,
   "editor.inlineSuggest.enabled": false,
+  "chat.commandCenter.enabled": false,
 
   // 终端外观
   "terminal.integrated.fontFamily": "FiraCode Nerd Font",
   "terminal.integrated.defaultProfile.windows": "Git Bash",
   "javascript.updateImportsOnFileMove.enabled": "always",
   "security.workspace.trust.untrustedFiles": "open",
+  "Lingma.DisplayLanguage": "简体中文",
+  "Lingma.PreferredLanguage for AI Chat": "简体中文",
+  "Lingma.PreferredLanguage forCommitMessage": "简体中文",
 
   // 代码格式化设置
   // prettier.eslintIntegration 已弃用，请使用 prettier-eslint 扩展或在 .prettierrc 中配置
