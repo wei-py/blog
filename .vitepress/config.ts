@@ -2,7 +2,7 @@ import { defineConfig } from "vitepress";
 import { getPosts } from "./theme/serverUtils";
 import AutoNav from "vite-plugin-vitepress-auto-nav";
 
-//每页的文章数量
+// 每页的文章数量
 const pageSize = 10;
 
 const isProd = true;
