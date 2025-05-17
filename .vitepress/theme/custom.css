@@ -41,6 +41,10 @@ pre span {
   border-bottom: transparent !important;
 }
 
+.pager-link .title {
+  font-size: 16px !important;
+}
+
 .divider {
   padding-left: 0 !important;
 }
