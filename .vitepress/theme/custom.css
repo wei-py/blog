@@ -9,7 +9,7 @@
 /* 引入 NotoSansSC SourceHanSansCN LXGWWenKaiTC */
 @font-face {
   font-family: 'cn';
-  src: url('./LXGWWenKaiLite.ttf') format('truetype');
+  src: url('./LXGWWenKai.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
