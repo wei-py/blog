@@ -18,13 +18,17 @@ description: vscode 配置
   "workbench.colorTheme": "dawn2_pure",
   "workbench.iconTheme": "atom-font-icons",
   "workbench.layoutControl.enabled": false,
+  "workbench.navigationControl.enabled": false,
+  "window.menuBarVisibility": "compact",
 
   // 编辑器外观
-  "editor.fontFamily": "FiraCode Nerd Font, 萍方-简",
+  "editor.fontFamily": "FiraCode Nerd Font, 霞鹜文楷",
   "editor.fontSize": 17,
   "editor.lineNumbers": "relative",
   "editor.tabSize": 2,
   "editor.fontWeight": "450",
+  "editor.lineHeight": 1.5,
+  "editor.minimap.enabled": true,
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.cursorSurroundingLines": 50,
   "editor.fontLigatures": true,
