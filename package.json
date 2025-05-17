@@ -36,6 +36,8 @@
     "h5pack": "^0.0.6",
     "prettier": "^3.5.3",
     "typescript": "^5.8.3",
+    "vite": "^6.3.5",
+    "vite-plugin-vitepress-auto-nav": "^3.0.0",
     "vitepress": "^1.6.3",
     "vitepress-plugin-comment-with-giscus": "^1.1.15"
   },
