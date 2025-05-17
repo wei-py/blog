@@ -1,9 +1,37 @@
+/* 引入 FiraCode */
+@font-face {
+  font-family: 'FiraCode';
+  src: url('./FiraCode.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 引入 NotoSansSC SourceHanSansCN LXGWWenKaiTC */
+@font-face {
+  font-family: 'cn';
+  src: url('./LXGWWenKaiLite.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 全局默认字体：优先使用 PingFang SC，其次是 ANDALEMO */
+* {
+  font-family: 'cn'
+}
+
+/* 代码部分：使用 FiraCode */
+code,
+pre span {
+  font-family: 'FiraCode', 'cn' !important;
+  font-size: 15px !important;
+}
+
 * {
   scrollbar-width: thin;
 }
 
 #app {
-  background-size: 15px 15px !important;
+  background-size: 20px 20px !important;
   background-image:
     linear-gradient(to right, var(--uno-colors-shadow) 1px, transparent 1px),
     linear-gradient(to bottom, var(--uno-colors-shadow) 1px, transparent 1px) !important;
@@ -43,7 +71,7 @@
 
 :root {
   --un-preset-theme-colors-shadow: 0 0 0;
-  --un-preset-theme-colors-shadow--alpha: 0.04;
+  --un-preset-theme-colors-shadow--alpha: 0.02;
   --un-preset-theme-colors-background: 255 255 255;
   --un-preset-theme-colors-primary: 46 64 91;
   --uno-colors-shadow: rgb(var(--un-preset-theme-colors-shadow) / var(--un-preset-theme-colors-shadow--alpha, 1));
