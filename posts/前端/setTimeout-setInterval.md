@@ -4,7 +4,7 @@ date: 2025-05-16
 category: frontEnd
 tags:
   - frontEnd
-  - 八股文 
+  - 八股文
 ---
 
 使用 `setTimeout` 模拟 `setInterval` 的主要原因是为了解决 `setInterval` 在某些场景下可能带来的问题。虽然 `setInterval` 看起来更简单直接，但它的行为在一些复杂或异步任务中可能会导致不可预料的问题。而通过递归或链式调用 `setTimeout`，我们可以更好地控制定时任务的执行。
@@ -14,13 +14,14 @@ tags:
 ## 一、`setInterval` 的局限性
 
 ### 1. **重复执行不考虑异步操作完成时间**
+
 如果在 `setInterval` 中执行的是一个异步操作（如 AJAX 请求、动画、Promise 等），它**不会等待上一次操作完成**，就会开始下一轮执行。
 
 ```js
 setInterval(() => {
-  console.log('start');
+  console.log("start");
   setTimeout(() => {
-    console.log('end');
+    console.log("end");
   }, 2000); // 假设这个任务耗时 2 秒
 }, 1000);
 ```
@@ -30,11 +31,13 @@ setInterval(() => {
 ---
 
 ### 2. **无法动态调整间隔时间**
+
 `setInterval` 的时间间隔是固定的，一旦设置就很难动态修改。如果你需要根据运行时状态来调整下一次执行的时间，`setInterval` 就不太适合。
 
 ---
 
 ### 3. **清除机制不够灵活**
+
 如果任务出错或者中途需要停止，`setInterval` 需要手动调用 `clearInterval`，并且不能很好地与 Promise 或 async/await 结合使用。
 
 ---
@@ -72,12 +75,12 @@ const cancel = mySetInterval(() => {
 
 ## 三、适用场景对比
 
-| 场景 | 推荐方式 | 说明 |
-|------|----------|------|
-| 固定时间间隔，任务同步、轻量 | `setInterval` | 简单直接 |
+| 场景                             | 推荐方式          | 说明         |
+| -------------------------------- | ----------------- | ------------ |
+| 固定时间间隔，任务同步、轻量     | `setInterval`     | 简单直接     |
 | 异步任务、需要控制流程、动态间隔 | `setTimeout` 模拟 | 更加灵活可控 |
-| 需要结合 Promise / async-await | `setTimeout` 模拟 | 更容易集成 |
-| 防止任务堆积、避免并发问题 | `setTimeout` 模拟 | 安全可靠 |
+| 需要结合 Promise / async-await   | `setTimeout` 模拟 | 更容易集成   |
+| 防止任务堆积、避免并发问题       | `setTimeout` 模拟 | 安全可靠     |
 
 ---
 

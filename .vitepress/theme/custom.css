@@ -1,33 +1,30 @@
 /* 引入 FiraCode */
 @font-face {
-  font-family: 'FiraCode';
-  src: url('./FiraCode.ttf') format('truetype');
+  font-family: "FiraCode";
+  src: url("./FiraCode.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 /* 引入 NotoSansSC SourceHanSansCN LXGWWenKaiTC */
 @font-face {
-  font-family: 'cn';
-  src: url('./LXGWWenKai.ttf') format('truetype');
+  font-family: "cn";
+  src: url("./LXGWWenKai.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 /* 全局默认字体：优先使用 PingFang SC，其次是 ANDALEMO */
 * {
-  font-family: 'cn'
+  font-family: "cn";
+  scrollbar-width: thin;
 }
 
 /* 代码部分：使用 FiraCode */
 code,
 pre span {
-  font-family: 'FiraCode', 'cn' !important;
+  font-family: "FiraCode", "cn" !important;
   font-size: 15px !important;
-}
-
-* {
-  scrollbar-width: thin;
 }
 
 #app {
