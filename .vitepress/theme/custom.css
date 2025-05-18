@@ -108,6 +108,9 @@ pre span {
   --vp-c-text-3: #666;
 }
 .dark {
+  --vp-c-text-1: #fff;
+  --vp-c-text-2: #fff;
+  --vp-c-text-3: #fff;
   --vp-c-brand: #3b82f6;
   --bt-theme-title: #fff;
   --un-preset-theme-colors-shadow: 255 255 255;
