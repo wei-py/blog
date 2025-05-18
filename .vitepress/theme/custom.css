@@ -6,9 +6,9 @@
   font-style: normal;
 }
 
-@font-face {
+/* @font-face {
   font-family: "LXGW";
-  src: url("./lxgw-wenkai-lite-v1.511/LXGWWenKaiLite-Light.ttf") format("truetype");
+  src: url("./lxgw-wenkai-webfont/lx") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -18,35 +18,14 @@
   src: url("./lxgw-wenkai-lite-v1.511/LXGWWenKaiLite-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
-}
-
-@font-face {
-  font-family: "source";
-  src: url("./SourceHanSansCN/SubsetOTF/CN/SourceHanSansCN-Regular.otf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: "source";
-  src: url("./SourceHanSansCN/SubsetOTF/CN/SourceHanSansCN-Medium.otf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "source";
-  src: url("./SourceHanSansCN/SubsetOTF/CN/SourceHanSansCN-Bold.otf") format("truetype");
-  font-weight: 600;
-  font-style: normal;
-}
+} */
 
 /* @import "lxgw-wenkai-webfont/lxgwwenkai-regular.css";
 @import "lxgw-wenkai-webfont/lxgwwenkai-bold.css"; */
 body {
-  /* font-family: "source"; */
-  font-family: "LXGW";
-  /* font-size: 17px !important; */
+  font-family: "LXGW WenKai";
 }
+
 /* 全局默认字体：优先使用 PingFang SC，其次是 ANDALEMO */
 * {
   scrollbar-width: thin;
