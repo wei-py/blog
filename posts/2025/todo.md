@@ -38,3 +38,7 @@ npm、yarn、pnpm 区别
 
 - 为什么要用 setTimeout 模拟 setInterval ?
   > https://segmentfault.com/a/1190000038829248
+
+## todo
+
+- 使用 setTimeout 实现 setInterval
