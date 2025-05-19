@@ -176,7 +176,8 @@ launchApp("b", "WeChat")
 launchApp("n", "Warp")
 ```
 
-## 最新配置 
+## 最新配置
+
 ```lua
 ---@diagnostic disable: undefined-global
 hs.alert.show("Config loaded")

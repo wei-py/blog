@@ -62,7 +62,9 @@ export default defineConfig({
 ```
 
 ## css
+
 custom.css
+
 ```css
 * {
   scrollbar-width: thin;
@@ -75,7 +77,7 @@ custom.css
     linear-gradient(to bottom, var(--uno-colors-shadow) 1px, transparent 1px) !important;
 }
 
-.VPSidebarItem h2  {
+.VPSidebarItem h2 {
   border-bottom: transparent !important;
 }
 
@@ -104,13 +106,14 @@ custom.css
   --un-preset-theme-colors-shadow--alpha: 0.04;
   --un-preset-theme-colors-background: 255 255 255;
   --un-preset-theme-colors-primary: 46 64 91;
-  --uno-colors-shadow: rgb(var(--un-preset-theme-colors-shadow) / var(--un-preset-theme-colors-shadow--alpha, 1));
+  --uno-colors-shadow: rgb(
+    var(--un-preset-theme-colors-shadow) / var(--un-preset-theme-colors-shadow--alpha, 1)
+  );
 }
 .dark {
   --un-preset-theme-colors-shadow: 255 255 255;
 }
 ```
-
 
 ## package.json
 

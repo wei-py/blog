@@ -34,6 +34,7 @@
     "globby": "^14.1.0",
     "gray-matter": "^4.0.3",
     "h5pack": "^0.0.6",
+    "lxgw-wenkai-webfont": "^1.7.0",
     "prettier": "^3.5.3",
     "typescript": "^5.8.3",
     "vite": "^6.3.5",

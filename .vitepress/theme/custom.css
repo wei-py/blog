@@ -1,33 +1,42 @@
 /* 引入 FiraCode */
 @font-face {
-  font-family: 'FiraCode';
-  src: url('./FiraCode.ttf') format('truetype');
+  font-family: "FiraCode";
+  src: url("./FiraCode.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
-/* 引入 NotoSansSC SourceHanSansCN LXGWWenKaiTC */
-@font-face {
-  font-family: 'cn';
-  src: url('./LXGWWenKaiLite.ttf') format('truetype');
+/* @font-face {
+  font-family: "LXGW";
+  src: url("./lxgw-wenkai-webfont/lx") format("truetype");
   font-weight: normal;
   font-style: normal;
+}
+
+@font-face {
+  font-family: "LXGW";
+  src: url("./lxgw-wenkai-lite-v1.511/LXGWWenKaiLite-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+} */
+
+/* @import "lxgw-wenkai-webfont/lxgwwenkai-regular.css";
+@import "lxgw-wenkai-webfont/lxgwwenkai-bold.css"; */
+body {
+  font-family: "LXGW WenKai";
 }
 
 /* 全局默认字体：优先使用 PingFang SC，其次是 ANDALEMO */
 * {
-  font-family: 'cn'
+  scrollbar-width: thin;
+  font-size: 17px;
 }
 
 /* 代码部分：使用 FiraCode */
 code,
 pre span {
-  font-family: 'FiraCode', 'cn' !important;
+  font-family: "FiraCode", "LXGW WenKai" !important;
   font-size: 15px !important;
-}
-
-* {
-  scrollbar-width: thin;
 }
 
 #app {
@@ -86,15 +95,22 @@ pre span {
   --vp-c-brand-dark: var(--vp-c-brand);
   --vp-c-brand-darker: var(--vp-c-brand);
 
-  --vp-font-family-base: "PingFang SC", "Microsoft Yahei", sans-serif;
+  /* --vp-font-family-base: "PingFang SC", "Microsoft Yahei", sans-serif; */
 
   /* pure theme color */
   --li-dot-color: var(--vp-c-brand);
   --date-color: var(--vp-c-text-2);
   --date-font-family: Georgia, sans-serif;
   --bt-theme-title: #000;
+  /* --vp-c-bg: #f5f5f5; */
+  --vp-c-text-1: #000;
+  --vp-c-text-2: #333;
+  --vp-c-text-3: #666;
 }
 .dark {
+  --vp-c-text-1: #fff;
+  --vp-c-text-2: #fff;
+  --vp-c-text-3: #fff;
   --vp-c-brand: #3b82f6;
   --bt-theme-title: #fff;
   --un-preset-theme-colors-shadow: 255 255 255;
