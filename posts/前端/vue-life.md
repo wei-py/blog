@@ -74,11 +74,11 @@ tags:
 ```js
 export default {
   data() {
-    return { msg: 'Hello' }
+    return { msg: "Hello" };
   }, // 响应式数据初始化
   computed: {
     upper() {
-      return this.msg.toUpperCase()
+      return this.msg.toUpperCase();
     }
   }, // 在 created 后可用
   watch: {
@@ -88,10 +88,10 @@ export default {
   },
   methods: {
     greet() {
-      console.log(this.msg)
+      console.log(this.msg);
     }
   } // created 后可用
-}
+};
 ```
 
 ## 五、异步操作的影响
@@ -103,22 +103,22 @@ export default {
 const vue2 = {
   mounted() {
     fetchData().then((res) => {
-      this.data = res
+      this.data = res;
       this.$nextTick(() => {
       // 处理 DOM 更新
-      })
-    })
+      });
+    });
   }
-}
+};
 
 // Vue3 组合式 API
 onMounted(async () => {
-  const res = await fetchData()
-  data.value = res
+  const res = await fetchData();
+  data.value = res;
   nextTick(() => {
     // 处理 DOM 更新
-  })
-})
+  });
+});
 ```
 
 ### 清理异步任务：
@@ -128,14 +128,14 @@ onMounted(async () => {
 const vue2 = {
   beforeUnmount() {
     if (this.request)
-      this.request.cancel()
+      this.request.cancel();
   }
-}
+};
 
 // Vue3
 onBeforeUnmount(() => {
-  controller.abort()
-})
+  controller.abort();
+});
 ```
 
 ## 六、生命周期执行顺序实验
@@ -153,16 +153,16 @@ onBeforeUnmount(() => {
   export default {
     components: { Child },
     setup() {
-      const showChild = ref(true)
+      const showChild = ref(true);
 
-      onBeforeMount(() => console.log('父组件 beforeMount'))
-      onMounted(() => console.log('父组件 mounted'))
-      onBeforeUpdate(() => console.log('父组件 beforeUpdate'))
-      onUpdated(() => console.log('父组件 updated'))
+      onBeforeMount(() => console.log("父组件 beforeMount"));
+      onMounted(() => console.log("父组件 mounted"));
+      onBeforeUpdate(() => console.log("父组件 beforeUpdate"));
+      onUpdated(() => console.log("父组件 updated"));
 
-      return { showChild }
+      return { showChild };
     },
-  }
+  };
 </script>
 ```
 
@@ -178,7 +178,7 @@ import {
   onBeforeMount,
   onMounted
   // ...其他钩子
-} from 'vue'
+} from "vue";
 ```
 
 ## 八、常见问题解决方案

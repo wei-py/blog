@@ -19,11 +19,11 @@ tags:
 
 ```js
 setInterval(() => {
-  console.log('start')
+  console.log("start");
   setTimeout(() => {
-    console.log('end')
-  }, 2000) // 假设这个任务耗时 2 秒
-}, 1000)
+    console.log("end");
+  }, 2000); // 假设这个任务耗时 2 秒
+}, 1000);
 ```
 
 这段代码每秒启动一个任务，即使前面的任务还没完成。这可能导致多个任务重叠执行，造成资源竞争或数据混乱。
@@ -50,22 +50,22 @@ setInterval(() => {
 
 ```js
 function mySetInterval(fn, interval) {
-  let timer
+  let timer;
 
   function loop() {
-    fn() // 执行任务
-    timer = setTimeout(loop, interval) // 下一次执行
+    fn(); // 执行任务
+    timer = setTimeout(loop, interval); // 下一次执行
   }
 
-  loop()
+  loop();
 
-  return () => clearTimeout(timer) // 返回取消方法
+  return () => clearTimeout(timer); // 返回取消方法
 }
 
 // 使用
 const cancel = mySetInterval(() => {
-  console.log('tick')
-}, 1000)
+  console.log("tick");
+}, 1000);
 
 // 取消
 // cancel();

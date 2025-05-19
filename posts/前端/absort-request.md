@@ -17,27 +17,27 @@ tags:
 
 ```javascript
 function fetchWithTimeout(url, options = {}, timeout = 5000) {
-  const controller = new AbortController()
-  const { signal } = controller
+  const controller = new AbortController();
+  const { signal } = controller;
 
-  const fetchPromise = fetch(url, { ...options, signal })
+  const fetchPromise = fetch(url, { ...options, signal });
 
   const timeoutId = setTimeout(() => {
-    controller.abort() // 终止请求
-    console.log('请求超时')
-  }, timeout)
+    controller.abort(); // 终止请求
+    console.log("请求超时");
+  }, timeout);
 
   return new Promise((resolve, reject) => {
     fetchPromise
       .then((response) => {
-        clearTimeout(timeoutId)
-        resolve(response)
+        clearTimeout(timeoutId);
+        resolve(response);
       })
       .catch((error) => {
-        clearTimeout(timeoutId)
-        reject(error)
-      })
-  })
+        clearTimeout(timeoutId);
+        reject(error);
+      });
+  });
 }
 ```
 
@@ -46,19 +46,19 @@ function fetchWithTimeout(url, options = {}, timeout = 5000) {
 ### ✅ 使用方式：
 
 ```javascript
-fetchWithTimeout('https://example.com/api/data')
+fetchWithTimeout("https://example.com/api/data")
   .then((response) => {
     if (response.ok) {
-      return response.json()
+      return response.json();
     }
-    throw new Error('Network response was not ok.')
+    throw new Error("Network response was not ok.");
   })
   .then((data) => {
-    console.log('数据:', data)
+    console.log("数据:", data);
   })
   .catch((error) => {
-    console.error('请求失败或超时:', error)
-  })
+    console.error("请求失败或超时:", error);
+  });
 ```
 
 ---
@@ -70,13 +70,13 @@ fetchWithTimeout('https://example.com/api/data')
 
 ```javascript
 const timeoutPromise = new Promise((_, reject) => {
-  setTimeout(() => reject(new Error('请求超时')), 5000)
-})
+  setTimeout(() => reject(new Error("请求超时")), 5000);
+});
 
 Promise.race([fetch(url), timeoutPromise])
   .then(res => res.json())
   .then(data => console.log(data))
-  .catch(err => console.error(err))
+  .catch(err => console.error(err));
 ```
 
 ---

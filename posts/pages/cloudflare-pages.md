@@ -55,10 +55,10 @@ jobs:
 ## vitepress config
 
 ```js
-const isCloudflare = process.env.isFlare === 'true'
+const isCloudflare = process.env.isFlare === "true";
 export default defineConfig({
-  base: isCloudflare ? '/' : '/blog/'
-})
+  base: isCloudflare ? "/" : "/blog/"
+});
 ```
 
 ## css

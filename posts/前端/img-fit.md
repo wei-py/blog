@@ -110,7 +110,7 @@ img {
 .container {
   width: 100%;
   height: 400px;
-  background-image: url('image.jpg');
+  background-image: url("image.jpg");
   background-size: cover; /* 或 contain */
   background-position: center;
   background-repeat: no-repeat;

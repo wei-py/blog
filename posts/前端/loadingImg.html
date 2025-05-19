@@ -15,20 +15,20 @@
     <img data-src="https://w.wallhaven.cc/full/rr/wallhaven-rrvp91.jpg" alt="Lazy Image" class="lazy-img" />
     <script>
       function lazyLoad() {
-        const images = document.querySelectorAll('.lazy-img')
-        const scrollTop = window.scrollY || window.pageYOffset
-        const windowHeight = window.innerHeight
-        console.log(images, scrollTop, windowHeight)
+        const images = document.querySelectorAll(".lazy-img");
+        const scrollTop = window.scrollY || window.pageYOffset;
+        const windowHeight = window.innerHeight;
+        console.log(images, scrollTop, windowHeight);
 
         images.forEach((img) => {
-          const offsetTop = img.getBoundingClientRect().top + scrollTop
+          const offsetTop = img.getBoundingClientRect().top + scrollTop;
           if (offsetTop < scrollTop + windowHeight && !img.src) {
-            img.src = img.dataset.src
+            img.src = img.dataset.src;
           }
-        })
+        });
       }
-      window.addEventListener('scroll', lazyLoad)
-      window.addEventListener('load', lazyLoad)
+      window.addEventListener("scroll", lazyLoad);
+      window.addEventListener("load", lazyLoad);
     </script>
   </body>
 </html>

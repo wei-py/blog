@@ -35,14 +35,14 @@ description: 前端模块化历程
 ```js
 // 立即执行函数创造私有作用域
 const Module = (function () {
-  const privateVar = '秘密数据'
+  const privateVar = "秘密数据";
 
   return {
     publicMethod() {
-      console.log(privateVar)
+      console.log(privateVar);
     }
-  }
-})()
+  };
+})();
 ```
 
 IIFE（立即调用函数表达式）让开发者第一次拥有了私有作用域，标志着模块化意识的觉醒。
@@ -55,11 +55,11 @@ IIFE（立即调用函数表达式）让开发者第一次拥有了私有作用�
 // server 端的模块化方案
 // math.js
 exports.add = function (a, b) {
-  return a + b
-}
+  return a + b;
+};
 
 // main.js
-const { add } = require('./math')
+const { add } = require("./math");
 ```
 
 优点：同步加载，简单直观
@@ -69,11 +69,11 @@ const { add } = require('./math')
 
 ```js
 // RequireJS 的模块定义
-define(['dependency'], (dep) => {
+define(["dependency"], (dep) => {
   return {
     // 模块逻辑
-  }
-})
+  };
+});
 ```
 
 通过 `define` 和 `require` 实现异步加载，解决了浏览器端模块加载问题。
@@ -83,9 +83,9 @@ define(['dependency'], (dep) => {
 ```js
 // SeaJS 的模块规范
 define((require, exports, module) => {
-  const dep = require('./dep')
-  exports.feature = () => {}
-})
+  const dep = require("./dep");
+  exports.feature = () => {};
+});
 ```
 
 兼顾同步/异步加载，更贴近 CommonJS 的书写习惯。
@@ -122,7 +122,7 @@ npm install --save lodash
 
 ```js
 // webpack.config.js
-import _ from 'lodash'
+import _ from "lodash";
 ```
 
 打包工具带来的变革：
@@ -150,8 +150,8 @@ import Button from "./Button";
 ```vue
 <script>
 export default {
-  props: ['label']
-}
+  props: ["label"]
+};
 </script>
 ```
 
@@ -182,20 +182,20 @@ export class AppModule {}
 
 ```js
 // 原生 ESM 动态导入
-const module = await import(`./feature-${version}.js`)
+const module = await import(`./feature-${version}.js`);
 ```
 
 3. **Web Component**：标准化的组件模块化方案
 
 ```js
 customElements.define(
-  'my-component',
+  "my-component",
   class extends HTMLElement {
     connectedCallback() {
-      this.innerHTML = '<p>Web Component</p>'
+      this.innerHTML = "<p>Web Component</p>";
     }
   }
-)
+);
 ```
 
 ## 六、模块化选择指南
