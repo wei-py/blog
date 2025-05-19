@@ -1,7 +1,9 @@
 import antfu from "@antfu/eslint-config";
 
 export default antfu({
-  formatters: true,
+  formatters: {
+    "style/no-multiple-empty-lines": ["error", { max: 1, maxEOF: 1 }],
+  },
   vue: true,
   stylistic: {
     semi: true,
