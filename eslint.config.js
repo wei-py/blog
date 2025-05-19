@@ -10,5 +10,5 @@ export default antfu({
     indent: 2,
     quotes: "double",
   },
-  markdown: false,
+  // markdown: t,
 });
