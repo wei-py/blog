@@ -44,10 +44,8 @@ bindKeyStroke(",", { "cmd" }, "u");
 bindKeyStroke(".", { "cmd" }, "j");
 bindKeyStroke(";", { "cmd" }, "l");
 
-
 -- capslock + w ==>  command + w
 -- bindKeyStroke("w", { "cmd" }, "w")
-
 
 -- capslock + c ==>  command + c
 -- bindKeyStroke("c", { "cmd" }, "c")
@@ -70,7 +68,6 @@ bindKeyStroke(";", { "cmd" }, "l");
 
 -- capslock + q ==>  command + q
 -- bindKeyStroke("q", { "cmd" }, "q")
-
 
 -- 调整窗口位置
 -- 左半屏幕
@@ -182,7 +179,6 @@ launchApp("n", "Warp")
 ---@diagnostic disable: undefined-global
 hs.alert.show("Config loaded")
 
-
 -- 输入法枚举
 InputMethodEnum = {
     -- mac自带的，无法删除的输入法，以键盘布局存在
@@ -212,7 +208,6 @@ InputMethodEnum = {
     },
 }
 
-
 --------------------------------------------------------------------------------
 -- 功能实现
 --------------------------------------------------------------------------------
@@ -221,7 +216,6 @@ InputMethodEnum = {
 local function sendKey(modifier, key)
     hs.eventtap.keyStroke(modifier, key, 0)
 end
-
 
 ------------------ capslock ⬇️ ------------------
 -- 创建 F13 模态环境
@@ -248,7 +242,6 @@ local function remapCapsLockToF13()
         F13Modal:exit()
     end)
 end
-
 
 -- 撤销 CapsLock 映射到 F13
 local function removeCapsLockToF13()
@@ -298,7 +291,6 @@ end
 
 ------------------ capslock ⬆️ ------------------
 
-
 -- 定义切换到当前应用其他窗口的功能
 bindF13Key("r", function()
     -- if allWindowsFilter:isWindowAllowed(hs.window.focusedWindow()) then
@@ -322,7 +314,6 @@ bindF13Key("r", function()
     -- end
 end)
 
-
 ------------------ cmd ⬇️ ------------------
 local function bindCMDKey(key, fn)
     hs.hotkey.bind({ "cmd" }, key, function()
@@ -330,8 +321,6 @@ local function bindCMDKey(key, fn)
     end)
 end
 ------------------ cmd ⬆️ ------------------
-
-
 
 ------------------ 改变窗口布局 ⬇️ ------------------
 local function changeWindowLayout(mode)
@@ -361,14 +350,11 @@ local function changeWindowLayout(mode)
 end
 ------------------ 改变窗口布局 ⬆️ ------------------
 
-
-
 ------------------ 启动App ⬇️ ------------------
 local function launchApp(app)
     hs.application.launchOrFocus(app)
 end
 ------------------ 启动App ⬆️ ------------------
-
 
 ------------------ 标签页相关 ⬇️ ------------------
 -- 上一个标签页
@@ -381,7 +367,6 @@ local function nextTab()
     sendKey({ "ctrl" }, "tab")
 end
 ------------------ 标签页相关 ⬆️ ------------------
-
 
 ------------------ 音量控制 ⬇️ -----------------
 local function setVolumn(isAdd)
@@ -492,10 +477,6 @@ local function clickShiftSwitchInputMethod()
 end
 ------------------ 输入法相关 ⬆️ ------------------
 
-
-
-
-
 --------------------------------------------------------------------------------
 -- 开启配置
 --------------------------------------------------------------------------------
@@ -511,7 +492,6 @@ bindF13Key("m", function() launchApp("/Applications/NeteaseMusic.app") end)
 bindF13Key("b", function() launchApp("/Applications/WeChat.app") end)
 bindF13Key("n", function() launchApp("/Applications/Warp.app") end)
 
-
 -- 实现支持重复的 Vim 风格方向键
 bindF13Key("h", function() sendKey({}, "left") end, true)
 bindF13Key("j", function() sendKey({}, "down") end, true)
@@ -526,7 +506,6 @@ bindCMDKey("2", nextTab)
 -- delete
 bindF13Key("d", function() sendKey({}, "delete") end, true)
 
-
 -- 单击shift切换输入法
 clickShiftSwitchInputMethod()
 
@@ -538,7 +517,6 @@ bindF13Key("right", function() changeWindowLayout("right") end)
 
 bindF13Key("=", function() setVolumn(true) end, true)
 bindF13Key("-", function() setVolumn(false) end, true)
-
 
 -- 在Hammerspoon退出时执行相关操作
 hs.shutdownCallback = function()

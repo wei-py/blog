@@ -1,38 +1,41 @@
+<script lang="ts" setup>
+import { useData, withBase } from 'vitepress'
+import { computed, ref } from 'vue'
+import { initTags } from '../functions'
+
+const url = location.href.split('?')[1]
+const params = new URLSearchParams(url)
+const { theme } = useData()
+const data = computed(() => initTags(theme.value.posts))
+const selectTag = ref(params.get('tag') ? params.get('tag') : '')
+function toggleTag(tag: string) {
+  selectTag.value = tag
+}
+// choose the first key
+const defaultDisplayTag = Object.keys(data.value)[0]
+if (defaultDisplayTag) {
+  toggleTag(defaultDisplayTag)
+}
+</script>
+
 <template>
   <div class="tags">
-    <span @click="toggleTag(String(key))" v-for="(_, key) in data" class="tag">
+    <span v-for="(_, key) in data" class="tag" @click="toggleTag(String(key))">
       {{ key }}
       <sup>{{ data[key].length }}</sup>
     </span>
   </div>
-  <div class="tag-header">{{ selectTag }}</div>
-  <a :href="withBase(article.regularPath)" v-for="(article, index) in selectTag ? data[selectTag] : []" :key="index" class="posts">
+  <div class="tag-header">
+    {{ selectTag }}
+  </div>
+  <a v-for="(article, index) in selectTag ? data[selectTag] : []" :key="index" :href="withBase(article.regularPath)" class="posts">
     <div class="post-container">
-      <div class="post-dot"></div>
+      <div class="post-dot" />
       {{ article.frontMatter.title }}
     </div>
     <div class="date">{{ article.frontMatter.date }}</div>
   </a>
 </template>
-<script lang="ts" setup>
-import { computed, ref } from "vue";
-import { useData, withBase } from "vitepress";
-import { initTags } from "../functions";
-
-let url = location.href.split("?")[1];
-let params = new URLSearchParams(url);
-const { theme } = useData();
-const data = computed(() => initTags(theme.value.posts));
-let selectTag = ref(params.get("tag") ? params.get("tag") : "");
-const toggleTag = (tag: string) => {
-  selectTag.value = tag;
-};
-// choose the first key
-const defaultDisplayTag = Object.keys(data.value)[0];
-if (defaultDisplayTag) {
-  toggleTag(defaultDisplayTag);
-}
-</script>
 
 <style scoped>
 .tags {

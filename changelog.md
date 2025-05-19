@@ -21,7 +21,7 @@ tag最多的内容排在最前面
 
 ## 2024-04-15 增加分类功能
 
-升级方式请看 https://github.com/airene/vitepress-blog-pure/commit/bbd8fb3508de7490ed93c3a43545df4d5b5ce9b1  
+升级方式请看 https://github.com/airene/vitepress-blog-pure/commit/bbd8fb3508de7490ed93c3a43545df4d5b5ce9b1
 总结就是：增加两个文件，修改3个文件，和每一个文章需要在开头增加category信息
 
 ## 2024-04-07 升级到正式版1.0.2

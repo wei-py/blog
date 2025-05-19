@@ -162,13 +162,13 @@ description: npm 安装行为的区别
 
 ### **常见问题**
 
-1. **为什么 `--save` 在 npm 5+ 是默认行为？**  
+1. **为什么 `--save` 在 npm 5+ 是默认行为？**
    为了简化流程，避免忘记保存依赖到 `package.json`。
 
-2. **`devDependencies` 和 `dependencies` 的区别？**  
+2. **`devDependencies` 和 `dependencies` 的区别？**
    `devDependencies` 仅用于开发，生产环境通过 `--production` 忽略它们。
 
-3. **如何查看已安装的依赖？**  
+3. **如何查看已安装的依赖？**
    检查 `package.json` 中的 `dependencies`、`devDependencies` 等字段。
 
 ---

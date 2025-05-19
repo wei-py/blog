@@ -46,31 +46,31 @@ JSONP 全称是 JSON with Padding，它不是一种正式的数据格式，而�
 ## 四、前端使用 JSONP 示例
 
 ```js
-const jsonp = (url, params, cbName) => {
+function jsonp(url, params, cbName) {
   return new Promise((resolve, reject) => {
-    const script = document.createElement("script");
+    const script = document.createElement('script')
     window[cbName] = (data) => {
-      resolve(data);
-      document.body.removeChild(script);
-    };
-    params = { ...params, callback: cbName };
-    const arr = Object.keys(params).map((key) => `${key}=${params[key]}`);
-    script.src = `${url}?${arr.join("&")}`;
-    document.body.appendChild(script);
-  });
-};
+      resolve(data)
+      document.body.removeChild(script)
+    }
+    params = { ...params, callback: cbName }
+    const arr = Object.keys(params).map(key => `${key}=${params[key]}`)
+    script.src = `${url}?${arr.join('&')}`
+    document.body.appendChild(script)
+  })
+}
 
-const url = "https://api.flickr.com/services/feeds/photos_public.gne";
+const url = 'https://api.flickr.com/services/feeds/photos_public.gne'
 
 const param = {
-  tags: "cat",
-  tagmode: "any",
-  format: "json"
-};
+  tags: 'cat',
+  tagmode: 'any',
+  format: 'json'
+}
 
-jsonp(url, param, "jsonFlickrFeed").then((data) => {
-  console.log(data, "返回数据");
-});
+jsonp(url, param, 'jsonFlickrFeed').then((data) => {
+  console.log(data, '返回数据')
+})
 ```
 
 ---

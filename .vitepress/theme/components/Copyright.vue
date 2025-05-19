@@ -1,21 +1,22 @@
+<script lang="ts" setup>
+import { useData } from 'vitepress'
+
+const { site, theme } = useData()
+const website = theme.value.website
+const webTitle = site.value.title
+</script>
+
 <template>
   <div class="site-footer">
     MIT Licensed | Copyright © 2021-2022
     <a class="vitepress" :href="website">{{ webTitle }}</a>
-    <br />
+    <br>
     Powered by
     <a class="vitepress" target="_blank" href="//vitepress.vuejs.org/">VitePress - 1.6.3</a>
     Theme by
     <a class="vitepress" target="_blank" href="//github.com/airene/vitepress-blog-pure">Vitepress-blog</a>
   </div>
 </template>
-<script lang="ts" setup>
-import { useData } from "vitepress";
-
-const { site, theme } = useData();
-const website = theme.value.website;
-const webTitle = site.value.title;
-</script>
 
 <style>
 .site-footer {

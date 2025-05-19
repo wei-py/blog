@@ -13,7 +13,7 @@ description: 在 Vue 3.0 中，**使用 `Proxy` 是为了实现更强大、更�
 
 ### 1. 更全面的拦截能力
 
-`Proxy` 是 ES6 提供的一种元编程特性，允许你对对象进行细粒度的操作拦截（如读取、写入、枚举、函数调用等）。  
+`Proxy` 是 ES6 提供的一种元编程特性，允许你对对象进行细粒度的操作拦截（如读取、写入、枚举、函数调用等）。
 而 `Object.defineProperty` 只能拦截对象属性的 **get 和 set 操作**，功能非常有限。
 
 > ✅ `Proxy` 能监听更多操作：
@@ -36,14 +36,14 @@ description: 在 Vue 3.0 中，**使用 `Proxy` 是为了实现更强大、更�
 
 ### 3. 更好的性能表现
 
-虽然 `Proxy` 在创建时会有一些开销，但它可以按需追踪依赖，不会像 Vue 2 那样对对象所有属性递归定义 getter/setter。  
+虽然 `Proxy` 在创建时会有一些开销，但它可以按需追踪依赖，不会像 Vue 2 那样对对象所有属性递归定义 getter/setter。
 Vue 3 利用了 `Proxy` + `Reflect` 的组合，实现了更细粒度的依赖收集和更新触发，整体性能更优。
 
 ---
 
 ### 4. 更容易处理嵌套对象和动态属性
 
-Vue 2 中如果给对象添加新属性，必须使用 `this.$set` 才能让它变成响应式的。  
+Vue 2 中如果给对象添加新属性，必须使用 `this.$set` 才能让它变成响应式的。
 而 Vue 3 中使用 `Proxy` 后，**新增或删除属性也能自动变为响应式**，不再需要手动干预。
 
 ---
@@ -72,17 +72,17 @@ Vue 3 的响应式系统可以支持 `Map`、`Set`、`WeakMap`、`WeakSet` 等�
 ### Vue 2 示例（Object.defineProperty）
 
 ```js
-let obj = { count: 0 };
-Object.defineProperty(obj, "count", {
+const obj = { count: 0 }
+Object.defineProperty(obj, 'count', {
   get() {
-    console.log("访问了 count");
-    return val;
+    console.log('访问了 count')
+    return val
   },
   set(newVal) {
-    console.log("count 被修改");
-    val = newVal;
+    console.log('count 被修改')
+    val = newVal
   }
-});
+})
 ```
 
 缺点：只能监听已有属性，不能监听新增或删除的属性。
@@ -92,21 +92,21 @@ Object.defineProperty(obj, "count", {
 ### Vue 3 示例（Proxy）
 
 ```js
-let obj = { count: 0 };
-let proxy = new Proxy(obj, {
+const obj = { count: 0 }
+const proxy = new Proxy(obj, {
   get(target, key, receiver) {
-    console.log(`访问了 ${key.toString()}`);
-    return Reflect.get(target, key, receiver);
+    console.log(`访问了 ${key.toString()}`)
+    return Reflect.get(target, key, receiver)
   },
   set(target, key, value, receiver) {
-    console.log(`设置了 ${key.toString()}`);
-    return Reflect.set(target, key, value, receiver);
+    console.log(`设置了 ${key.toString()}`)
+    return Reflect.set(target, key, value, receiver)
   }
-});
+})
 
-proxy.count; // 访问了 count
-proxy.count = 10; // 设置了 count
-proxy.newKey = 20; // 设置了 newKey（自动响应）
+proxy.count // 访问了 count
+proxy.count = 10 // 设置了 count
+proxy.newKey = 20 // 设置了 newKey（自动响应）
 ```
 
 优点：支持新增属性、数组、Map 等。

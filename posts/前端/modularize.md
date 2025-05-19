@@ -20,6 +20,7 @@ description: 前端模块化历程
 <script src="jquery.js"></script>
 <script src="utils.js"></script>
 <script src="main.js"></script>
+
 ```
 
 这种原始的模块化方式存在致命缺陷：
@@ -34,15 +35,15 @@ description: 前端模块化历程
 
 ```js
 // 立即执行函数创造私有作用域
-var Module = (function () {
-  const privateVar = "秘密数据";
+const Module = (function () {
+  const privateVar = '秘密数据'
 
   return {
-    publicMethod: function () {
-      console.log(privateVar);
+    publicMethod() {
+      console.log(privateVar)
     }
-  };
-})();
+  }
+})()
 ```
 
 IIFE（立即调用函数表达式）让开发者第一次拥有了私有作用域，标志着模块化意识的觉醒。
@@ -55,25 +56,25 @@ IIFE（立即调用函数表达式）让开发者第一次拥有了私有作用�
 // server 端的模块化方案
 // math.js
 exports.add = function (a, b) {
-  return a + b;
-};
+  return a + b
+}
 
 // main.js
-const { add } = require("./math");
+const { add } = require('./math')
 ```
 
-优点：同步加载，简单直观  
+优点：同步加载，简单直观
 缺点：不适用于浏览器端
 
 #### AMD（异步模块定义）
 
 ```js
 // RequireJS 的模块定义
-define(["dependency"], function (dep) {
+define(['dependency'], (dep) => {
   return {
     // 模块逻辑
-  };
-});
+  }
+})
 ```
 
 通过 `define` 和 `require` 实现异步加载，解决了浏览器端模块加载问题。
@@ -82,10 +83,10 @@ define(["dependency"], function (dep) {
 
 ```js
 // SeaJS 的模块规范
-define(function (require, exports, module) {
-  const dep = require("./dep");
-  exports.feature = () => {};
-});
+define((require, exports, module) => {
+  const dep = require('./dep')
+  exports.feature = () => {}
+})
 ```
 
 兼顾同步/异步加载，更贴近 CommonJS 的书写习惯。
@@ -122,7 +123,7 @@ npm install --save lodash
 
 ```js
 // webpack.config.js
-import _ from "lodash";
+import _ from 'lodash'
 ```
 
 打包工具带来的变革：
@@ -150,8 +151,8 @@ import Button from "./Button";
 ```vue
 <script>
 export default {
-  props: ["label"]
-};
+  props: ['label']
+}
 </script>
 ```
 
@@ -182,32 +183,32 @@ export class AppModule {}
 
 ```js
 // 原生 ESM 动态导入
-const module = await import(`./feature-${version}.js`);
+const module = await import(`./feature-${version}.js`)
 ```
 
 3. **Web Component**：标准化的组件模块化方案
 
 ```js
 customElements.define(
-  "my-component",
+  'my-component',
   class extends HTMLElement {
     connectedCallback() {
-      this.innerHTML = "<p>Web Component</p>";
+      this.innerHTML = '<p>Web Component</p>'
     }
   }
-);
+)
 ```
 
 ## 六、模块化选择指南
 
-**小型项目** → 原生 ESM + 动态导入  
-**大型应用** → React/Vue + 微前端架构  
-**Node.js 项目** → ES Module + TypeORM  
+**小型项目** → 原生 ESM + 动态导入
+**大型应用** → React/Vue + 微前端架构
+**Node.js 项目** → ES Module + TypeORM
 **库开发** → Rollup + ESM + UMD
 
 ## 结语：模块化本质论
 
 模块化不仅是代码组织方式，更是前端工程化的哲学基础。从解决命名冲突到实现按需加载，从语法规范到架构设计，每一次进化都在降低软件的认知成本。当我们站在现代前端的高地上回望，那些曾经的模块化方案虽已退场，但它们共同铸就了今天的开发体验。
 
-> "The best module system is the one you don't have to think about."  
+> "The best module system is the one you don't have to think about."
 > —— 前端模块化终极理想

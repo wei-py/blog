@@ -59,25 +59,25 @@ description: 事件坐标
 ```javascript
 // 获取元素在页面中的绝对位置
 function getElementPosition(el) {
-  let left = 0,
-    top = 0;
+  let left = 0
+  let top = 0
   while (el) {
-    left += el.offsetLeft;
-    top += el.offsetTop;
-    el = el.offsetParent;
+    left += el.offsetLeft
+    top += el.offsetTop
+    el = el.offsetParent
   }
-  return { left, top };
+  return { left, top }
 }
 
 // 判断元素是否在视口中可见
 function isElementInViewport(el) {
-  const rect = el.getBoundingClientRect();
+  const rect = el.getBoundingClientRect()
   return (
-    rect.top >= 0 &&
-    rect.left >= 0 &&
-    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-  );
+    rect.top >= 0
+    && rect.left >= 0
+    && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+    && rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  )
 }
 ```
 

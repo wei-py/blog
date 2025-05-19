@@ -22,6 +22,7 @@ img {
   width: 100%;
   height: auto;
 }
+
 ```
 
 - **作用**：图片宽度始终等于其容器宽度，高度按比例缩放，防止变形。
@@ -36,6 +37,7 @@ img {
   max-width: 100%;
   height: auto;
 }
+
 ```
 
 - **优点**：防止图片在小屏幕上溢出容器，保持布局完整性。
@@ -53,6 +55,7 @@ img {
   height: 100%;
   object-fit: cover; /* 或 contain、fill、none */
 }
+
 ```
 
 - `cover`：图片按比例缩放，填满容器，可能裁剪边缘。
@@ -68,6 +71,7 @@ img {
   width: 100%;
   aspect-ratio: 16 / 9; /* 按需设置 */
 }
+
 ```
 
 - **作用**：图片高度自动根据宽度和设定比例计算，适合固定比例展示（如视频封面）。
@@ -88,6 +92,7 @@ HTML 中使用 `srcset` 和 `sizes` 属性，配合 CSS 实现更智能的响应
          33vw"
   alt="响应式图片"
 />
+
 ```
 
 ```css
@@ -95,6 +100,7 @@ img {
   width: 100%;
   height: auto;
 }
+
 ```
 
 - **作用**：浏览器根据设备宽度和像素密度选择最合适的图片资源。
@@ -110,11 +116,12 @@ img {
 .container {
   width: 100%;
   height: 400px;
-  background-image: url("image.jpg");
+  background-image: url('image.jpg');
   background-size: cover; /* 或 contain */
   background-position: center;
   background-repeat: no-repeat;
 }
+
 ```
 
 - `cover`：填充容器，可能裁剪。
@@ -133,6 +140,7 @@ img {
   height: auto;
   display: block;
 }
+
 ```
 
 - 适用于移动端优化的图片展示，防止布局抖动。
@@ -152,6 +160,7 @@ img {
   height: 100%;
   object-fit: cover;
 }
+
 ```
 
 ---

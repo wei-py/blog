@@ -1,3 +1,32 @@
+<script lang="ts" setup>
+import type { PropType } from 'vue'
+import { withBase } from 'vitepress'
+
+interface Article {
+  regularPath: string
+  frontMatter: {
+    title: string
+    description: string
+    date: string
+    tags: string[]
+  }
+}
+defineProps({
+  posts: {
+    type: Array as PropType<Article[]>,
+    required: true,
+  },
+  pageCurrent: {
+    type: Number as PropType<number>,
+    required: true,
+  },
+  pagesNum: {
+    type: Number as PropType<number>,
+    required: true,
+  },
+})
+</script>
+
 <template>
   <div v-for="(article, index) in posts" :key="index" class="post-list">
     <div class="post-header">
@@ -5,7 +34,7 @@
         <a :href="withBase(article.regularPath)">{{ article.frontMatter.title }}</a>
       </div>
     </div>
-    <p class="describe" v-html="article.frontMatter.description"></p>
+    <p class="describe" v-html="article.frontMatter.description" />
     <div class="post-info">
       {{ article.frontMatter.date }}
       <span v-for="item in article.frontMatter.tags">
@@ -16,44 +45,16 @@
 
   <div class="pagination">
     <a
-      class="link"
-      :class="{ active: pageCurrent === i }"
       v-for="i in pagesNum"
       :key="i"
+      class="link"
+      :class="{ active: pageCurrent === i }"
       :href="withBase(i === 1 ? '/index.html' : `/page_${i}.html`)"
     >
       {{ i }}
     </a>
   </div>
 </template>
-
-<script lang="ts" setup>
-import { withBase } from "vitepress";
-import { PropType } from "vue";
-interface Article {
-  regularPath: string;
-  frontMatter: {
-    title: string;
-    description: string;
-    date: string;
-    tags: string[];
-  };
-}
-defineProps({
-  posts: {
-    type: Array as PropType<Article[]>,
-    required: true
-  },
-  pageCurrent: {
-    type: Number as PropType<number>,
-    required: true
-  },
-  pagesNum: {
-    type: Number as PropType<number>,
-    required: true
-  }
-});
-</script>
 
 <style scoped>
 .post-list {

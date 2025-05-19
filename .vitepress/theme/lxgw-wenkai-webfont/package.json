@@ -2,8 +2,8 @@
   "name": "lxgw-wenkai-webfont",
   "version": "1.7.0",
   "description": "webfont package for the LXGW WenKai typeface",
-  "license": "MIT",
   "author": "Chawye Hsu <chawyehsu@hotmail.com>",
+  "license": "MIT",
   "homepage": "https://github.com/chawyehsu/lxgw-wenkai-webfont",
   "repository": {
     "type": "git",
@@ -12,15 +12,6 @@
   "bugs": {
     "url": "https://github.com/chawyehsu/lxgw-wenkai-webfont/issues"
   },
-  "main": "style.css",
-  "style": "style.css",
-  "files": [
-    "CHANGELOG.md",
-    "files",
-    "*.css",
-    "OFL.txt",
-    "VERSION"
-  ],
   "keywords": [
     "cjk",
     "lxgw-wenkai",
@@ -29,5 +20,14 @@
     "typeface",
     "webfont",
     "css"
+  ],
+  "main": "style.css",
+  "style": "style.css",
+  "files": [
+    "*.css",
+    "CHANGELOG.md",
+    "OFL.txt",
+    "VERSION",
+    "files"
   ]
 }

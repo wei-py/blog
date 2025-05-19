@@ -55,10 +55,10 @@ jobs:
 ## vitepress config
 
 ```js
-const isCloudflare = process.env.isFlare === "true";
+const isCloudflare = process.env.isFlare === 'true'
 export default defineConfig({
-  base: isCloudflare ? "/" : "/blog/"
-});
+  base: isCloudflare ? '/' : '/blog/'
+})
 ```
 
 ## css
@@ -106,13 +106,12 @@ custom.css
   --un-preset-theme-colors-shadow--alpha: 0.04;
   --un-preset-theme-colors-background: 255 255 255;
   --un-preset-theme-colors-primary: 46 64 91;
-  --uno-colors-shadow: rgb(
-    var(--un-preset-theme-colors-shadow) / var(--un-preset-theme-colors-shadow--alpha, 1)
-  );
+  --uno-colors-shadow: rgb(var(--un-preset-theme-colors-shadow) / var(--un-preset-theme-colors-shadow--alpha, 1));
 }
 .dark {
   --un-preset-theme-colors-shadow: 255 255 255;
 }
+
 ```
 
 ## package.json

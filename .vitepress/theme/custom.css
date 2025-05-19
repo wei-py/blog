@@ -1,7 +1,7 @@
 /* 引入 FiraCode */
 @font-face {
-  font-family: "FiraCode";
-  src: url("./FiraCode.ttf") format("truetype");
+  font-family: 'FiraCode';
+  src: url('./FiraCode.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -23,7 +23,7 @@
 /* @import "lxgw-wenkai-webfont/lxgwwenkai-regular.css";
 @import "lxgw-wenkai-webfont/lxgwwenkai-bold.css"; */
 body {
-  font-family: "LXGW WenKai";
+  font-family: 'LXGW WenKai';
 }
 
 /* 全局默认字体：优先使用 PingFang SC，其次是 ANDALEMO */
@@ -35,7 +35,7 @@ body {
 /* 代码部分：使用 FiraCode */
 code,
 pre span {
-  font-family: "FiraCode", "LXGW WenKai" !important;
+  font-family: 'FiraCode', 'LXGW WenKai' !important;
   font-size: 15px !important;
 }
 
@@ -141,13 +141,13 @@ pre span {
 .title a {
   color: var(--bt-theme-title) !important;
 }
-.content a[rel~="noreferrer"]:link,
-a[rel~="noreferrer"]:visited {
+.content a[rel~='noreferrer']:link,
+a[rel~='noreferrer']:visited {
   color: var(--vp-c-brand);
   font-weight: 500 !important;
   border-bottom: 1px solid var(--vp-c-brand);
 }
-.content a[rel~="noreferrer"]:hover {
+.content a[rel~='noreferrer']:hover {
   color: #888;
 }
 h1 {
