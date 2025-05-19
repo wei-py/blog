@@ -111,14 +111,15 @@ custom.css
 .dark {
   --un-preset-theme-colors-shadow: 255 255 255;
 }
-
 ```
 
 ## package.json
 
 ```json
-"scripts": {
-  "cloudflare": "cross-env isFlare=true vitepress build",
+{
+  "scripts": {
+    "cloudflare": "cross-env isFlare=true vitepress build"
+  }
 }
 ```
 

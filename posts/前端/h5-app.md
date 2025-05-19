@@ -33,7 +33,9 @@ pnpm add -D h5pack
 ```
 
 ```json
-"scripts": {
-  "compress": "npx h5pack"
+{
+  "scripts": {
+    "compress": "npx h5pack"
+  }
 }
 ```

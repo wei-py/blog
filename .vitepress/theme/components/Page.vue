@@ -2,15 +2,6 @@
 import type { PropType } from 'vue'
 import { withBase } from 'vitepress'
 
-interface Article {
-  regularPath: string
-  frontMatter: {
-    title: string
-    description: string
-    date: string
-    tags: string[]
-  }
-}
 defineProps({
   posts: {
     type: Array as PropType<Article[]>,
@@ -25,6 +16,16 @@ defineProps({
     required: true,
   },
 })
+
+interface Article {
+  regularPath: string
+  frontMatter: {
+    title: string
+    description: string
+    date: string
+    tags: string[]
+  }
+}
 </script>
 
 <template>

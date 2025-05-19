@@ -20,7 +20,6 @@ description: 前端模块化历程
 <script src="jquery.js"></script>
 <script src="utils.js"></script>
 <script src="main.js"></script>
-
 ```
 
 这种原始的模块化方式存在致命缺陷：

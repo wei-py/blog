@@ -60,7 +60,6 @@ tags:
 <keep-alive>
   <component :is="currentComponent" />
 </keep-alive>
-
 ```
 
 | 钩子        | 触发时机       | Vue2/Vue3 |
@@ -101,13 +100,15 @@ export default {
 
 ```js
 // Vue2 示例
-mounted() {
-  fetchData().then(res => {
-    this.data = res
-    this.$nextTick(() => {
+const vue2 = {
+  mounted() {
+    fetchData().then((res) => {
+      this.data = res
+      this.$nextTick(() => {
       // 处理 DOM 更新
+      })
     })
-  })
+  }
 }
 
 // Vue3 组合式 API
@@ -124,8 +125,11 @@ onMounted(async () => {
 
 ```js
 // Vue2
-beforeUnmount() {
-  if (this.request) this.request.cancel()
+const vue2 = {
+  beforeUnmount() {
+    if (this.request)
+      this.request.cancel()
+  }
 }
 
 // Vue3
@@ -160,7 +164,6 @@ onBeforeUnmount(() => {
     },
   }
 </script>
-
 ```
 
 ## 七、Vue3 Composition API 特性
@@ -196,7 +199,6 @@ import {
   </template>
   <template #fallback>Loading...</template>
 </Suspense>
-
 ```
 
 2. **组合式 API 执行上下文**：

@@ -1,7 +1,7 @@
 {
   // Disable the default formatter, use eslint instead
   "prettier.enable": false,
-  "editor.formatOnSave": false,
+  // "editor.formatOnSave": false,
 
   // Auto fix
   "editor.codeActionsOnSave": {
@@ -11,16 +11,16 @@
 
   // Silent the stylistic rules in you IDE, but still auto fix them
   "eslint.rules.customizations": [
-    { "rule": "style/*", "severity": "off", "fixable": true },
-    { "rule": "format/*", "severity": "off", "fixable": true },
-    { "rule": "*-indent", "severity": "off", "fixable": true },
-    { "rule": "*-spacing", "severity": "off", "fixable": true },
-    { "rule": "*-spaces", "severity": "off", "fixable": true },
-    { "rule": "*-order", "severity": "off", "fixable": true },
-    { "rule": "*-dangle", "severity": "off", "fixable": true },
-    { "rule": "*-newline", "severity": "off", "fixable": true },
-    { "rule": "*quotes", "severity": "off", "fixable": true },
-    { "rule": "*semi", "severity": "off", "fixable": true }
+    { "rule": "style/*", "severity": "default", "fixable": true },
+    { "rule": "format/*", "severity": "default", "fixable": true },
+    { "rule": "*-indent", "severity": "default", "fixable": true },
+    { "rule": "*-spacing", "severity": "default", "fixable": true },
+    { "rule": "*-spaces", "severity": "default", "fixable": true },
+    { "rule": "*-order", "severity": "default", "fixable": true },
+    { "rule": "*-dangle", "severity": "default", "fixable": true },
+    { "rule": "*-newline", "severity": "default", "fixable": true },
+    { "rule": "*quotes", "severity": "default", "fixable": true },
+    { "rule": "*semi", "severity": "default", "fixable": true }
   ],
 
   // Enable eslint for all supported languages

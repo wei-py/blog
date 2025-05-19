@@ -31,7 +31,6 @@ tags:
     <span class="indicator"></span>
   </div>
 </div>
-
 ```
 
 #### 2. 样式（CSS）
@@ -93,12 +92,11 @@ tags:
 .indicator.active {
   background: #333;
 }
-
 ```
 
 #### 3. 逻辑（JavaScript）
 
-```javascript
+```js
 const slides = document.querySelectorAll('.carousel-slide')
 const indicators = document.querySelectorAll('.indicator')
 const prevBtn = document.querySelector('.prev')
@@ -379,7 +377,6 @@ document.addEventListener('DOMContentLoaded', () => {
     </script>
   </body>
 </html>
-
 ```
 
 ---
@@ -422,7 +419,6 @@ document.addEventListener('DOMContentLoaded', () => {
     autoplay: { delay: 3000 },
   })
 </script>
-
 ```
 
 ---
@@ -434,24 +430,20 @@ document.addEventListener('DOMContentLoaded', () => {
    - 图片压缩与 WebP 格式
    - 预加载下一张图片
 2. **可访问性（A11Y）**：
-   ```html
-   <button aria-label="Previous Slide" class="carousel-btn prev">❮</button>
-   ```
+
+```html
+<button aria-label="Previous Slide" class="carousel-btn prev">❮</button>
+```
+
 3. **响应式设计**：
 
-   ```css
-   @media (max-width: 768px) {
-     .carousel-slide {
-       height: 200px;
-       object-fit: cover;
-     }
-   }
-   ```
-
-```
-
-```
-
+```css
+@media (max-width: 768px) {
+  .carousel-slide {
+    height: 200px;
+    object-fit: cover;
+  }
+}
 ```
 
 ---
@@ -463,8 +455,6 @@ document.addEventListener('DOMContentLoaded', () => {
 3. **内存泄漏**：及时清理定时器和事件监听器
 
 根据项目需求选择方案：小型项目可用原生实现，大型项目推荐使用 Swiper 等成熟库。
-
-```
 
 ```
 

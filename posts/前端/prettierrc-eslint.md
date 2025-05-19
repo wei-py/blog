@@ -97,12 +97,6 @@ export default [
     }
   },
   // {
-  // 	files: ["**/*.json"],
-  // 	rules: {
-  // 		"prettier/prettier": ["error", { tabWidth: 2 }]
-  // 	}
-  // },
-  // {
   //   files: ["*.md"],
   //   rules: {
   //     "prettier/prettier": ["error", { ...prettierConfig, printWidth: 100 }]

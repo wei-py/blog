@@ -97,7 +97,6 @@ document.querySelectorAll('img[data-src]').forEach(img => observer.observe(img))
 ```html
 <img src="placeholder.jpg" data-src="real-image.jpg" loading="lazy" alt="示例" />
 <iframe src="video.html" loading="lazy"></iframe>
-
 ```
 
 ### **优点**
@@ -131,7 +130,6 @@ document.querySelectorAll('img[data-src]').forEach(img => observer.observe(img))
 ```html
 <img data-src="image.jpg" class="lazyload" alt="示例" />
 <script src="lazysizes.min.js" async></script>
-
 ```
 
 ### **优点**
