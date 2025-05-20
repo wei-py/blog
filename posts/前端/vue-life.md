@@ -60,7 +60,6 @@ tags:
 <keep-alive>
   <component :is="currentComponent" />
 </keep-alive>
-
 ```
 
 | 钩子        | 触发时机       | Vue2/Vue3 |
@@ -165,7 +164,6 @@ onBeforeUnmount(() => {
     },
   };
 </script>
-
 ```
 
 ## 七、Vue3 Composition API 特性
@@ -201,7 +199,6 @@ import {
   </template>
   <template #fallback>Loading...</template>
 </Suspense>
-
 ```
 
 2. **组合式 API 执行上下文**：

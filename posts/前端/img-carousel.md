@@ -31,7 +31,6 @@ tags:
     <span class="indicator"></span>
   </div>
 </div>
-
 ```
 
 #### 2. 样式（CSS）
@@ -93,7 +92,6 @@ tags:
 .indicator.active {
   background: #333;
 }
-
 ```
 
 #### 3. 逻辑（JavaScript）
@@ -379,7 +377,6 @@ document.addEventListener("DOMContentLoaded", () => {
     </script>
   </body>
 </html>
-
 ```
 
 ---
@@ -422,7 +419,6 @@ document.addEventListener("DOMContentLoaded", () => {
     autoplay: { delay: 3000 },
   });
 </script>
-
 ```
 
 ---
@@ -448,7 +444,6 @@ document.addEventListener("DOMContentLoaded", () => {
     object-fit: cover;
   }
 }
-
 ```
 
 ---

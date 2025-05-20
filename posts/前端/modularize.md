@@ -93,7 +93,6 @@ define((require, exports, module) => {
 ### 3. 工业革命：ES6 模块化标准
 
 ```js
-
 // ES6 模块化语法
 // math.js
 export const PI = 3.14;
