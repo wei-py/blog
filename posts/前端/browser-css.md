@@ -21,10 +21,15 @@ tags:
 body {
   margin: 8px; /* 可能为 8px 或其他值 */
 }
+
 ```
+
+<<<<<<< HEAD
 
 ````
 
+=======
+>>>>>>> daa9cccfbac2b8bb066c15984a35d01880b9cb31
 这会导致页面四周出现意料之外的空白边距，影响全屏布局或严格对齐的设计。
 
 - **消除默认空白**：
@@ -42,8 +47,14 @@ body {
 * {
   box-sizing: border-box;
 }
+<<<<<<< HEAD
 
 ````
+
+=======
+
+````
+>>>>>>> daa9cccfbac2b8bb066c15984a35d01880b9cb31
 
 - **作用**：将所有元素的盒模型改为 `border-box`，使宽度和高度包含 `padding` 和 `border`，便于布局计算。
 - **原因**：默认的 `content-box` 模型（仅包含内容区域）容易导致尺寸失控。
@@ -57,7 +68,7 @@ ol {
   padding: 0;
   list-style: none;
 }
-```
+````
 
 - **作用**：清除无序列表（`<ul>`）和有序列表（`<ol>`）的默认缩进和项目符号。
 - **原因**：浏览器默认为列表添加 `padding` 和 `list-style`，可能干扰设计。
@@ -77,6 +88,7 @@ h6 {
 p {
   margin: 0 0 1em; /* 自定义段落间距 */
 }
+
 ```
 
 - **作用**：清除标题的默认 `margin`，并为段落设置统一的底部间距。
@@ -88,6 +100,7 @@ p {
 img {
   vertical-align: middle; /* 或 top、bottom */
 }
+
 ```
 
 - **作用**：避免图片与文本基线对齐（`baseline`）导致的底部空白。
@@ -100,6 +113,7 @@ a {
   text-decoration: none; /* 移除下划线 */
   color: inherit; /* 继承父级文字颜色 */
 }
+
 ```
 
 - **作用**：统一链接的视觉表现，避免浏览器默认的蓝色下划线。
@@ -111,6 +125,7 @@ a {
 table {
   border-collapse: collapse;
 }
+
 ```
 
 - **作用**：合并表格边框，消除单元格间的默认间距。
@@ -127,6 +142,7 @@ textarea {
   border: 1px solid #ccc;
   font-family: inherit; /* 继承父级字体 */
 }
+
 ```
 
 - **作用**：统一表单控件的外观和行为。
@@ -153,31 +169,30 @@ textarea {
 - **自定义基础样式**：
   根据项目需求编写轻量化的初始化 CSS，例如：
 
-  ```css
-  /* 示例：基础样式重置 */
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
+```css
+/* 示例：基础样式重置 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-  html,
-  body {
-    height: 100%;
-    font-family: Arial, sans-serif;
-  }
+html,
+body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
 
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
-  ul {
-    list-style: none;
-  }
-  `
-  ``
-  ```
+ul {
+  list-style: none;
+}
+
+```
 
 ---
 

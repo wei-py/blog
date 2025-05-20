@@ -31,6 +31,7 @@ tags:
     <span class="indicator"></span>
   </div>
 </div>
+
 ```
 
 #### 2. 样式（CSS）
@@ -92,45 +93,46 @@ tags:
 .indicator.active {
   background: #333;
 }
+
 ```
 
 #### 3. 逻辑（JavaScript）
 
-```javascript
-const slides = document.querySelectorAll('.carousel-slide')
-const indicators = document.querySelectorAll('.indicator')
-const prevBtn = document.querySelector('.prev')
-const nextBtn = document.querySelector('.next')
-let currentIndex = 0
+```js
+const slides = document.querySelectorAll(".carousel-slide");
+const indicators = document.querySelectorAll(".indicator");
+const prevBtn = document.querySelector(".prev");
+const nextBtn = document.querySelector(".next");
+let currentIndex = 0;
 
 function showSlide(index) {
   slides.forEach((slide, i) => {
-    slide.classList.toggle('active', i === index)
-  })
+    slide.classList.toggle("active", i === index);
+  });
   indicators.forEach((indicator, i) => {
-    indicator.classList.toggle('active', i === index)
-  })
+    indicator.classList.toggle("active", i === index);
+  });
 }
 
 function nextSlide() {
-  currentIndex = (currentIndex + 1) % slides.length
-  showSlide(currentIndex)
+  currentIndex = (currentIndex + 1) % slides.length;
+  showSlide(currentIndex);
 }
 
 function prevSlide() {
-  currentIndex = (currentIndex - 1 + slides.length) % slides.length
-  showSlide(currentIndex)
+  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+  showSlide(currentIndex);
 }
 
-nextBtn.addEventListener('click', nextSlide)
-prevBtn.addEventListener('click', prevSlide)
+nextBtn.addEventListener("click", nextSlide);
+prevBtn.addEventListener("click", prevSlide);
 
 indicators.forEach((indicator, index) => {
-  indicator.addEventListener('click', () => {
-    showSlide(index)
-    currentIndex = index
-  })
-})
+  indicator.addEventListener("click", () => {
+    showSlide(index);
+    currentIndex = index;
+  });
+});
 ```
 
 ---
@@ -140,14 +142,14 @@ indicators.forEach((indicator, index) => {
 #### 1. 自动播放
 
 ```javascript
-let autoPlayInterval = setInterval(nextSlide, 3000)
+let autoPlayInterval = setInterval(nextSlide, 3000);
 // 鼠标悬停暂停
-document.querySelector('.carousel').addEventListener('mouseenter', () => {
-  clearInterval(autoPlayInterval)
-})
-document.querySelector('.carousel').addEventListener('mouseleave', () => {
-  autoPlayInterval = setInterval(nextSlide, 3000)
-})
+document.querySelector(".carousel").addEventListener("mouseenter", () => {
+  clearInterval(autoPlayInterval);
+});
+document.querySelector(".carousel").addEventListener("mouseleave", () => {
+  autoPlayInterval = setInterval(nextSlide, 3000);
+});
 ```
 
 #### 2. 无限轮播（无缝切换）
@@ -155,26 +157,26 @@ document.querySelector('.carousel').addEventListener('mouseleave', () => {
 - 克隆首尾元素，实现循环过渡：
 
 ```javascript
-const firstSlide = slides[0].cloneNode(true)
-const lastSlide = slides[slides.length - 1].cloneNode(true)
-document.querySelector('.carousel-track').appendChild(firstSlide)
-document.querySelector('.carousel-track').insertBefore(lastSlide, slides[0])
+const firstSlide = slides[0].cloneNode(true);
+const lastSlide = slides[slides.length - 1].cloneNode(true);
+document.querySelector(".carousel-track").appendChild(firstSlide);
+document.querySelector(".carousel-track").insertBefore(lastSlide, slides[0]);
 ```
 
 #### 3. 触摸滑动（移动端支持）
 
 ```javascript
-let startX = 0
-document.querySelector('.carousel-track').addEventListener('touchstart', (e) => {
-  startX = e.touches[0].clientX
-})
-document.querySelector('.carousel-track').addEventListener('touchend', (e) => {
-  const diff = e.changedTouches[0].clientX - startX
+let startX = 0;
+document.querySelector(".carousel-track").addEventListener("touchstart", (e) => {
+  startX = e.touches[0].clientX;
+});
+document.querySelector(".carousel-track").addEventListener("touchend", (e) => {
+  const diff = e.changedTouches[0].clientX - startX;
   if (diff > 50)
-    prevSlide()
+    prevSlide();
   if (diff < -50)
-    nextSlide()
-})
+    nextSlide();
+});
 ```
 
 #### 4. 图片懒加载
@@ -184,12 +186,12 @@ document.querySelector('.carousel-track').addEventListener('touchend', (e) => {
 ```
 
 ```javascript
-document.addEventListener('DOMContentLoaded', () => {
-  const lazyImages = document.querySelectorAll('.lazyload')
+document.addEventListener("DOMContentLoaded", () => {
+  const lazyImages = document.querySelectorAll(".lazyload");
   lazyImages.forEach((img) => {
-    img.src = img.dataset.src
-  })
-})
+    img.src = img.dataset.src;
+  });
+});
 ```
 
 ### 二、原生实现（推荐）
@@ -309,74 +311,75 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
 
     <script>
-      const carousel = document.querySelector('.carousel')
-      const track = document.querySelector('.carousel-track')
-      const items = document.querySelectorAll('.carousel-item')
-      const dots = document.querySelectorAll('.dot')
-      const prevBtn = document.querySelector('.prev')
-      const nextBtn = document.querySelector('.next')
+      const carousel = document.querySelector(".carousel");
+      const track = document.querySelector(".carousel-track");
+      const items = document.querySelectorAll(".carousel-item");
+      const dots = document.querySelectorAll(".dot");
+      const prevBtn = document.querySelector(".prev");
+      const nextBtn = document.querySelector(".next");
 
-      let currentIndex = 0
-      let intervalId
+      let currentIndex = 0;
+      let intervalId;
 
       // 初始化位置
       function updateCarousel() {
-        const offset = -currentIndex * 100
-        track.style.transform = `translateX(${offset}%)`
+        const offset = -currentIndex * 100;
+        track.style.transform = `translateX(${offset}%)`;
 
         // 更新指示点
-        dots.forEach((dot) => dot.classList.remove('active'))
-        dots[currentIndex].classList.add('active')
+        dots.forEach((dot) => dot.classList.remove("active"));
+        dots[currentIndex].classList.add("active");
       }
 
       // 自动播放
       function startAutoPlay() {
         intervalId = setInterval(() => {
-          currentIndex = (currentIndex + 1) % items.length
-          updateCarousel()
-        }, 3000)
+          currentIndex = (currentIndex + 1) % items.length;
+          updateCarousel();
+        }, 3000);
       }
 
       // 停止自动播放
       function stopAutoPlay() {
-        clearInterval(intervalId)
+        clearInterval(intervalId);
       }
 
       // 点击指示点
       dots.forEach((dot) => {
-        dot.addEventListener('click', () => {
-          currentIndex = parseInt(dot.dataset.index)
-          updateCarousel()
-          stopAutoPlay()
-          startAutoPlay()
-        })
-      })
+        dot.addEventListener("click", () => {
+          currentIndex = parseInt(dot.dataset.index);
+          updateCarousel();
+          stopAutoPlay();
+          startAutoPlay();
+        });
+      });
 
       // 点击左右按钮
-      prevBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + items.length) % items.length
-        updateCarousel()
-        stopAutoPlay()
-        startAutoPlay()
-      })
+      prevBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + items.length) % items.length;
+        updateCarousel();
+        stopAutoPlay();
+        startAutoPlay();
+      });
 
-      nextBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % items.length
-        updateCarousel()
-        stopAutoPlay()
-        startAutoPlay()
-      })
+      nextBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % items.length;
+        updateCarousel();
+        stopAutoPlay();
+        startAutoPlay();
+      });
 
       // 鼠标悬停暂停
-      carousel.addEventListener('mouseenter', stopAutoPlay)
-      carousel.addEventListener('mouseleave', startAutoPlay)
+      carousel.addEventListener("mouseenter", stopAutoPlay);
+      carousel.addEventListener("mouseleave", startAutoPlay);
 
       // 初始化
-      updateCarousel()
-      startAutoPlay()
+      updateCarousel();
+      startAutoPlay();
     </script>
   </body>
 </html>
+
 ```
 
 ---
@@ -409,16 +412,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <!-- 初始化 -->
 <script>
-  new Swiper('.swiper-container', {
+  new Swiper(".swiper-container", {
     loop: true,
-    pagination: { el: '.swiper-pagination' },
+    pagination: { el: ".swiper-pagination" },
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
     },
     autoplay: { delay: 3000 },
-  })
+  });
 </script>
+
 ```
 
 ---
@@ -430,80 +434,20 @@ document.addEventListener('DOMContentLoaded', () => {
    - 图片压缩与 WebP 格式
    - 预加载下一张图片
 2. **可访问性（A11Y）**：
-   ```html
-   <button aria-label="Previous Slide" class="carousel-btn prev">❮</button>
-   ```
+
+```html
+<button aria-label="Previous Slide" class="carousel-btn prev">❮</button>
+```
+
 3. **响应式设计**：
 
-   ```css
-   @media (max-width: 768px) {
-     .carousel-slide {
-       height: 200px;
-       object-fit: cover;
-     }
-   }
-
-   ```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
+```css
+@media (max-width: 768px) {
+  .carousel-slide {
+    height: 200px;
+    object-fit: cover;
+  }
+}
 
 ```
 
@@ -516,64 +460,6 @@ document.addEventListener('DOMContentLoaded', () => {
 3. **内存泄漏**：及时清理定时器和事件监听器
 
 根据项目需求选择方案：小型项目可用原生实现，大型项目推荐使用 Swiper 等成熟库。
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
 
 ```
 

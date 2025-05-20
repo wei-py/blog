@@ -24,16 +24,16 @@ description: 网站开发中, 实现图片的懒加载
 
 ```javascript
 function lazyLoad() {
-  const images = document.querySelectorAll('img[data-src]')
+  const images = document.querySelectorAll("img[data-src]");
   images.forEach((img) => {
     if (img.getBoundingClientRect().top < window.innerHeight) {
-      img.src = img.dataset.src
+      img.src = img.dataset.src;
     }
-  })
+  });
 }
 
-window.addEventListener('scroll', lazyLoad)
-window.addEventListener('DOMContentLoaded', lazyLoad) // 初始加载
+window.addEventListener("scroll", lazyLoad);
+window.addEventListener("DOMContentLoaded", lazyLoad); // 初始加载
 ```
 
 ### **优点**
@@ -61,16 +61,16 @@ const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        const img = entry.target
-        img.src = img.dataset.src
-        observer.unobserve(img) // 加载后停止监听
+        const img = entry.target;
+        img.src = img.dataset.src;
+        observer.unobserve(img); // 加载后停止监听
       }
-    })
+    });
   },
-  { rootMargin: '0px 0px 200px 0px' }
-) // 提前加载（可选）
+  { rootMargin: "0px 0px 200px 0px" }
+); // 提前加载（可选）
 
-document.querySelectorAll('img[data-src]').forEach(img => observer.observe(img))
+document.querySelectorAll("img[data-src]").forEach(img => observer.observe(img));
 ```
 
 ### **优点**
@@ -155,17 +155,17 @@ document.querySelectorAll('img[data-src]').forEach(img => observer.observe(img))
 
 ```javascript
 // Vue3 组合式 API
-app.directive('lazy', {
+app.directive("lazy", {
   mounted(el) {
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
-        el.src = el.dataset.src
-        observer.disconnect()
+        el.src = el.dataset.src;
+        observer.disconnect();
       }
-    })
-    observer.observe(el)
+    });
+    observer.observe(el);
   }
-})
+});
 ```
 
 ```html
@@ -197,9 +197,9 @@ app.directive('lazy', {
 ```
 
 ```javascript
-observer.observe(document.querySelector('.lazy-bg'))
+observer.observe(document.querySelector(".lazy-bg"));
 // 在 Intersection Observer 回调中：
-element.style.backgroundImage = `url(${element.dataset.bg})`
+element.style.backgroundImage = `url(${element.dataset.bg})`;
 ```
 
 ### **优点**

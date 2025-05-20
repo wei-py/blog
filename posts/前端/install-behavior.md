@@ -101,8 +101,10 @@ description: npm 安装行为的区别
   ```
   **结果**：
   ```json
-  "dependencies": {
-    "react": "18.2.0"
+  {
+    "dependencies": {
+      "react": "18.2.0"
+    }
   }
   ```
 

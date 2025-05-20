@@ -1,6 +1,7 @@
 {
   // Disable the default formatter, use eslint instead
   "prettier.enable": false,
+  "editor.formatOnSave": true,
 
   // Auto fix
   "editor.codeActionsOnSave": {
@@ -12,6 +13,7 @@
   // Silent the stylistic rules in you IDE, but still auto fix them
   "eslint.rules.customizations": [
     { "rule": "style/*", "severity": "default", "fixable": true },
+    { "rule": "@stylistic/*", "severity": "default", "fixable": true },
     { "rule": "format/*", "severity": "default", "fixable": true },
     { "rule": "*-indent", "severity": "default", "fixable": true },
     { "rule": "*-spacing", "severity": "default", "fixable": true },

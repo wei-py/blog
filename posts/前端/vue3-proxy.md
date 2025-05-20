@@ -72,17 +72,17 @@ Vue 3 的响应式系统可以支持 `Map`、`Set`、`WeakMap`、`WeakSet` 等�
 ### Vue 2 示例（Object.defineProperty）
 
 ```js
-const obj = { count: 0 }
-Object.defineProperty(obj, 'count', {
+const obj = { count: 0 };
+Object.defineProperty(obj, "count", {
   get() {
-    console.log('访问了 count')
-    return val
+    console.log("访问了 count");
+    return val;
   },
   set(newVal) {
-    console.log('count 被修改')
-    val = newVal
+    console.log("count 被修改");
+    val = newVal;
   }
-})
+});
 ```
 
 缺点：只能监听已有属性，不能监听新增或删除的属性。
@@ -92,21 +92,21 @@ Object.defineProperty(obj, 'count', {
 ### Vue 3 示例（Proxy）
 
 ```js
-const obj = { count: 0 }
+const obj = { count: 0 };
 const proxy = new Proxy(obj, {
   get(target, key, receiver) {
-    console.log(`访问了 ${key.toString()}`)
-    return Reflect.get(target, key, receiver)
+    console.log(`访问了 ${key.toString()}`);
+    return Reflect.get(target, key, receiver);
   },
   set(target, key, value, receiver) {
-    console.log(`设置了 ${key.toString()}`)
-    return Reflect.set(target, key, value, receiver)
+    console.log(`设置了 ${key.toString()}`);
+    return Reflect.set(target, key, value, receiver);
   }
-})
+});
 
-proxy.count // 访问了 count
-proxy.count = 10 // 设置了 count
-proxy.newKey = 20 // 设置了 newKey（自动响应）
+proxy.count; // 访问了 count
+proxy.count = 10; // 设置了 count
+proxy.newKey = 20; // 设置了 newKey（自动响应）
 ```
 
 优点：支持新增属性、数组、Map 等。
