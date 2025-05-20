@@ -37,7 +37,7 @@ defineProps({
     <p class="describe" v-html="article.frontMatter.description" />
     <div class="post-info">
       {{ article.frontMatter.date }}
-      <span v-for="item in article.frontMatter.tags">
+      <span v-for="item in article.frontMatter.tags" :key="item">
         <a :href="withBase(`/pages/tags.html?tag=${item}`)">{{ item }}</a>
       </span>
     </div>

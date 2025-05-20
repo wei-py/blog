@@ -31,7 +31,6 @@ tags:
     <span class="indicator"></span>
   </div>
 </div>
-
 ```
 
 #### 2. 样式（CSS）
@@ -93,7 +92,6 @@ tags:
 .indicator.active {
   background: #333;
 }
-
 ```
 
 #### 3. 逻辑（JavaScript）
@@ -379,7 +377,6 @@ document.addEventListener('DOMContentLoaded', () => {
     </script>
   </body>
 </html>
-
 ```
 
 ---
@@ -422,7 +419,6 @@ document.addEventListener('DOMContentLoaded', () => {
     autoplay: { delay: 3000 },
   })
 </script>
-
 ```
 
 ---
@@ -445,8 +441,65 @@ document.addEventListener('DOMContentLoaded', () => {
        height: 200px;
        object-fit: cover;
      }
-   }
+   }
+
    ```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
 
 ```
 
@@ -463,6 +516,62 @@ document.addEventListener('DOMContentLoaded', () => {
 3. **内存泄漏**：及时清理定时器和事件监听器
 
 根据项目需求选择方案：小型项目可用原生实现，大型项目推荐使用 Swiper 等成熟库。
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
 
 ```
 

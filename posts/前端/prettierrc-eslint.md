@@ -97,10 +97,10 @@ export default [
     }
   },
   // {
-  // 	files: ["**/*.json"],
-  // 	rules: {
-  // 		"prettier/prettier": ["error", { tabWidth: 2 }]
-  // 	}
+  // files: ["**/*.json"],
+  // rules: {
+  // "prettier/prettier": ["error", { tabWidth: 2 }]
+  // }
   // },
   // {
   //   files: ["*.md"],

@@ -1,6 +1,13 @@
 import antfu from '@antfu/eslint-config'
 
 export default antfu({
-  formatters: true,
-  vue: true,
+  // rules: {
+  //   'format/prettier': 'off',
+  // },
+  // formatters: {
+  //   markdown: 'prettier',
+  // },
+  vue: {
+    vueVersion: 2,
+  },
 })

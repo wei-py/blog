@@ -16,15 +16,11 @@ tags:
 - **浏览器默认样式差异**：
   不同浏览器（如 Chrome、Firefox、Safari）对 HTML 元素的默认样式（User Agent Stylesheet）有不同的处理。例如：
 
-  ```css
-  /* 浏览器默认样式（示例） */
-  body {
-    margin: 8px; /* 可能为 8px 或其他值 */
-  }
-  ```
-
-```
-
+```css
+/* 浏览器默认样式（示例） */
+body {
+  margin: 8px; /* 可能为 8px 或其他值 */
+}
 ```
 
 ````
@@ -61,7 +57,6 @@ ol {
   padding: 0;
   list-style: none;
 }
-
 ```
 
 - **作用**：清除无序列表（`<ul>`）和有序列表（`<ol>`）的默认缩进和项目符号。
@@ -82,7 +77,6 @@ h6 {
 p {
   margin: 0 0 1em; /* 自定义段落间距 */
 }
-
 ```
 
 - **作用**：清除标题的默认 `margin`，并为段落设置统一的底部间距。
@@ -94,7 +88,6 @@ p {
 img {
   vertical-align: middle; /* 或 top、bottom */
 }
-
 ```
 
 - **作用**：避免图片与文本基线对齐（`baseline`）导致的底部空白。
@@ -107,7 +100,6 @@ a {
   text-decoration: none; /* 移除下划线 */
   color: inherit; /* 继承父级文字颜色 */
 }
-
 ```
 
 - **作用**：统一链接的视觉表现，避免浏览器默认的蓝色下划线。
@@ -119,7 +111,6 @@ a {
 table {
   border-collapse: collapse;
 }
-
 ```
 
 - **作用**：合并表格边框，消除单元格间的默认间距。
@@ -136,7 +127,6 @@ textarea {
   border: 1px solid #ccc;
   font-family: inherit; /* 继承父级字体 */
 }
-
 ```
 
 - **作用**：统一表单控件的外观和行为。

@@ -20,7 +20,6 @@ description: 前端模块化历程
 <script src="jquery.js"></script>
 <script src="utils.js"></script>
 <script src="main.js"></script>
-
 ```
 
 这种原始的模块化方式存在致命缺陷：
@@ -94,6 +93,7 @@ define((require, exports, module) => {
 ### 3. 工业革命：ES6 模块化标准
 
 ```js
+
 // ES6 模块化语法
 // math.js
 export const PI = 3.14;
