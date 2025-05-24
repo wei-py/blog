@@ -14,7 +14,6 @@
     "preview": "cross-env NODE_ENV=production vitepress preview",
     "lint": "eslint posts",
     "lint:fix": "eslint posts --fix",
-    "format": "prettier --write .",
     "test": "node ./posts/trash/draft.mjs"
   },
   "dependencies": {

@@ -123,7 +123,7 @@ onMounted(async () => {
 
 ### 清理异步任务：
 
-```js
+```vue
 // Vue2
 const vue2 = {
   beforeUnmount() {

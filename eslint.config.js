@@ -1,13 +1,15 @@
 import antfu from "@antfu/eslint-config";
 
 export default antfu({
-  // formatters: {
-  //   "style/no-multiple-empty-lines": ["error", { max: 1, maxEOF: 1 }],
-  // },
-  formatters: true,
+  formatters: {
+    markdown: true,
+  },
   vue: true,
+  markdown: false,
   stylistic: {
     semi: true,
+    proseWrap: "preserve",
+    arrowParens: "always",
     indent: 2,
     quotes: "double",
   },
