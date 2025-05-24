@@ -15,8 +15,8 @@ description: vscode 配置
   // 插件市场
   // "application.extensionMarketUrl": "https://marketplace.visualstudio.com/",
   // 主题相关
-  "workbench.colorTheme": "dawn2_pure",
-  "workbench.iconTheme": "atom-font-icons",
+  "workbench.colorTheme": "Vim Dark Hard",
+  "workbench.iconTheme": "pcode-icon-theme-dark-no-folder",
   "workbench.navigationControl.enabled": false,
   "workbench.layoutControl.enabled": false,
   "workbench.activityBar.location": "top",
@@ -52,6 +52,7 @@ description: vscode 配置
     "javascript",
     "javascriptreact",
     "typescript",
+    "markdown",
     "typescriptreact",
     "vue",
     "html"
@@ -76,7 +77,7 @@ description: vscode 配置
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
