@@ -37,6 +37,7 @@ export default defineConfig({
     // outline:[2,3],
     outline: {
       label: "文章摘要",
+      level: "deep",
     },
     // socialLinks: [{ icon: 'github', link: 'https://github.com/airene/vitepress-blog-pure' }]
   } as any,
