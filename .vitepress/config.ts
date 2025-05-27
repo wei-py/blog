@@ -9,7 +9,8 @@ const isProd = true;
 
 export default defineConfig({
   title: "wei",
-  base: isCloudflare ? "/" : "/blog/",
+  // base: isCloudflare ? "/" : "/blog/",
+  base: "/",
   // base: '/',
   cacheDir: "./node_modules/vitepress_cache",
   description: "vitepress,blog,blog-theme",
