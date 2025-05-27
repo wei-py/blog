@@ -1,10 +1,11 @@
+import AutoNav from "vite-plugin-vitepress-auto-nav";
 import { defineConfig } from "vitepress";
 import { getPosts } from "./theme/serverUtils";
 
 // 每页的文章数量
 const pageSize = 10;
 
-const isCloudflare = process.env.isFlare === "true";
+// const isCloudflare = process.env.isFlare === "true";
 const isProd = true;
 
 export default defineConfig({
@@ -16,6 +17,7 @@ export default defineConfig({
   description: "vitepress,blog,blog-theme",
   ignoreDeadLinks: true,
   themeConfig: {
+    // eslint-disable-next-line antfu/no-top-level-await
     posts: await getPosts(pageSize),
     website: "https://github.com/airene/vitepress-blog-pure", // copyright link
     // 评论的仓库地址
@@ -54,6 +56,7 @@ export default defineConfig({
   vite: {
     // build: { minify: false }
     server: { port: 5000 },
+    plugins: [AutoNav() as any],
   },
   /*
       optimizeDeps: {
