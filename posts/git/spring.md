@@ -2,6 +2,7 @@
 title: spring
 description: spring
 date: 2025-05-22
+category: backEnd
 tags:
   - spring
 ---
@@ -16,13 +17,13 @@ tags:
 
 ## IoC的实例化和初始化工作过程
 
-1. xml配置文件 (Bean定义信息  BeanDefinition)
+1. xml配置文件 (Bean定义信息 BeanDefinition)
 2. 抽象（接口 BeanDefinitionReader）通过接口读取配置文件信息加载到IoC容器中
 3. IoC容器 （BeanFactory工厂+反射）
    1. 获取到Bean定义信息
    2. 实例化（BeanFactory工厂+反射）
    3. 初始化
-   4. 得到最终对象 
+   4. 得到最终对象
 4. 获取对象： context.getBean("xxx");
 
 ### User实体类
@@ -41,7 +42,7 @@ public class User {
 
 ```
 
-### xml配置文件 
+### xml配置文件
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -307,7 +308,7 @@ org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying
 public class Book {
     private String bname;
     private String author;
-    
+
     public Book(String bname, String author) {
         this.bname = bname;
         this.author = author;
@@ -831,11 +832,11 @@ zardemp work....20
 部门名称：技术部门
 ```
 
-- 如果错把ref属性写成了value属性，会抛出异常： Caused by: java.lang.IllegalStateException: Cannot convert value of type 'java.lang.String' to required type 'com.atguigu.spring6.bean.Clazz' for property 'clazz': no matching editors or conversion strategy found 
+- 如果错把ref属性写成了value属性，会抛出异常： Caused by: java.lang.IllegalStateException: Cannot convert value of type 'java.lang.String' to required type 'com.atguigu.spring6.bean.Clazz' for property 'clazz': no matching editors or conversion strategy found
 
 - 意思是不能把String类型转换成我们要的Clazz类型，说明我们使用value属性时，Spring只把这个属性看做一个普通的字符串，不会认为这是一个bean的id，更不会根据它去找到bean来赋值
 
-#### 方式二：引用内部bean 
+#### 方式二：引用内部bean
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -1270,16 +1271,3 @@ joker2
 joker3
 joker2
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
