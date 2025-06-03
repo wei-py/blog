@@ -19,7 +19,7 @@ description: window 快捷键 修改光标为 vim 操作
 
 /bin/MyKeymap.ahk
 
-```ahk
+```lua
 InitKeymap()
 {
   taskSwitch := TaskSwitchKeymap("k", "j", "h", "l", "c", "space")
