@@ -16,3 +16,5 @@ posts/trash/draft.mjs
 posts/trash/sleep.mjs
 posts/trash/draft.md
 posts/trash/draft.html
+
+draft/*.*

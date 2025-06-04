@@ -1,5 +1,5 @@
 {
-  "name": "ti.bi",
+  "name": "blog",
   "type": "module",
   "version": "1.0.0",
   "description": "",
@@ -14,7 +14,7 @@
     "preview": "cross-env NODE_ENV=production vitepress preview",
     "lint": "eslint posts",
     "lint:fix": "eslint posts --fix",
-    "test": "node ./posts/trash/draft.mjs"
+    "test": "node ./draft/draft.mjs"
   },
   "dependencies": {
     "lodash-es": "^4.17.21"
