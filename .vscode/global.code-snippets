@@ -7,6 +7,14 @@
     ],
     "description": "Import a module"
   },
+  "Console Log Template": {
+    "scope": "javascript,typescript,vue",
+    "prefix": "log",
+    "body": [
+      "console.log('$1', $1);"
+    ],
+    "description": "Log variable with name and value"
+  },
   "export-all": {
     "scope": "javascript,typescript",
     "prefix": "ex",
