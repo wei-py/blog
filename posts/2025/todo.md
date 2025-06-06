@@ -42,3 +42,5 @@ npm、yarn、pnpm 区别
 ## todo
 
 - 使用 setTimeout 实现 setInterval
+
+- 买 999 来
