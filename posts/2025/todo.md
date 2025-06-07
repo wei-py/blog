@@ -43,4 +43,5 @@ npm、yarn、pnpm 区别
 
 - 使用 setTimeout 实现 setInterval
 
-- 买 999 来
+- homerow use => capslock + cmd
+
