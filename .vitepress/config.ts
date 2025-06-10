@@ -1,6 +1,8 @@
+import { globby } from "globby";
 import AutoNav from "vite-plugin-vitepress-auto-nav";
 import { defineConfig } from "vitepress";
-import { getPosts } from "./theme/serverUtils";
+
+import { getFolder, getPosts } from "./theme/serverUtils";
 
 // 每页的文章数量
 const pageSize = 10;
@@ -27,10 +29,10 @@ export default defineConfig({
       issueTerm: "pathname",
     },
     nav: [
-      { text: "首页", link: "/" },
-      { text: "分类", link: "/pages/category" },
-      { text: "归档", link: "/pages/archives" },
-      { text: "标签", link: "/pages/tags" },
+      { text: "首页", link: "/", collapsed: true },
+      { text: "分类", link: "/pages/category", collapsed: true },
+      { text: "归档", link: "/pages/archives", collapsed: true },
+      { text: "标签", link: "/pages/tags", collapsed: true },
       // { text: 'About', link: '/pages/about' }
       // { text: 'Airene', link: 'http://airene.net' }  -- External link test
     ],
@@ -56,7 +58,11 @@ export default defineConfig({
   vite: {
     // build: { minify: false }
     server: { port: 5000 },
-    plugins: [AutoNav() as any],
+    plugins: [AutoNav({
+      itemsSetting: {
+        ...(await getFolder()),
+      },
+    }) as any],
   },
   /*
       optimizeDeps: {
