@@ -291,29 +291,6 @@ end
 
 ------------------ capslock ⬆️ ------------------
 
--- 定义切换到当前应用其他窗口的功能
-bindF13Key("r", function()
-    -- if allWindowsFilter:isWindowAllowed(hs.window.focusedWindow()) then
-    local frontApp = hs.application.frontmostApplication()
-    local windows = frontApp:allWindows()
-    local currentWindow = hs.window.focusedWindow()
-    local currentIndex = nil
-    for i, window in ipairs(windows) do
-        if window == currentWindow then
-            currentIndex = i
-            break
-        end
-    end
-    if currentIndex then
-        local nextIndex = currentIndex + 1
-        if nextIndex > #windows then
-            nextIndex = 1
-        end
-        windows[nextIndex]:focus()
-    end
-    -- end
-end)
-
 ------------------ cmd ⬇️ ------------------
 local function bindCMDKey(key, fn)
     hs.hotkey.bind({ "cmd" }, key, function()
@@ -484,10 +461,10 @@ end
 -- 将 CapsLock 键映射为 F13 键
 remapCapsLockToF13()
 
-bindF13Key("i", function() launchApp("/Applications/Arc.app") end)
-bindF13Key("o", function() launchApp("/Applications/Trae.app") end)
-bindF13Key("u", function() launchApp("/Applications/ziniaobrowser.app") end)
-bindF13Key("y", function() launchApp("/Applications/Obsidian.app") end)
+bindF13Key("i", function() launchApp("/Applications/Zen Browser.app") end)
+bindF13Key("o", function() launchApp("/Applications/Visual Studio Code.app") end)
+-- bindF13Key("u", function() launchApp("/Applications/.app") end)
+-- bindF13Key("y", function() launchApp("/Applications/Obsidian.app") end)
 bindF13Key("m", function() launchApp("/Applications/NeteaseMusic.app") end)
 bindF13Key("b", function() launchApp("/Applications/WeChat.app") end)
 bindF13Key("n", function() launchApp("/Applications/Warp.app") end)
@@ -497,6 +474,7 @@ bindF13Key("h", function() sendKey({}, "left") end, true)
 bindF13Key("j", function() sendKey({}, "down") end, true)
 bindF13Key("k", function() sendKey({}, "up") end, true)
 bindF13Key("l", function() sendKey({}, "right") end, true)
+bindF13Key("r", function() sendKey({ "cmd" }, "`") end, true)
 
 -- 切换标签页
 bindF13Key("1", prevTab)
