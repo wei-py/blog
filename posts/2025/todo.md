@@ -12,7 +12,7 @@ tags:
 
 ### 颜色默认配置
 
-body 默认有margin:0
+body 默认有 margin: 0
 
 ## vue
 
