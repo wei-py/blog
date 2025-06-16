@@ -8,6 +8,7 @@ tags:
 ---
 
 ## 单调栈 题型
+
 ```js
 stack = [];
 for i {
