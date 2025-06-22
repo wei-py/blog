@@ -8,6 +8,15 @@ tags:
 
 # Todo
 
+// 图片轮播
+// setTimeout => setInterval
+// throttle debounce
+// promise
+// vue 指令
+// JSONP
+// 中断请求
+// git
+
 ## todo
 
 - https://www.bilibili.com/video/BV1Rk7gzLEum/?vd_source=0e4a6629d1d6bf13e3ce8bce47442ac8
