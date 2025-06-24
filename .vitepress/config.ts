@@ -1,4 +1,3 @@
-import { globby } from "globby";
 import AutoNav from "vite-plugin-vitepress-auto-nav";
 import { defineConfig } from "vitepress";
 
@@ -19,7 +18,7 @@ export default defineConfig({
   description: "vitepress,blog,blog-theme",
   ignoreDeadLinks: true,
   themeConfig: {
-    // eslint-disable-next-line antfu/no-top-level-await
+
     posts: await getPosts(pageSize),
     website: "https://github.com/airene/vitepress-blog-pure", // copyright link
     // 评论的仓库地址

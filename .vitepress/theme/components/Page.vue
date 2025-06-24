@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import type { PropType } from 'vue'
-import { withBase } from 'vitepress'
+import type { PropType } from "vue";
+import { withBase } from "vitepress";
 
 defineProps({
   posts: {
@@ -15,16 +15,16 @@ defineProps({
     type: Number as PropType<number>,
     required: true,
   },
-})
+});
 
 interface Article {
-  regularPath: string
+  regularPath: string;
   frontMatter: {
-    title: string
-    description: string
-    date: string
-    tags: string[]
-  }
+    title: string;
+    description: string;
+    date: string;
+    tags: string[];
+  };
 }
 </script>
 

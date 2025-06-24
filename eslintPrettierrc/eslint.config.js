@@ -1,12 +1,12 @@
-import eslintJs from '@eslint/js'
-import eslintConfigPrettier from 'eslint-config-prettier'
+import eslintJs from "@eslint/js";
+import eslintConfigPrettier from "eslint-config-prettier";
 // import vueParser from "vue-eslint-parser";
 // import vuePlugin from "eslint-plugin-vue";
-import markdownPlugin from 'eslint-plugin-markdown'
-import prettierPlugin from 'eslint-plugin-prettier'
+import markdownPlugin from "eslint-plugin-markdown";
+import prettierPlugin from "eslint-plugin-prettier";
 // eslint.config.js
-import globals from 'globals'
-import prettierConfig from './.prettierrc.js'
+import globals from "globals";
+import prettierConfig from "./.prettierrc.js";
 
 export default [
   eslintJs.configs.recommended,
@@ -18,7 +18,7 @@ export default [
       prettier: prettierPlugin,
     },
     rules: {
-      'prettier/prettier': ['error', prettierConfig],
+      "prettier/prettier": ["error", prettierConfig],
     },
   },
   // {
@@ -34,7 +34,7 @@ export default [
   //   }
   // },
   {
-    files: ['*.md'],
+    files: ["*.md"],
     plugins: { markdown: markdownPlugin },
     // languageOptions:
   },
@@ -62,4 +62,4 @@ export default [
   // },
   // 解决 Prettier 与 ESLint 冲突的问题
   eslintConfigPrettier,
-]
+];

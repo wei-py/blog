@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import { useData, withBase } from 'vitepress'
-import { computed } from 'vue'
-import { useYearSort } from '../functions'
+import { useData, withBase } from "vitepress";
+import { computed } from "vue";
+import { useYearSort } from "../functions";
 
-const { theme } = useData()
-const data = computed(() => useYearSort(theme.value.posts))
+const { theme } = useData();
+const data = computed(() => useYearSort(theme.value.posts));
 </script>
 
 <template>

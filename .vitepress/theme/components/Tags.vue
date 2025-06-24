@@ -1,20 +1,20 @@
 <script lang="ts" setup>
-import { useData, withBase } from 'vitepress'
-import { computed, ref } from 'vue'
-import { initTags } from '../functions'
+import { useData, withBase } from "vitepress";
+import { computed, ref } from "vue";
+import { initTags } from "../functions";
 
-const url = location.href.split('?')[1]
-const params = new URLSearchParams(url)
-const { theme } = useData()
-const data = computed(() => initTags(theme.value.posts))
-const selectTag = ref(params.get('tag') ? params.get('tag') : '')
+const url = location.href.split("?")[1];
+const params = new URLSearchParams(url);
+const { theme } = useData();
+const data = computed(() => initTags(theme.value.posts));
+const selectTag = ref(params.get("tag") ? params.get("tag") : "");
 function toggleTag(tag: string) {
-  selectTag.value = tag
+  selectTag.value = tag;
 }
 // choose the first key
-const defaultDisplayTag = Object.keys(data.value)[0]
+const defaultDisplayTag = Object.keys(data.value)[0];
 if (defaultDisplayTag) {
-  toggleTag(defaultDisplayTag)
+  toggleTag(defaultDisplayTag);
 }
 </script>
 

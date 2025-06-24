@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import { useData } from 'vitepress'
+import { useData } from "vitepress";
 
-const { site, theme } = useData()
-const website = theme.value.website
-const webTitle = site.value.title
+const { site, theme } = useData();
+const website = theme.value.website;
+const webTitle = site.value.title;
 </script>
 
 <template>

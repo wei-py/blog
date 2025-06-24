@@ -12,8 +12,8 @@
     "build": "cross-env NODE_ENV=production vitepress build",
     "cloudflare": "cross-env isFlare=true vitepress build",
     "preview": "cross-env NODE_ENV=production vitepress preview",
-    "lint": "eslint posts",
-    "lint:fix": "eslint posts --fix",
+    "lint": "eslint .",
+    "format": "eslint . --fix",
     "test": "node ./draft/draft.mjs"
   },
   "dependencies": {
