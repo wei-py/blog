@@ -54,7 +54,10 @@ vscode 有时候识别不出来, 添加 jsconfig.json
     "esModuleInterop": true,
     "skipLibCheck": true,
     "outDir": "./dist",
-    "types": ["vite/client", "vue"]
+    "types": ["vite/client", "vue"],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
   "include": [
     "auto-imports.d.ts",
