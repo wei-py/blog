@@ -115,6 +115,7 @@ pnpm i -D @vitejs/plugin-vue-jsx
 ## vite.config.js
 
 ```js
+import path from "node:path";
 import tailwindcss from "@tailwindcss/vite";
 import vue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
@@ -200,6 +201,12 @@ export default defineConfig({
     }),
     tailwindcss(),
   ],
+  resolve: {
+    alias: {
+      "@pulic": path.resolve(__dirname, "public"),
+      "@": path.resolve(__dirname, "src"),
+    },
+  },
 });
 ```
 
