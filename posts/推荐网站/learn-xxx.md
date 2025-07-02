@@ -8,3 +8,7 @@ description:
 ---
 
 https://saduck.top
+
+## mcp
+
+https://glama.ai/mcp/servers
