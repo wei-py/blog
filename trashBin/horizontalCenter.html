@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <title>水平居中示例汇总</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    h2 {
+      margin-top: 40px;
+    }
+
+    .box {
+      background-color: #f0f0f0;
+      padding: 10px;
+      border: 1px solid #ccc;
+      margin-bottom: 30px;
+    }
+
+    /* 方法 1 */
+    .method1 div {
+      width: fit-content;
+      margin: 0 auto;
+    }
+
+    /* 方法 2 */
+    .method2 div {
+      display: block;
+      width: 200px;
+      margin: 0 auto;
+    }
+
+    /* 方法 3 */
+    .method3 {
+      text-align: center;
+    }
+
+    .method3 span {
+      display: inline-block;
+    }
+
+    /* 方法 4 */
+    .method4 {
+      position: relative;
+      height: 50px;
+    }
+
+    .method4 div {
+      position: absolute;
+      left: 50%;
+      width: 100px;
+      margin-left: -50px;
+      /* width的一半 */
+    }
+
+    /* 方法 5 */
+    .method5 {
+      /* position: relative; */
+      height: 50px;
+    }
+
+    .method5 div {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      /* white-space: nowrap; */
+    }
+
+    /* 方法 6 */
+    .method6 {
+      display: flex;
+      justify-content: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>水平居中示例汇总</h1>
+
+  <!-- 方法 1 -->
+  <h2>方法 1: margin: 0 auto + width: fit-content</h2>
+  <div class="box method1">
+    <div>这是一个块级元素，宽度自适应，居中显示。</div>
+  </div>
+
+  <!-- 方法 2 -->
+  <h2>方法 2: 块级元素 + margin: 0 auto + width</h2>
+  <div class="box method2">
+    <div>
+      <img src="./bak2.ico" alt="图片示例" />
+    </div>
+  </div>
+
+  <!-- 方法 3 -->
+  <h2>方法 3: text-align:center (父容器) + inline-block</h2>
+  <div class="box method3">
+    <span>这是一个行内元素，通过 text-align 居中。</span>
+  </div>
+
+  <!-- 方法 4 -->
+  <h2>方法 4: position + left + margin-left</h2>
+  <div class="box method4">
+    <div>绝对定位 + 左偏移 + 负左外边距</div>
+  </div>
+
+  <!-- 方法 5 -->
+  <h2>方法 5: position + left + transform: translateX(-50%)</h2>
+  <div class="box method5">
+    <div>使用 transform 平移实现居中</div>
+  </div>
+
+  <!-- 方法 6 -->
+  <h2>方法 6: flex 布局 + justify-content:center</h2>
+  <div class="box method6">
+    <p>Flex 容器内部子元素自动水平居中</p>
+  </div>
+
+</body>
+
+</html>
