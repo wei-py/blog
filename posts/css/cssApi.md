@@ -10,7 +10,7 @@ tags:
 # 效果如下
 
 
-<a href="/css/cssApi">点击查看</a>
+<a href="https://blog.xu-wei.site/css/cssApi.html">点击查看</a>
 
 <!DOCTYPE html>
 <html lang="zh-CN">
