@@ -1,204 +1,57 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <title>CSS 所有常用函数示例</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
   <style>
-    :root {
-      --main-color: rgb(100, 150, 200);
-    }
-
-    body {
-      font-family: sans-serif;
-      padding: 40px;
-      background-color: #f4f4f4;
-    }
-
-    h2 {
-      margin-top: 40px;
-    }
-
-    .box {
+    .strip-loading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       width: 200px;
       height: 200px;
-      margin: 20px auto;
-      border: 2px solid #333;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      transition: all 1s ease-in-out;
-    }
 
-    /* ================== 颜色函数 ================== */
-    .color-rgb {
-      background-color: rgb(255, 99, 71);
-    }
+      li {
+        --time: calc(var(--line-index) * 200ms);
+        border-radius: 3px;
+        width: 6px;
+        height: 30px;
+        background-color: #f66;
+        animation: beat 1.5s ease-in-out var(--time) infinite;
 
-    .color-rgba {
-      background-color: rgba(255, 99, 71, 0.5);
-    }
-
-    .color-hsl {
-      background-color: hsl(210, 50%, 50%);
-    }
-
-    .color-hsla {
-      background-color: hsla(210, 50%, 50%, 0.6);
-    }
-
-    .color-color {
-      background-color: color(rgb(255, 99, 71) tint 20%);
-    }
-
-    /* ================== 属性函数 ================== */
-    [data-text]::after {
-      content: attr(data-text);
-      display: block;
-      margin-top: 10px;
-      color: red;
-    }
-
-    .use-var {
-      background-color: var(--main-color);
-    }
-
-    /* ================== 数学函数 ================== */
-    .math-calc {
-      width: calc(100% - 40px);
-    }
-
-    .math-minmax {
-      width: min(300px, 50%);
-      height: max(100px, 20vh);
-    }
-
-    .math-clamp {
-      font-size: clamp(16px, 2vw, 24px);
-    }
-
-    /* ================== 背景函数 ================== */
-    .bg-url {
-      background-image: url('https://via.placeholder.com/200 ');
-    }
-
-    .bg-gradient {
-      background-image: linear-gradient(to right, red, yellow);
-    }
-
-    .bg-radial {
-      background-image: radial-gradient(circle, blue, white);
-    }
-
-    .bg-conic {
-      background-image: conic-gradient(from 90deg, red, green, blue);
-    }
-
-    .bg-repeating {
-      background-image: repeating-linear-gradient(to bottom,
-          red,
-          red 10px,
-          yellow 10px,
-          yellow 20px);
-    }
-
-    /* ================== 滤镜函数 ================== */
-    .filter-example {
-      filter: blur(5px) brightness(1.2) contrast(1.1) saturate(1.5);
-    }
-
-    /* ================== 图像函数（clip-path）================== */
-    .clip-circle {
-      clip-path: circle(50%);
-    }
-
-    .clip-polygon {
-      clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
-    }
-
-    /* ================== 变换函数 ================== */
-    .transform-example {
-      transform: rotate(30deg) scale(1.2) translateX(20px);
-    }
-
-    /* ================== 动画缓动函数 ================== */
-    .animate {
-      animation: moveBox 2s cubic-bezier(0.1, 0.7, 1.0, 0.1) infinite alternate;
-    }
-
-    @keyframes moveBox {
-      from {
-        transform: translateX(0);
-      }
-
-      to {
-        transform: translateX(100px);
+        &+li {
+          margin-left: 5px;
+        }
       }
     }
 
-    .step-animation {
-      animation: stepAnim 2s steps(4, end) infinite;
-    }
+    @keyframes beat {
 
-    @keyframes stepAnim {
-      from {
-        background-position: 0;
+      0%,
+      100% {
+        transform: scaleY(1);
       }
 
-      to {
-        background-position: 400px;
+      50% {
+        transform: scaleY(.5);
       }
     }
   </style>
+
 </head>
 
+
 <body>
-
-  <h1>CSS 常用函数演示</h1>
-
-
-
-  <h2>颜色函数</h2>
-
-  <div class="box color-rgb">
-    rgb(255, 99, 71)
-  </div>
-  <div class="box color-rgba">rgba()</div>
-  <div class="box color-hsl">hsl()</div>
-  <div class="box color-hsla">hsla()</div>
-  <div class="box color-color">color() (实验性)</div>
-
-  <h2>属性函数</h2>
-  <div class="box use-var" data-text="这是 attr() 内容">var(), attr()</div>
-
-  <h2>数学函数</h2>
-  <div class="box math-calc">calc()</div>
-  <div class="box math-minmax">min(), max()</div>
-  <p class="math-clamp">clamp(16px, 2vw, 24px)：字体大小随视口变化</p>
-
-  <h2>背景函数</h2>
-  <div class="box bg-url">url()</div>
-  <div class="box bg-gradient">linear-gradient()</div>
-  <div class="box bg-radial">radial-gradient()</div>
-  <div class="box bg-conic">conic-gradient()</div>
-  <div class="box bg-repeating">repeating-linear-gradient()</div>
-
-  <h2>滤镜函数</h2>
-  <div class="box filter-example">blur(), brightness(), contrast(), saturate()</div>
-
-  <h2>图像函数（clip-path）</h2>
-  <div class="box clip-circle">circle()</div>
-  <div class="box clip-polygon">polygon()</div>
-
-  <h2>变换函数</h2>
-  <div class="box transform-example">rotate(), scale(), translate()</div>
-
-  <h2>缓动函数</h2>
-  <div class="box animate">cubic-bezier()</div>
-  <div class="box step-animation">steps()</div>
-
-
+  <ul class="strip-loading">
+    <li style="--line-index: 1"></li>
+    <li style="--line-index: 2"></li>
+    <li style="--line-index: 3"></li>
+    <li style="--line-index: 4"></li>
+    <li style="--line-index: 5"></li>
+    <li style="--line-index: 6"></li>
+  </ul>
 </body>
 
 </html>
