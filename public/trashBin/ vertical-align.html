@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>vertical-align 多场景演示</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      line-height: 1.6;
+    }
+
+    h2 {
+      margin-top: 40px;
+    }
+
+    /* 公共样式 */
+    .box {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      background-color: lightblue;
+      text-align: center;
+      line-height: 30px;
+      font-size: 14px;
+    }
+
+    /* 不同 vertical-align 值 */
+    .va-top {
+      vertical-align: top;
+    }
+
+    .va-middle {
+      vertical-align: middle;
+    }
+
+    .va-bottom {
+      vertical-align: bottom;
+    }
+
+    .va-text-top {
+      vertical-align: text-top;
+    }
+
+    .va-text-bottom {
+      vertical-align: text-bottom;
+    }
+
+    .va-sub {
+      vertical-align: sub;
+      font-size: smaller;
+    }
+
+    .va-super {
+      vertical-align: super;
+      font-size: smaller;
+    }
+
+    /* 表格样式 */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    td,
+    th {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+
+    .cell-img {
+      width: 50px;
+      height: 50px;
+      background-color: lightcoral;
+      display: inline-block;
+    }
+
+    .table-top {
+      vertical-align: top;
+    }
+
+    .table-middle {
+      vertical-align: middle;
+    }
+
+    .table-bottom {
+      vertical-align: bottom;
+    }
+
+    /* 按钮示例 */
+    .btn {
+      display: inline-block;
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      background-color: #f9f9f9;
+      margin-right: 10px;
+      font-size: 16px;
+    }
+
+    .btn-icon {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background-color: lightgreen;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+
+    /* 文字混排表情 */
+    .emoji {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      background-color: yellow;
+      border-radius: 50%;
+      vertical-align: text-bottom;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>vertical-align 多场景演示</h1>
+
+  <!-- 场景 1：图标与文字垂直居中 -->
+  <h2>1. 图标与文字垂直居中（middle）</h2>
+  <div>
+    <span class="btn">
+      <span class="btn-icon"></span>保存
+    </span>
+    <span class="btn">
+      <span class="btn-icon va-top"></span>顶部对齐
+    </span>
+    <span class="btn">
+      <span class="btn-icon va-bottom"></span>底部对齐
+    </span>
+  </div>
+
+  <!-- 场景 2：表情符号与文字对齐 -->
+  <h2>2. 表情与文字对齐（text-bottom）</h2>
+  <p>
+    今天天气真好 😊 我们去公园玩吧！
+    <span class="emoji"></span>
+  </p>
+
+  <!-- 场景 3：下标（sub） -->
+  <h2>3. 下标（sub）</h2>
+  <p>H<sub class="va-sub">2</sub>O 是水的化学式。</p>
+
+  <!-- 场景 4：上标（super） -->
+  <h2>4. 上标（super）</h2>
+  <p>面积是 100 米<sup class="va-super">2</sup>。</p>
+
+  <!-- 场景 5：行内块元素不同对齐方式 -->
+  <h2>5. 行内块元素不同对齐方式</h2>
+  <p>
+    默认：
+    <span class="box">A</span>
+    top：
+    <span class="box va-top">B</span>
+    middle：
+    <span class="box va-middle">C</span>
+    bottom：
+    <span class="box va-bottom">D</span>
+    text-top：
+    <span class="box va-text-top">E</span>
+    text-bottom：
+    <span class="box va-text-bottom">F</span>
+  </p>
+
+  <!-- 场景 6：表格单元格内容对齐 -->
+  <h2>6. 表格中的 vertical-align</h2>
+  <table>
+    <tr>
+      <th>位置</th>
+      <th>图片</th>
+      <th>描述</th>
+    </tr>
+    <tr>
+      <td>top</td>
+      <td class="table-top"><span class="cell-img"></span></td>
+      <td class="table-top">顶部对齐<br>多行文本</td>
+    </tr>
+    <tr>
+      <td>middle</td>
+      <td class="table-middle"><span class="cell-img"></span></td>
+      <td class="table-middle">居中对齐<br>多行文本</td>
+    </tr>
+    <tr>
+      <td>bottom</td>
+      <td class="table-bottom"><span class="cell-img"></span></td>
+      <td class="table-bottom">底部对齐<br>多行文本</td>
+    </tr>
+  </table>
+
+</body>
+
+</html>

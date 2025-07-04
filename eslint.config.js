@@ -3,6 +3,7 @@ import antfu from "@antfu/eslint-config";
 export default antfu({
   formatters: {
     markdown: true,
+    // css: pre,
   },
   vue: true,
   markdown: false,

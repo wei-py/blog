@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>CSS 所有函数详解 + 效果展示</title>
+  <style>
+    :root {
+      --main-color: rgb(100, 150, 200);
+    }
+
+    body {
+      font-family: sans-serif;
+      padding: 40px;
+      background-color: #f4f4f4;
+    }
+
+    h2 {
+      margin-top: 60px;
+    }
+
+    .box {
+      width: 300px;
+      height: auto;
+      min-height: 80px;
+      margin: 20px auto;
+      border: 2px solid #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 10px;
+      box-sizing: border-box;
+      transition: all 1s ease-in-out;
+      background-color: white;
+      position: relative;
+    }
+
+    .box pre {
+      margin: 0;
+      font-size: 14px;
+      color: #333;
+      line-height: 1.4;
+      text-align: left;
+      background: #f9f9f9;
+      padding: 10px;
+      border-radius: 4px;
+      overflow-x: auto;
+      width: 100%;
+    }
+
+    .example-area {
+      width: 100%;
+      height: 80px;
+      margin-top: 10px;
+      background-color: #eee;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: bold;
+      color: white;
+      overflow: hidden;
+    }
+
+    /* 颜色函数示例 */
+    .color-rgb {
+      background-color: rgb(255, 99, 71);
+    }
+
+    .color-rgba {
+      background-color: rgba(255, 99, 71, 0.5);
+    }
+
+    .color-hsl {
+      background-color: hsl(210, 50%, 50%);
+    }
+
+    .color-hsla {
+      background-color: hsla(210, 50%, 50%, 0.6);
+    }
+
+    .color-color {
+      background-color: color(rgb(255, 99, 71) tint 20%);
+    }
+
+    /* 背景函数示例 */
+    .bg-url {
+      background-image: url('https://via.placeholder.com/300x80 ');
+      background-size: cover;
+    }
+
+    .bg-gradient {
+      background-image: linear-gradient(to right, red, yellow);
+    }
+
+    .bg-radial {
+      background-image: radial-gradient(circle, blue, white);
+    }
+
+    .bg-conic {
+      background-image: conic-gradient(from 90deg, red, green, blue);
+    }
+
+    /* 滤镜函数示例 */
+    .filter-blur {
+      filter: blur(5px);
+    }
+
+    .filter-brightness {
+      filter: brightness(1.2);
+    }
+
+    .filter-contrast {
+      filter: contrast(1.1);
+    }
+
+    /* clip-path 示例 */
+    .clip-circle {
+      clip-path: circle(50%);
+    }
+
+    .clip-polygon {
+      clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+    }
+
+    /* transform 示例 */
+    .transform-example {
+      transform: rotate(30deg) scale(0.8);
+      background-color: #333;
+      color: white;
+    }
+
+    /* 动画缓动函数无法直接展示，需配合动画 */
+  </style>
+</head>
+
+<body>
+
+  <h1>CSS 所有函数详解 + 效果展示</h1>
+
+  <!-- 颜色函数 -->
+  <h2>🎨 颜色函数</h2>
+
+  <div class="box">
+    <strong>rgb()</strong>
+    <pre>
+函数：rgb(R, G, B)
+示例：rgb(255, 99, 71)
+说明：红绿蓝三色值（0~255）
+    </pre>
+    <div class="example-area color-rgb">rgb(255, 99, 71)</div>
+  </div>
+
+  <div class="box">
+    <strong>rgba()</strong>
+    <pre>
+函数：rgba(R, G, B, A)
+示例：rgba(255, 99, 71, 0.5)
+说明：带透明度的 RGB 颜色
+    </pre>
+    <div class="example-area color-rgba">rgba(255, 99, 71, 0.5)</div>
+  </div>
+
+  <div class="box">
+    <strong>hsl()</strong>
+    <pre>
+函数：hsl(H, S%, L%)
+示例：hsl(210, 50%, 50%)
+说明：基于色相、饱和度、亮度的颜色表示
+    </pre>
+    <div class="example-area color-hsl">hsl(210, 50%, 50%)</div>
+  </div>
+
+  <div class="box">
+    <strong>hsla()</strong>
+    <pre>
+函数：hsla(H, S%, L%, A)
+示例：hsla(210, 50%, 50%, 0.6)
+说明：带透明度的 HSL 颜色
+    </pre>
+    <div class="example-area color-hsla">hsla(210, 50%, 50%, 0.6)</div>
+  </div>
+
+  <div class="box">
+    <strong>color()</strong>
+    <pre>
+函数：color(颜色 操作 值)
+示例：color(rgb(255, 99, 71) tint 20%)
+说明：实验性功能，用于派生颜色
+    </pre>
+    <div class="example-area color-color">color(...)（可能不显示）</div>
+  </div>
+
+  <!-- 背景与图像函数 -->
+  <h2>🖼️ 背景与图像函数</h2>
+
+  <div class="box">
+    <strong>url()</strong>
+    <pre>
+函数：url(路径)
+示例：background-image: url('image.png')
+说明：加载本地或远程图片资源
+    </pre>
+    <div class="example-area bg-url"></div>
+  </div>
+
+  <div class="box">
+    <strong>linear-gradient()</strong>
+    <pre>
+函数：linear-gradient(方向, 颜色停止点...)
+示例：linear-gradient(to right, red, yellow)
+说明：线性渐变背景
+    </pre>
+    <div class="example-area bg-gradient">linear-gradient()</div>
+  </div>
+
+  <div class="box">
+    <strong>radial-gradient()</strong>
+    <pre>
+函数：radial-gradient(类型/位置, 颜色停止点...)
+示例：radial-gradient(circle, blue, white)
+说明：径向渐变背景
+    </pre>
+    <div class="example-area bg-radial">radial-gradient()</div>
+  </div>
+
+  <div class="box">
+    <strong>conic-gradient()</strong>
+    <pre>
+函数：conic-gradient(起始角, 中心点, 颜色停止点...)
+示例：conic-gradient(from 90deg, red, green, blue)
+说明：锥形渐变背景
+    </pre>
+    <div class="example-area bg-conic">conic-gradient()</div>
+  </div>
+
+  <!-- 滤镜函数 -->
+  <h2>🎞️ 滤镜函数</h2>
+
+  <div class="box">
+    <strong>blur()</strong>
+    <pre>
+函数：blur(半径)
+示例：filter: blur(5px)
+说明：模糊效果
+    </pre>
+    <div class="example-area filter-blur">blur(5px)</div>
+  </div>
+
+  <div class="box">
+    <strong>brightness()</strong>
+    <pre>
+函数：brightness(倍数)
+示例：filter: brightness(1.2)
+说明：增加亮度
+    </pre>
+    <div class="example-area filter-brightness">brightness(1.2)</div>
+  </div>
+
+  <div class="box">
+    <strong>contrast()</strong>
+    <pre>
+函数：contrast(倍数)
+示例：filter: contrast(1.1)
+说明：调整对比度
+    </pre>
+    <div class="example-area filter-contrast">contrast(1.1)</div>
+  </div>
+
+  <!-- 图像裁剪函数 -->
+  <h2>📐 图像裁剪函数</h2>
+
+  <div class="box">
+    <strong>circle()</strong>
+    <pre>
+函数：circle(半径 at 位置)
+示例：clip-path: circle(50%)
+说明：圆形裁剪
+    </pre>
+    <div class="example-area clip-circle bg-gradient">circle()</div>
+  </div>
+
+  <div class="box">
+    <strong>polygon()</strong>
+    <pre>
+函数：polygon(坐标点列表)
+示例：clip-path: polygon(50% 0%, 100% 100%, 0% 100%)
+说明：多边形裁剪
+    </pre>
+    <div class="example-area clip-polygon bg-gradient">polygon()</div>
+  </div>
+
+  <!-- 变换函数 -->
+  <h2>🔄 变换函数</h2>
+
+  <div class="box">
+    <strong>rotate() + scale()</strong>
+    <pre>
+函数：rotate(角度), scale(比例)
+示例：transform: rotate(30deg) scale(0.8)
+说明：旋转缩放元素
+    </pre>
+    <div class="example-area transform-example">rotate + scale</div>
+  </div>
+
+  <!-- 缓动函数 -->
+  <h2>⏱️ 动画缓动函数</h2>
+
+  <p style="text-align:center;">缓动函数需要配合动画使用，不能直接展示。</p>
+
+</body>
+
+</html>
