@@ -24,3 +24,7 @@ tags:
 - http://127.0.0.1:8080/%E6%8E%98%E9%87%91%E5%B0%8F%E5%86%8C/React%E9%80%9A%E5%85%B3%E7%A7%98%E7%B1%8D(%E6%9C%80%E6%96%B0/
 
 - js arr object proxy
+
+## ai video
+
+CogVideoX-5B

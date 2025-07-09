@@ -7,6 +7,18 @@ tags:
   - vue vite
 ---
 
+## node-module
+
+```shell
+pnpm add -D tailwindcss @tailwindcss/vite unplugin-auto-import eslint @antfu/eslint-config @vitejs/plugin-vue-jsx
+pnpm add -D sass-embedded sass
+
+pnpm add lodash-es dayjs vant
+
+pnpm dlx @antfu/eslint-config@latest
+npx @eslint/config-inspector
+```
+
 ## utils
 
 ```shell
