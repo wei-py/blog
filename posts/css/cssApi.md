@@ -9,8 +9,58 @@ tags:
 
 # 效果如下
 
-
 <a target="_blank" href="https://blog.xu-wei.site/css/cssApi.html">点击查看</a>
+
+1. 颜色函数
+
+- rbg
+- rbga
+- hsl
+- hsla
+- color
+
+2. 属性函数
+
+- var
+- attr
+
+3. 数学函数
+
+- calc
+- min
+- max
+- clamp
+
+4. 背景函数
+
+- url
+- linear-gradient
+- radial-gradient
+- conic-gradient
+- repeating-linear-gradient
+
+5. 滤镜函数
+
+- blur
+- brightness
+- contrast
+- saturate
+
+6. 图像裁剪函数
+
+- polygon
+- circle
+
+7. 变换函数
+
+- rotate
+- scale
+- translate
+
+8. 动画缓动函数
+
+- cubic-bezier
+- steps
 
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -184,6 +234,7 @@ tags:
         background-position: 400px;
       }
     }
+
   </style>
 </head>
 
