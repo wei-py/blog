@@ -38,4 +38,4 @@ description:
 
 ## 视频解析
 
-> https://vget.xyz/about/
+> https://vget.xyz/
