@@ -233,3 +233,8 @@ type AllCombinations<A extends string, B extends string = A> = A extends A
   ? Combination<A, AllCombinations<Exclude<B, A>>>
   : never;
 ```
+
+- **never**代表不可达，比如函数抛异常的时候，返回值就是 never。
+- **void**代表空，可以是 undefined 或 never。
+- **any**是任意类型，任何类型都可以赋值给它，它也可以赋值给任何类型（除了 never）。
+- **unknown**是未知类型，任何类型都可以赋值给它，但是它不可以赋值给别的类型。
