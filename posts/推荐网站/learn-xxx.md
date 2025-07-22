@@ -16,3 +16,19 @@ https://glama.ai/mcp/servers
 ## vvv
 
 https://github.com/yonggekkk/Cloudflare_vless_trojan
+
+### react
+
+- https://message163.github.io/react-docs/
+
+### js
+
+- https://zh.javascript.info/
+
+### mdn
+
+- https://developer.mozilla.org/en-US/
+
+### leecode-master
+
+- https://gitee.com/programmercarl/leetcode-master#
