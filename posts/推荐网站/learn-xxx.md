@@ -32,3 +32,7 @@ https://github.com/yonggekkk/Cloudflare_vless_trojan
 ### leecode-master
 
 - https://gitee.com/programmercarl/leetcode-master#
+
+### hack59
+
+- https://epomaker.com/blogs/manuals/epomaker-hack59-manual?_pos=2&_sid=b949fa2db&_ss=r
