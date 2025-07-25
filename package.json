@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "@dhlx/vitepress-plugin-mindmap": "^0.0.4",
+    "@movk-repo/vitepress-plugin-auto-nav-sidebar": "^1.0.4",
     "lodash-es": "^4.17.21"
   },
   "devDependencies": {
