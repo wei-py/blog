@@ -35,6 +35,7 @@
     "gray-matter": "^4.0.3",
     "h5pack": "^0.0.6",
     "lxgw-wenkai-webfont": "^1.7.0",
+    "markmap-lib": "^0.18.12",
     "typescript": "^5.8.3",
     "vite": "^6.3.5",
     "vite-plugin-vitepress-auto-nav": "^3.0.0",
