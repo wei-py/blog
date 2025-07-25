@@ -1,5 +1,7 @@
 import AutoNav from "vite-plugin-vitepress-auto-nav";
 import { defineConfig } from "vitepress";
+import withMindMap from '@dhlx/vitepress-plugin-mindmap'
+
 
 import { getFolder, getPosts } from "./theme/serverUtils";
 
@@ -9,7 +11,7 @@ const pageSize = 10;
 // const isCloudflare = process.env.isFlare === "true";
 const isProd = true;
 
-export default defineConfig({
+export default withMindMap(defineConfig({
   title: "wei",
   // base: isCloudflare ? "/" : "/blog/",
   base: "/",
@@ -68,4 +70,4 @@ export default defineConfig({
           keepNames: true
       }
       */
-});
+}));
