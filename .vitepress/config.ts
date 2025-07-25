@@ -1,5 +1,5 @@
 import AutoNav from "vite-plugin-vitepress-auto-nav";
-import VitePressPluginAutoNavSidebar from '@movk-repo/vitepress-plugin-auto-nav-sidebar'
+// import VitePressPluginAutoNavSidebar from '@movk-repo/vitepress-plugin-auto-nav-sidebar'
 import { defineConfig } from "vitepress";
 import withMindMap from '@dhlx/vitepress-plugin-mindmap'
 
@@ -71,9 +71,7 @@ export default withMindMap(defineConfig({
       // }) as any,
     ],
   },
-  /*
-      optimizeDeps: {
-          keepNames: true
-      }
-      */
+  // optimizeDeps: {
+  //   keepNames: true
+  // }
 }));
