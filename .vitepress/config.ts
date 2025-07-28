@@ -1,8 +1,7 @@
+import withMindMap from "@dhlx/vitepress-plugin-mindmap";
 import AutoNav from "vite-plugin-vitepress-auto-nav";
 // import VitePressPluginAutoNavSidebar from '@movk-repo/vitepress-plugin-auto-nav-sidebar'
 import { defineConfig } from "vitepress";
-import withMindMap from '@dhlx/vitepress-plugin-mindmap'
-
 
 import { getFolder, getPosts } from "./theme/serverUtils";
 
@@ -50,12 +49,7 @@ export default withMindMap(defineConfig({
   } as any,
 
   srcExclude: isProd
-    ? [
-      "**/trash/**/*.md", // 排除所有 trash 目录
-      "**/draft/**/*.md", // 递归排除子目录
-      "**/private-notes/*.md", // 排除特定文件
-      "README.md",
-    ]
+    ? ["**/trash/**/*.md", "**/draft/**/*.md", "**/private-notes/*.md", "README.md"]
     : ["README.md"],
   vite: {
     // build: { minify: false }

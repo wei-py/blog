@@ -16,6 +16,24 @@ https://docs.trae.ai/ide/manage-extensions
 
 https://marketplace.visualstudio.com/_apis/public/gallery/publishers/${itemName.fieldA}/vsextensions/${itemName.fieldB}/${version}/vspackage
 
+```js
+const url = "https://marketplace.visualstudio.com/items?itemName=BrandonKirbyson.vscode-animations";
+const version = "2.0.7";
+
+// 从 URL 中提取 itemName
+const itemName = new URL(url).searchParams.get("itemName");
+console.log(itemName); // BrandonKirbyson.vscode-animations
+
+// 将 itemName 分解为 publisher 和 extension name
+const [fieldA, fieldB] = itemName.split(".");
+console.log(fieldA); // BrandonKirbyson
+console.log(fieldB); // vscode-animations
+
+// 构造 API URL
+const apiUrl = `https://marketplace.visualstudio.com/_apis/public/gallery/publishers/${fieldA}/vsextensions/${fieldB}/${version}/vspackage`;
+console.log(apiUrl);
+```
+
 ## github 主题插件
 
 https://marketplace.visualstudio.com/items?itemName=Hyzeta.vscode-theme-github-light

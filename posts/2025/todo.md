@@ -28,3 +28,8 @@ tags:
 ## ai video
 
 CogVideoX-5B
+
+## 07-28
+
+- 🧻
+- ⌨️
