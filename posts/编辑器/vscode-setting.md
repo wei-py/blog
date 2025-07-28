@@ -11,43 +11,51 @@ description: vscode 配置
 
 ```json
 {
-  // VSCode 外观设置
-  // 插件市场
-  // "application.extensionMarketUrl": "https://marketplace.visualstudio.com/",
-  // 主题相关
-  "workbench.colorTheme": "Vim Dark Hard",
-  "workbench.iconTheme": "pcode-icon-theme-dark-no-folder",
-  "workbench.navigationControl.enabled": false,
-  "workbench.layoutControl.enabled": false,
-  "workbench.activityBar.location": "top",
-  "window.commandCenter": false,
-  "window.menuBarVisibility": "compact",
-
-  // 编辑器外观
-  "editor.fontFamily": "FiraCode Nerd Font, 霞鹜文楷",
-  "editor.fontSize": 17,
-  "editor.lineNumbers": "relative",
-  "editor.tabSize": 2,
-  "editor.fontWeight": "450",
+  "//": "VSCode 外观设置",
+  "chat.commandCenter.enabled": false,
+  "editor.accessibilitySupport": "on",
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.cursorSurroundingLines": 50,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.diffEditor.ignoreTrimWhitespace": true,
+  "editor.fontFamily": "FiraCode Nerd Font, 霞鹜文楷",
   "editor.fontLigatures": true,
-  "editor.accessibilitySupport": "on",
-  "editor.formatOnSave": true,
+  "editor.fontSize": 17,
+  "editor.fontWeight": "400",
   "editor.inlineSuggest.enabled": false,
-  "chat.commandCenter.enabled": false,
-
-  // 终端外观
-  "terminal.integrated.fontFamily": "FiraCode Nerd Font",
+  "editor.lineHeight": 1.3,
+  "editor.lineNumbers": "relative",
+  // "editor.minimap.size": "fit",
+  "editor.smoothScrolling": true,
+  "editor.tabSize": 2,
+  "editor.minimap.side": "left",
+  "//": "终端设置",
   "terminal.integrated.defaultProfile.windows": "Git Bash",
-  "javascript.updateImportsOnFileMove.enabled": "always",
+  "terminal.integrated.fontFamily": "FiraCode Nerd Font",
+  "terminal.integrated.smoothScrolling": true,
+  "//": "工作区设置",
   "security.workspace.trust.untrustedFiles": "open",
+  "window.commandCenter": false,
+  "window.density.editorTabHeight": "default",
+  "window.titleBarStyle": "custom",
+  "workbench.activityBar.location": "bottom",
+  "workbench.colorTheme": "Laravel Extra - Github",
+  "workbench.editor.tabSizingFixedMaxWidth": 80,
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.layoutControl.enabled": false,
+  "workbench.list.smoothScrolling": true,
+  "workbench.fontAliasing": "default",
+  "workbench.navigationControl.enabled": false,
+  "workbench.sideBar.location": "left",
+  "workbench.statusBar.visible": true,
+  "workbench.productIconTheme": "jetbrains-product-icon-theme",
+  "//": "AI 工具设置",
+  "AI.toolcall.confirmMode": "autoRun",
+  "//": "语言与翻译设置",
   "Lingma.DisplayLanguage": "简体中文",
   "Lingma.PreferredLanguage for AI Chat": "简体中文",
   "Lingma.PreferredLanguage forCommitMessage": "简体中文",
-
-  // 代码格式化设置
-  // prettier.eslintIntegration 已弃用，请使用 prettier-eslint 扩展或在 .prettierrc 中配置
+  "//": "ESLint 设置",
   "eslint.validate": [
     "javascript",
     "javascriptreact",
@@ -57,8 +65,20 @@ description: vscode 配置
     "vue",
     "html"
   ],
-  "[vue]": {
-    // "editor.defaultFormatter": "Vue.volar",
+  "//": "代码格式化设置 - Prettier 默认格式化器",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescript]": {
@@ -67,40 +87,44 @@ description: vscode 配置
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[jsonc]": {
+  "[vue]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[json]": {
+  "[markdown]": {
+    "diffEditor.ignoreTrimWhitespace": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[html]": {
+  "[scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[javascript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
-  },
-  "[javascriptreact]": {
+  "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "AI.toolcall.confirmMode": "autoRun",
-
-  // Vim 设置
-  "vim.incsearch": true,
-  "vim.useSystemClipboard": true,
-  "vim.useCtrlKeys": true,
-  "vim.sneak": false,
-  "vim.hlsearch": true,
+  "//": "Vim 插件设置",
   "vim.easymotion": true,
-  "vim.leader": "<space>",
-  "vim.surround": true,
   "vim.easymotionJumpToAnywhereRegex": "\\b[A-Za-z0-9]|[A-Za-z0-9]\\b|_.|#.|[a-z][A-Z]",
   "vim.foldfix": true,
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-b>": false,
+    "<C-c>": false,
+    "<C-d>": false,
+    "<C-f>": false,
+    "<C-j>": false,
+    "<C-k>": false,
+    "<C-p>": false,
+    "<C-v>": false,
+    "<C-z>": false
+  },
+  "vim.hlsearch": true,
+  "vim.incsearch": true,
   "vim.insertModeKeyBindings": [
     {
       "before": ["j", "k"],
       "after": ["<Esc>"]
     }
   ],
+  "vim.leader": ";",
   "vim.normalModeKeyBindings": [
     {
       "before": ["<leader>", "m"],
@@ -137,6 +161,10 @@ description: vscode 配置
       "after": ["f"]
     }
   ],
+  "vim.sneak": false,
+  "vim.surround": true,
+  "vim.useCtrlKeys": true,
+  "vim.useSystemClipboard": true,
   "vim.visualModeKeyBindingsNonRecursive": [
     {
       "before": ["H"],
@@ -153,26 +181,24 @@ description: vscode 配置
     {
       "before": ["j", "k"],
       "after": ["<Esc>"]
+    },
+    {
+      "before": ["c", "r", "s"],
+      "commands": ["editor.action.transformToSnakecase"]
+    },
+    {
+      "before": ["c", "r", "c"],
+      "commands": ["editor.action.transformToCamelcase"]
+    },
+    {
+      "before": ["c", "r", "m"],
+      "commands": ["editor.action.transformToKebabcase"]
     }
   ],
-  "vim.handleKeys": {
-    "<C-a>": false,
-    "<C-f>": false,
-    "<C-c>": false,
-    "<C-v>": false,
-    "<C-p>": false,
-    "<C-b>": false,
-    "<C-k>": false,
-    "<C-z>": false,
-    "<C-j>": false,
-    "<C-d>": false
-  },
-
-  // updated 2025-05-04 06:26
-  // https://github.com/antfu/vscode-file-nesting-config
+  "//": "文件嵌套配置（File Nesting）",
+  "explorer.compactFolders": false,
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
-  "explorer.compactFolders": false,
   "explorer.fileNesting.patterns": {
     ".clang-tidy": ".clang-format, .clangd, compile_commands.json",
     ".env": "*.env, .env.*, .envrc, env.d.ts",
@@ -203,7 +229,7 @@ description: vscode 配置
     "Makefile": "*.mk",
     "mix.exs": ".credo.exs, .dialyzer_ignore.exs, .formatter.exs, .iex.exs, .tool-versions, mix.lock",
     "next.config.*": "*.env, .babelrc*, .codecov, .cssnanorc*, .env.*, .envrc, .htmlnanorc*, .lighthouserc.*, .mocha*, .postcssrc*, .terserrc*, api-extractor.json, ava.config.*, babel.config.*, capacitor.config.*, content.config.*, contentlayer.config.*, cssnano.config.*, cypress.*, env.d.ts, formkit.config.*, formulate.config.*, histoire.config.*, htmlnanorc.*, i18n.config.*, ionic.config.*, jasmine.*, jest.config.*, jsconfig.*, karma*, lighthouserc.*, next-env.d.ts, next-i18next.config.*, panda.config.*, playwright.config.*, postcss.config.*, puppeteer.config.*, react-router.config.*, rspack.config.*, sst.config.*, svgo.config.*, tailwind.config.*, tsconfig.*, tsdoc.*, uno.config.*, unocss.config.*, vitest.config.*, vuetify.config.*, webpack.config.*, windi.config.*",
-    "nuxt.config.*": "*.env, .babelrc*, .codecov, .cssnanorc*, .env.*, .envrc, .htmlnanorc*, .lighthouserc.*, .mocha*, .nuxtignore, .nuxtrc, .postcssrc*, .terserrc*, api-extractor.json, ava.config.*, babel.config.*, capacitor.config.*, content.config.*, contentlayer.config.*, cssnano.config.*, cypress.*, env.d.ts, formkit.config.*, formulate.config.*, histoire.config.*, htmlnanorc.*, i18n.config.*, ionic.config.*, jasmine.*, jest.config.*, jsconfig.*, karma*, lighthouserc.*, panda.config.*, playwright.config.*, postcss.config.*, puppeteer.config.*, react-router.config.*, rspack.config.*, sst.config.*, svgo.config.*, tailwind.config.*, tsconfig.*, tsdoc.*, uno.config.*, unocss.config.*, vitest.config.*, vuetify.config.*, webpack.config.*, windi.config.*",
+    "nuxt.config.*": "*.env, .babelrc*, .codecov, .cssnanorc*, .env.*, .envrc, .htmlnanorc*, .lighthouserc.*, .mocha*, .nuxtignore, .nuxtrc, .postcssrc*, .terserrc*, api-extractor.json, ava.config.*, babel.config.*, capacitor.config.*, content.config.*, contentlayer.config.*, cssnano.config.*, cypress.*, env.d.ts, formkit.config.*, formulate.config.*, histoire.config.*, htmlnanorc.*, i18n.config.*, ionic.config.*, jasmine.*, jest.config.*, jsconfig.*, karma*, lighthouserc.*, panda.config.*, playwright.config.*, postcss.config.*, puppeteer.config.*, quasar.extensions.json, react-router.config.*, rspack.config.*, sst.config.*, svgo.config.*, tailwind.config.*, tsconfig.*, tsdoc.*, uno.config.*, unocss.config.*, vitest.config.*, vuetify.config.*, webpack.config.*, windi.config.*",
     "package.json": "*.code-workspace, .browserslist*, .circleci*, .commitlint*, .cspell*, .cursor*, .cz-config.js, .czrc, .dlint.json, .dprint.json*, .editorconfig, .eslint*, .firebase*, .flowconfig, .github*, .gitlab*, .gitmojirc.json, .gitpod*, .huskyrc*, .jslint*, .knip.*, .lintstagedrc*, .ls-lint.yml, .markdownlint*, .node-version, .nodemon*, .npm*, .nvmrc, .oxlintrc.json, .oxlintrc.json.bak, .pm2*, .pnp.*, .pnpm*, .prettier*, .pylintrc, .release-please*.json, .releaserc*, .ruff.toml, .sentry*, .shellcheckrc, .simple-git-hooks*, .stackblitz*, .styleci*, .stylelint*, .tazerc*, .textlint*, .tool-versions, .travis*, .versionrc*, .vscode*, .watchman*, .windsurfrules, .xo-config*, .yamllint*, .yarnrc*, Procfile, apollo.config.*, appveyor*, azure-pipelines*, biome.json*, bower.json, build.config.*, bun.lock, bun.lockb, bunfig.toml, colada.options.ts, commitlint*, crowdin*, cspell*, dangerfile*, dlint.json, dprint.json*, ec.config.*, electron-builder.*, eslint*, firebase.json, grunt*, gulp*, jenkins*, knip.*, lerna*, lint-staged*, nest-cli.*, netlify*, nixpacks*, nodemon*, npm-shrinkwrap.json, nx.*, package-lock.json, package.nls*.json, phpcs.xml, pm2.*, pnpm*, prettier*, pullapprove*, pyrightconfig.json, release-please*.json, release-tasks.sh, release.config.*, renovate*, rolldown.config.*, rollup.config.*, rspack*, ruff.toml, sentry.*.config.ts, simple-git-hooks*, sonar-project.properties, stylelint*, tsdown.config.*, tslint*, tsup.config.*, turbo*, typedoc*, unlighthouse*, vercel*, vetur.config.*, webpack*, workspace.json, wrangler.*, xo.config.*, yarn*",
     "Pipfile": ".editorconfig, .flake8, .isort.cfg, .python-version, Pipfile, Pipfile.lock, requirements*.in, requirements*.pip, requirements*.txt, tox.ini",
     "pom.xml": "mvnw*",
@@ -266,6 +292,16 @@ description: vscode 配置
     "*.w": "$(capture).*.w, I$(capture).w",
     "*.wat": "$(capture).wasm",
     "*.xaml": "$(capture).xaml.cs"
-  }
+  },
+  // "gitlens.ai.model": "gitkraken",
+  // "gitlens.ai.gitkraken.model": "gemini:gemini-2.0-flash",
+  // 动画
+  "animations.Install-Method": "Custom CSS and JS",
+  "animations.Enabled": true,
+  "animations.CursorAnimation": true,
+  "animations.UseCursorColorForCursorAnimation": true,
+  "vscode_custom_css.imports": [
+    "file:///Users/wx/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.7/dist/updateHandler.js"
+  ]
 }
 ```
