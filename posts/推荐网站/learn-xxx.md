@@ -1,10 +1,15 @@
+
 ---
+
 date: 2025-04-25
 title: 推荐实用网站 - 公
 category: 工具
 tags:
-  - utils
-description:
+
+- utils
+  description:
+
+
 ---
 
 https://saduck.top
@@ -36,3 +41,13 @@ https://github.com/yonggekkk/Cloudflare_vless_trojan
 ### hack59
 
 - https://epomaker.com/blogs/manuals/epomaker-hack59-manual?_pos=2&_sid=b949fa2db&_ss=r
+
+### test api
+
+- https://jsonplaceholder.typicode.com/
+
+### windows keys
+
+- https://github.com/yaoqs/keys
+
+
