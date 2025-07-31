@@ -30,10 +30,3 @@ tags:
 CogVideoX-5B
 
 ## 07-31
-
-- warp orange
-- 文楷 gb
-- opera-air
-- folo
-- mac 语音
-- https://pickle.com/glass

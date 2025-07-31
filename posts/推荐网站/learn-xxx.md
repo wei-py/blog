@@ -40,6 +40,10 @@ https://github.com/yonggekkk/Cloudflare_vless_trojan
 
 - https://epomaker.com/blogs/manuals/epomaker-hack59-manual?_pos=2&_sid=b949fa2db&_ss=r
 
+### font
+
+- https://formulae.brew.sh/cask/font-lxgw-wenkai-gb
+
 ### test api
 
 - https://jsonplaceholder.typicode.com/
