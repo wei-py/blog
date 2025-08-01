@@ -29,4 +29,10 @@ tags:
 
 CogVideoX-5B
 
-## 07-31
+## 08-01
+
+- brew install dufs
+- npm install --global emoj
+- brew install posting (option)
+- brew install superfile | brew install nnn
+- brew install mac
