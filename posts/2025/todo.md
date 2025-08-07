@@ -31,10 +31,5 @@ CogVideoX-5B
 
 ## 08-01
 
-- nvim nvchad
 - wallpaper
-- NestHive https://app.follow.is/timeline/view-0/folder-工具/175138597705337856
 - https://app.follow.is/timeline/view-0/41147805276726272/174727260463100928
-
-
-
