@@ -11,9 +11,9 @@ tags:
 ### first
 
 ```ts
-type getFirst<Arr extends unknow[]> = Arr extends [infer First, ...unknow[]]
+type getFirst<Arr extends unknown[]> = Arr extends [infer First, ...unknown[]]
   ? First
-  : unknow;
+  : unknown;
 ```
 
 ### replace
@@ -33,7 +33,7 @@ type Replace<
 ```ts
 type GetParameters<Func extends Function> = Func extends (
   ...args: infer Args
-) => unknow
+) => unknown
   ? Args
   : never;
 ```
@@ -53,7 +53,7 @@ type GetConstructorParameters<
 ### Zip
 
 ```ts
-type Zip<One extends unknow[], Other extends unknow[]> = One extends [
+type Zip<One extends unknown[], Other extends unknown[]> = One extends [
   infer OneFirst,
   ...infer OneRest
 ]
@@ -97,8 +97,8 @@ type FilterByValueType<Obj extends Record<string, any>, ValueType> = {
 ### deepPromiseValueType
 
 ```ts
-type DeepPromiseValueType<P extends Promise<T>> = T extends Promise<unknown>
-  ? DeepPromiseValueType<T>
+type DeepPromiseValueType<T> = T extends Promise<infer U>
+  ? DeepPromiseValueType<U>
   : T;
 ```
 
@@ -107,8 +107,8 @@ type DeepPromiseValueType<P extends Promise<T>> = T extends Promise<unknown>
 ```ts
 type BuildArray<
   Length extends number,
-  Ele = unknow,
-  Arr extends unknow[]
+  Ele = unknown,
+  Arr extends unknown[]
 > = Arr["Length"] extends Length ? Arr : BuildArray<Length, Ele, [...Arr, Ele]>;
 ```
 
@@ -159,7 +159,7 @@ type Subtract<
 type Mutiply<
   Num1 extends number,
   Num2 extends number,
-  ResultArr extends unknown[] = []
+  ResultArr extends unknownn[] = []
 > = Num2 extends 0
   ? ResultArr["length"]
   : Mutiply<Num1, Subtract<Num2, 1>, [...BuildArray<Num1>, ...ResultArr]>;
@@ -167,10 +167,10 @@ type Mutiply<
 type Divide<
   Num1 extends number,
   Num2 extends number,
-  CountArr extends unknown[] = []
+  CountArr extends unknownn[] = []
 > = Num1 extends 0
   ? CountArr["length"]
-  : Divide<Subtract<Num1, Num2>, Num2, [unknown, ...CountArr]>;
+  : Divide<Subtract<Num1, Num2>, Num2, [unknownn, ...CountArr]>;
 ```
 
 ### GreaterThan
@@ -182,27 +182,27 @@ type GreaterThan<
   CountArr extends unknown[] = []
 > = Num1 extends Num2
   ? false
-  : CountArr["length"] extends Num2
+  : CountArr['length'] extends Num2
   ? true
-  : CountArr["length"] extends Num1
+  : CountArr['length'] extends Num1
   ? false
-  : GreaterThan<Substruct<Num1, Num2>, Num2, [...CountArr, unknown]>;
+  : GreaterThan<Num1, Num2, [...CountArr, unknown]>;
 ```
 
 ### Fibonacci
 
 ```ts
 type FibonacciLoop<
-  PrevArr extends unknown[],
-  CurrentArr extends unknown[],
-  IndexArr extends unknown[] = [],
+  PrevArr extends unknownn[],
+  CurrentArr extends unknownn[],
+  IndexArr extends unknownn[] = [],
   Num extends number = 1
 > = IndexArr["length"] extends Num
   ? CurrentArr["length"]
   : FibonacciLoop<
       CurrentArr,
       [...PrevArr, ...CurrentArr],
-      [...IndexArr, unknown],
+      [...IndexArr, unknownn],
       Num
     >;
 
@@ -237,4 +237,4 @@ type AllCombinations<A extends string, B extends string = A> = A extends A
 - **never**代表不可达，比如函数抛异常的时候，返回值就是 never。
 - **void**代表空，可以是 undefined 或 never。
 - **any**是任意类型，任何类型都可以赋值给它，它也可以赋值给任何类型（除了 never）。
-- **unknown**是未知类型，任何类型都可以赋值给它，但是它不可以赋值给别的类型。
+- **unknownn**是未知类型，任何类型都可以赋值给它，但是它不可以赋值给别的类型。
