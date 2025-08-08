@@ -12,10 +12,11 @@
     "resolveJsonModule": true,
     "types": [],
     "strict": true,
+    "strictFunctionTypes": true,
     "sourceMap": true,
     "esModuleInterop": true,
     "skipLibCheck": true
   },
-  "include": [".vitepress/**/*.ts", ".vitepress/**/*.d.ts", ".vitepress/**/*.tsx", ".vitepress/**/*.vue", "shims-vue.d.ts"],
+  "include": [".vitepress/**/*.ts", ".vitepress/**/*.d.ts", ".vitepress/**/*.tsx", ".vitepress/**/*.vue", "shims-vue.d.ts", "draft/**/*.ts"],
   "exclude": ["dist", "node_modules"]
 }
