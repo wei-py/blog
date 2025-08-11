@@ -1,5 +1,5 @@
 ---
-date: 2025-04-24
+date: 2025-08-11
 title: git ai 配置
 category: 配置
 tags:
