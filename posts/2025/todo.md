@@ -39,4 +39,4 @@ CogVideoX-5B
   - 24 project reference
 
 - npm install -g opencommit
-- oco config set OCO_AI_PROVIDER='ollama' OCO_MODEL='qwen:1.7b'
+- oco config set OCO_AI_PROVIDER='ollama' OCO_MODEL='deepseek-coder:6.7b'
