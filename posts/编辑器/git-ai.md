@@ -18,7 +18,7 @@ npm i -g opencommit
 
 ```shell
 OCO_API_URL=http://localhost:11434/api/chat
-OCO_MODEL=gemma3:27b
+OCO_MODEL=deepseek-r1:14b
 OCO_API_KEY=undefined
 OCO_API_CUSTOM_HEADERS=undefined
 OCO_AI_PROVIDER=ollama
