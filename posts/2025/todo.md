@@ -38,5 +38,13 @@ CogVideoX-5B
   - 12 内置
   - 24 project reference
 
-- npm install -g opencommit
-- oco config set OCO_AI_PROVIDER='ollama' OCO_MODEL='deepseek-coder:6.7b'
+- https://github.com/dyad-sh/dyad
+- 翻译背景色
+
+## 继承
+
+- https://juejin.cn/post/6844903475021627400
+
+## 了解
+
+- https://clerk.com/blog/multi-tenant-vs-single-tenant
