@@ -38,5 +38,4 @@ CogVideoX-5B
   - 12 内置
   - 24 project reference
 
-- npm install -g opencommit
-- oco config set OCO_AI_PROVIDER='ollama' OCO_MODEL='qwen:1.7b'
+- https://github.com/dyad-sh/dyad
