@@ -44,6 +44,7 @@ CogVideoX-5B
 ## 继承
 
 - https://juejin.cn/post/6844903475021627400
+- https://segmentfault.com/a/1190000015727237#item-2-6
 
 ## 了解
 
