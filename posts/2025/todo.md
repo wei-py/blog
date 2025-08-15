@@ -38,9 +38,6 @@ CogVideoX-5B
   - 12 内置
   - 24 project reference
 
-- https://github.com/dyad-sh/dyad
-- 翻译背景色
-
 ## 继承
 
 - https://juejin.cn/post/6844903475021627400
