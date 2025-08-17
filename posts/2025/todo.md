@@ -38,9 +38,6 @@ CogVideoX-5B
   - 12 内置
   - 24 project reference
 
-- https://github.com/dyad-sh/dyad
-- 翻译背景色
-
 ## 继承
 
 - https://juejin.cn/post/6844903475021627400
@@ -49,3 +46,9 @@ CogVideoX-5B
 ## 了解
 
 - https://clerk.com/blog/multi-tenant-vs-single-tenant
+
+## react router
+
+## 搭建发布react组件库npm
+
+## vite.config.ts build 配置项详解
