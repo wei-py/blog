@@ -52,3 +52,9 @@ CogVideoX-5B
 ## 搭建发布react组件库npm
 
 ## vite.config.ts build 配置项详解
+
+## todo
+
+### zed 动画光标 cursorSmoothCaretAnimation
+
+> https://github.com/zed-industries/zed/discussions/6487
