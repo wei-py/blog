@@ -7,6 +7,39 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "ui_font_family": "Zed Plex Sans",
+  "buffer_font_family": "FiraCode Nerd Font Mono",
+  "ui_font_fallbacks": ["霞鹜文楷 GB"],
+  "inlay_hints": {
+    "enabled": true,
+    "show_value_hints": true,
+    "show_type_hints": true,
+    "show_parameter_hints": true,
+    "show_other_hints": true,
+    "show_background": false,
+    "edit_debounce_ms": 700,
+    "scroll_debounce_ms": 50,
+    "toggle_on_modifiers_press": {
+      "control": false,
+      "alt": false,
+      "shift": false,
+      "platform": false,
+      "function": false
+    }
+  },
+  "vim_mode": true,
+  "ui_font_size": 16,
+  "theme": {
+    "mode": "system",
+    "light": "Gruvbox Dark Hard",
+    "dark": "Gruvbox Light"
+  },
+  "minimap": {
+    "show": "always",
+    "display_in": "all_editors",
+    "thumb_border": "left_only",
+    "thumb": "always"
+  },
   "agent": {
     "default_model": {
       "provider": "ollama",
@@ -15,22 +48,23 @@
   },
   "base_keymap": "VSCode",
   "relative_line_numbers": true,
-  "vim_mode": true,
-  "vertical_scroll_margin": 20,
-  "ui_font_size": 16,
   "buffer_line_height": "standard",
   "buffer_font_size": 16.8,
-  "theme": {
-    "mode": "system",
-    "light": "Gruvbox Light Hard",
-    "dark": "One Dark"
-  },
-  "buffer_font_family": "FiraCode Nerd Font",
-  "buffer_font_fallbacks": ["霞鹜文楷 GB"],
-  "minimap": {
-    "show": "always",
-    "display_in": "all_editors",
-    "thumb_border": "left_only",
-    "thumb": "always"
+  "vertical_scroll_margin": 20,
+  "diagnostics": {
+    "button": true,
+    "include_warnings": true,
+    "lsp_pull_diagnostics": {
+      "enabled": true,
+      "debounce_ms": 50
+    },
+    "inline": {
+      "enabled": true,
+      "update_debounce_ms": 150,
+      "padding": 4,
+      "min_column": 0,
+      "max_severity": null
+    },
+    "cargo": null
   }
 }
