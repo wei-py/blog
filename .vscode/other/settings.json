@@ -7,11 +7,13 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "icon_theme": "Colored Zed Icons Theme Dark",
   "ui_font_family": "Zed Plex Sans",
   "buffer_font_family": "FiraCode Nerd Font Mono",
+  "buffer_font_fallbacks": ["霞鹜文楷 GB"],
   "ui_font_fallbacks": ["霞鹜文楷 GB"],
   "inlay_hints": {
-    "enabled": true,
+    "enabled": false,
     "show_value_hints": true,
     "show_type_hints": true,
     "show_parameter_hints": true,
@@ -31,8 +33,8 @@
   "ui_font_size": 16,
   "theme": {
     "mode": "system",
-    "light": "Gruvbox Dark Hard",
-    "dark": "Gruvbox Light"
+    "light": "Sublime Mariana",
+    "dark": "Sublime Mariana"
   },
   "minimap": {
     "show": "always",
@@ -41,9 +43,10 @@
     "thumb": "always"
   },
   "agent": {
+    "always_allow_tool_actions": true,
     "default_model": {
       "provider": "ollama",
-      "model": "gemma3:1b"
+      "model": "gemma3:1b-it-fp16"
     }
   },
   "base_keymap": "VSCode",
@@ -66,5 +69,12 @@
       "max_severity": null
     },
     "cargo": null
+  },
+  "languages": {
+    "TSX": {
+      "code_actions_on_format": {
+        "source.organizeImports": true
+      }
+    }
   }
 }
