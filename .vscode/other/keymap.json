@@ -34,6 +34,14 @@
   {
     "context": "Editor && vim_mode == insert && !menu",
     "bindings": {
+      // "j k": ["workspace::SendKeystrokes", "escape"]
+      "j k": "vim::NormalBefore"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == visual && !menu",
+    "bindings": {
+      // "j k": ["workspace::SendKeystrokes", "escape"]
       "j k": "vim::SwitchToNormalMode"
     }
   },

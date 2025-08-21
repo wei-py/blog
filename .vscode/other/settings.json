@@ -76,5 +76,11 @@
         "source.organizeImports": true
       }
     }
+  },
+  "indent_guides": {
+    "line_width": 1,
+    "active_line_width": 2,
+    "coloring": "fixed"
+    // "background_coloring": "indent_aware"
   }
 }
