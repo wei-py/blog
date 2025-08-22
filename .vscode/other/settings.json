@@ -62,6 +62,10 @@
     "dock": "left",
     "entry_spacing": "standard"
   },
+  "gutter": {
+    "line_numbers": true,
+    "folds": false
+  },
 
   "vertical_scroll_margin": 20,
   "diagnostics": {
@@ -89,8 +93,8 @@
   },
   "indent_guides": {
     "line_width": 1,
-    "active_line_width": 2,
-    "coloring": "fixed"
+    "active_line_width": 2
+    // "coloring": "fixed",
     // "background_coloring": "indent_aware"
   }
 }
