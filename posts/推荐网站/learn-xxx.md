@@ -65,3 +65,7 @@ https://saduck.top
 
 - https://github.com/LessUp/awesome-cursorrules-zh
 - https://github.com/flyeric0212/cursor-rules
+
+### interview
+
+- https://github.com/message163/interview
