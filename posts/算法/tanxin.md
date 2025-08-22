@@ -116,7 +116,6 @@ var canJump = function (nums) {
 };
 ```
 
-
 ## 45. 跳跃游戏 II
 
 ```js
