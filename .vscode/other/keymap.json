@@ -32,14 +32,14 @@
     }
   },
   {
-    "context": "Editor && vim_mode == insert && !menu",
+    "context": "Editor && vim_mode == insert",
     "bindings": {
       // "j k": ["workspace::SendKeystrokes", "escape"]
       "j k": "vim::NormalBefore"
     }
   },
   {
-    "context": "Editor && vim_mode == visual && !menu",
+    "context": "Editor && vim_mode == visual",
     "bindings": {
       // "j k": ["workspace::SendKeystrokes", "escape"]
       "j k": "vim::SwitchToNormalMode"
