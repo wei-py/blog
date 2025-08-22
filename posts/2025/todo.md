@@ -58,3 +58,7 @@ CogVideoX-5B
 ### zed 动画光标 cursorSmoothCaretAnimation
 
 > https://github.com/zed-industries/zed/discussions/6487
+
+## zshrc
+
+- 其他电脑更新配置
