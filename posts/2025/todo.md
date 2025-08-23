@@ -61,4 +61,4 @@ CogVideoX-5B
 
 ## zshrc
 
-- 阿里编辑器
+- next https://www.bilibili.com/video/BV1BF7qzfEXJ
