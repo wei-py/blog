@@ -12,18 +12,21 @@ description: vscode 配置
 ```json
 {
   "//": "VSCode 外观设置",
+  "workbench.colorTheme": "Vim Dark Hard",
+  "window.zoomLevel": -0.5,
   "chat.commandCenter.enabled": false,
   "editor.accessibilitySupport": "on",
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.cursorSurroundingLines": 50,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.diffEditor.ignoreTrimWhitespace": true,
-  "editor.fontFamily": "FiraCode Nerd Font, 霞鹜文楷",
+  "editor.fontFamily": "FiraCode Nerd Font, 霞鹜文楷 GB",
+  "terminal.integrated.fontSize": 16,
   "editor.fontLigatures": true,
-  "editor.fontSize": 17,
+  "editor.fontSize": 19,
   "editor.fontWeight": "400",
   "editor.inlineSuggest.enabled": false,
-  "editor.lineHeight": 1.3,
+  "editor.lineHeight": 1.2,
   "editor.lineNumbers": "relative",
   // "editor.minimap.size": "fit",
   "editor.smoothScrolling": true,
@@ -33,13 +36,17 @@ description: vscode 配置
   "terminal.integrated.defaultProfile.windows": "Git Bash",
   "terminal.integrated.fontFamily": "FiraCode Nerd Font",
   "terminal.integrated.smoothScrolling": true,
+  "explorer.autoReveal": "focusNoScroll",
+  // "explorer.decorations.badges": false,
+  // "explorer.decorations.colors": false,
   "//": "工作区设置",
+  "workbench.tree.indent": 18,
+  "workbench.tree.renderIndentGuides": "none",
   "security.workspace.trust.untrustedFiles": "open",
   "window.commandCenter": false,
   "window.density.editorTabHeight": "default",
   "window.titleBarStyle": "custom",
   "workbench.activityBar.location": "bottom",
-  "workbench.colorTheme": "Laravel Extra - Github",
   "workbench.editor.tabSizingFixedMaxWidth": 80,
   "workbench.iconTheme": "material-icon-theme",
   "workbench.layoutControl.enabled": false,
@@ -48,7 +55,6 @@ description: vscode 配置
   "workbench.navigationControl.enabled": false,
   "workbench.sideBar.location": "left",
   "workbench.statusBar.visible": true,
-  "workbench.productIconTheme": "jetbrains-product-icon-theme",
   "//": "AI 工具设置",
   "AI.toolcall.confirmMode": "autoRun",
   "//": "语言与翻译设置",
@@ -82,7 +88,7 @@ description: vscode 配置
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -91,7 +97,7 @@ description: vscode 配置
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[markdown]": {
-    "diffEditor.ignoreTrimWhitespace": true,
+    "diffEditor.ignoreTrimWhitespace": false,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[scss]": {
@@ -195,6 +201,9 @@ description: vscode 配置
       "commands": ["editor.action.transformToKebabcase"]
     }
   ],
+  "workbench.colorCustomizations": {
+    "editorCursor.foreground": "#d83b01"
+  },
   "//": "文件嵌套配置（File Nesting）",
   "explorer.compactFolders": false,
   "explorer.fileNesting.enabled": true,
@@ -296,12 +305,15 @@ description: vscode 配置
   // "gitlens.ai.model": "gitkraken",
   // "gitlens.ai.gitkraken.model": "gemini:gemini-2.0-flash",
   // 动画
-  "animations.Install-Method": "Custom CSS and JS",
+  "animations.Install-Method": "Custom UI Style",
   "animations.Enabled": true,
   "animations.CursorAnimation": true,
   "animations.UseCursorColorForCursorAnimation": true,
-  "vscode_custom_css.imports": [
-    "file:///Users/wx/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.7/dist/updateHandler.js"
-  ]
+  "vscode_custom_css.imports": [],
+  "custom-ui-style.external.imports": [
+    "file:///Users/bto/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.7/dist/updateHandler.js"
+  ],
+  "custom-ui-style.webview.enable": true,
+  "Lingma.aI Chat.mcpToolsInAgentMode": true
 }
 ```
