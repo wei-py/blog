@@ -9,3 +9,4 @@ const [fieldA, fieldB] = itemName.split(".");
 
 // 构造 API URL
 const apiUrl = `https://marketplace.visualstudio.com/_apis/public/gallery/publishers/${fieldA}/vsextensions/${fieldB}/${version}/vspackage`;
+apiUrl.toLocaleLowerCase();
