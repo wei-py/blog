@@ -46,7 +46,7 @@ tags:
 - state management
 
   - useState // 状态
-  - useReducer // 用户交互频iiii繁
+  - useReducer // 用户交互频繁
   - useSyncExternalStore // 状态管理库
 
 - Effect hooks
