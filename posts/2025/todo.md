@@ -62,3 +62,7 @@ CogVideoX-5B
 ## zshrc
 
 - next https://www.bilibili.com/video/BV1BF7qzfEXJ
+
+## 21
+
+- React通关秘籍
