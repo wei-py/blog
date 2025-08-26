@@ -7,11 +7,11 @@ tags:
   - hooks
 ---
 
-# react
+## react
 
 ## vidoe
 
-- https://www.bilibili.com/video/BV1vqoVY5ELc
+- <https://www.bilibili.com/video/BV1vqoVY5ELc>
 
 ## 概念
 
@@ -46,7 +46,7 @@ tags:
 - state management
 
   - useState // 状态
-  - useReducer // 用户交互频繁
+  - useReducer // 用户交互频iiii繁
   - useSyncExternalStore // 状态管理库
 
 - Effect hooks
