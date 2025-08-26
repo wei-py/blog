@@ -69,3 +69,7 @@ https://saduck.top
 ### interview
 
 - https://github.com/message163/interview
+
+### vscode custom theme
+
+- https://themes.vscode.one/your-themes
