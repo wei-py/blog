@@ -925,7 +925,7 @@
       "statusBar.background": "#1c2228",
       "activityBar.background": "#1c2228",
       "tab.inactiveBackground": "#1c2228",
-      "tab.activeForeground": "#8bc34b",
+      "tab.activeForeground": "#40a6f5",
       "tab.inactiveForeground": "#888",
       "sideBar.background": "#1c2228",
       "editorGroupHeader.tabsBackground": "#1c2228",
@@ -1124,6 +1124,9 @@
   ],
 
   "//": "文件嵌套配置（File Nesting）",
+  "explorer.sortOrder": "type",
+  "explorer.sortOrderReverse": true,
+  "explorer.openEditors.sortOrder": "fullPath",
   "explorer.compactFolders": false,
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
@@ -1224,21 +1227,17 @@
   // "gitlens.ai.model": "gitkraken",
   // "gitlens.ai.gitkraken.model": "gemini:gemini-2.0-flash",
   // 动画
-  "animations.Install-Method": "Custom UI Style",
+  "animations.Install-Method": "Custom CSS and JS",
   "animations.Enabled": true,
   "animations.CursorAnimation": true,
   "animations.UseCursorColorForCursorAnimation": true,
-  "vscode_custom_css.imports": [
-    "file:///Users/bto/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.7/dist/updateHandler.js"
-  ],
-  "custom-ui-style.external.imports": [
-    "file:///Users/bto/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.7/dist/updateHandler.js"
-  ],
-  "custom-ui-style.webview.enable": true,
   "Lingma.aI Chat.mcpToolsInAgentMode": true,
   "terminal.external.osxExec": "Warp.app",
   "workbench.colorTheme": "Sublime Material Theme - Dark",
   "window.zoomLevel": 1.2,
-  "apc.imports": []
-
+  "git.openRepositoryInParentFolders": "never",
+  "animations.Auto-Install": false,
+  "vscode_custom_css.imports": [
+    "file:///Users/wx/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.7/dist/updateHandler.js"
+  ]
 }
