@@ -66,3 +66,7 @@ CogVideoX-5B
 ## 21
 
 - React通关秘籍
+
+## sop
+
+https://www.bilibili.com/video/BV123hwzrEG1
