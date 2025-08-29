@@ -70,3 +70,7 @@ CogVideoX-5B
 ## sop
 
 https://www.bilibili.com/video/BV123hwzrEG1
+
+## blog-notion-next
+
+https://github.com/tangly1024/NotionNext?tab=readme-ov-file
