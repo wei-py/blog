@@ -69,7 +69,7 @@ CogVideoX-5B
 
 ## 62
 
-- Next
+- Next 看到 第 6 章
 
 ## sop
 
