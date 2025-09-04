@@ -61,4 +61,24 @@ CogVideoX-5B
 
 ## zshrc
 
-- 阿里编辑器
+- next https://www.bilibili.com/video/BV1BF7qzfEXJ
+
+## 21
+
+- React通关秘籍
+
+## 62
+
+- Next 看到 第 6 章
+
+## sop
+
+https://www.bilibili.com/video/BV123hwzrEG1
+
+## blog-notion-next
+
+https://github.com/tangly1024/NotionNext?tab=readme-ov-file
+
+## lazynpm
+
+brew install jesseduffield/lazynpm/lazynpm

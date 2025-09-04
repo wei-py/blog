@@ -16,7 +16,7 @@ tags:
 ## 数据模式 推荐
 
 - 路由
-- 路由对k象
+- 路由对象
 - 操作
 - 导航
   - Link
@@ -72,13 +72,16 @@ tags:
       - loading 加载状态
 
 ## 操作
+
 - loader
 - action
 
 ## 边界处理
+
 - ErrorBoundary
 
 ## store
+
 - zustand
 - immer
 - useShallow

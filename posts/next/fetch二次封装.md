@@ -1,0 +1,342 @@
+---
+title: fetch 二次封装
+date: 2025-09-04
+category: next
+tags:
+  - next
+  - fetch
+---
+
+Q: 那我还有二次封装一下fetch来使用，这样结合next的优势
+
+非常好的问题！👏
+
+你问的是：**“我是否应该对 `fetch` 进行二次封装，来更好地结合 Next.js 的优势？”**
+
+### ✅ 简短回答：
+
+> **可以封装，但要“智能封装”——不要破坏 Next.js 对 `fetch` 的原生增强（如缓存、revalidate、流式渲染）**。
+
+---
+
+## 🧩 一、Next.js 对 `fetch` 的增强（不能丢）
+
+Next.js 在服务端（Server Components）中对原生 `fetch` 做了关键增强：
+
+| 特性                  | 说明                             |
+| --------------------- | -------------------------------- |
+| ✅ 自动缓存           | 相同 URL 的 `fetch` 自动去重     |
+| ✅ 支持 `revalidate`  | 实现 ISR（增量静态再生）         |
+| ✅ 与 `Suspense` 配合 | 支持流式渲染（Streaming）        |
+| ✅ 跨组件请求去重     | 多个组件请求同一资源，只执行一次 |
+
+> ⚠️ 如果你“粗暴封装”（比如用 axios 或自定义拦截器），可能会**丢失这些能力**。
+
+---
+
+## ✅ 二、可以封装的内容（推荐做法）
+
+你可以封装 **通用逻辑**，但要**保留原生 `fetch` 的调用**，并支持 Next.js 特性。
+
+### ✅ 推荐封装点：
+
+#### 1. **统一请求配置（基础封装）**
+
+```ts
+// lib/api.ts
+async function baseFetch(url: string, options: RequestInit = {}) {
+  const defaultHeaders = {
+    'Content-Type': 'application/json',
+    ...options.headers,
+  };
+
+  // 添加认证 token
+  const token = await getAuthToken();
+  if (token) {
+    defaultHeaders['Authorization'] = `Bearer ${token}`;
+  }
+
+  return fetch(url, {
+    ...options,
+    headers: defaultHeaders,
+  });
+}
+
+export const api = {
+  get: (url: string, options?: RequestInit) =>
+    baseFetch(url, { ...options, method: 'GET' }),
+
+  post: (url: string, body: any, options?: RequestInit) =>
+    baseFetch(url, { ...options, method: 'POST', body: JSON.stringify(body) }),
+
+  // 其他方法...
+};
+```
+
+使用：
+
+```ts
+// app/page.tsx
+const res = await api.get('/api/users', {
+  next: { revalidate: 60, tags: ['users'] } // ✅ 保留 Next.js 特性
+});
+```
+
+✅ 优势：
+
+- 统一 header、认证
+- 保留 `next.revalidate`、`tags` 等特性
+- 不破坏原生 `fetch` 行为
+
+---
+
+#### 2. **错误处理封装**
+
+```ts
+async function handleResponse(res: Response) {
+  if (!res.ok) {
+    const error = new Error(`HTTP ${res.status}: ${res.statusText}`);
+    error.name = 'ApiError';
+    throw error;
+  }
+  return res.json();
+}
+
+// 使用
+const res = await baseFetch('/api/users');
+const data = await handleResponse(res);
+```
+
+---
+
+#### 3. **类型安全封装（配合 TypeScript）**
+
+```ts
+type ApiResponse<T> = { data: T; error?: string };
+
+async function fetchJson<T>(url: string, options?: RequestInit): Promise<T> {
+  const res = await fetch(url, options);
+  if (!res.ok) throw new Error(await res.text());
+  return res.json();
+}
+
+// 使用泛型
+const users = await fetchJson<User[]>('/api/users', {
+  next: { revalidate: 60 }
+});
+```
+
+---
+
+#### 4. **缓存标签自动管理（高级）**
+
+```ts
+const API_TAGS = {
+  users: 'users',
+  posts: 'posts',
+  profile: 'profile',
+};
+
+export async function fetchWithTags<T>(
+  url: string,
+  tags: string[],
+  options?: RequestInit
+): Promise<T> {
+  return fetch(url, {
+    ...options,
+    next: {
+      revalidate: 60,
+      tags: tags,
+      ...options.next,
+    },
+  }).then(r => r.json());
+}
+
+// 使用
+const users = await fetchWithTags<User[]>('/api/users', ['users']);
+```
+
+这样你可以用 `revalidateTag('users')` 批量刷新。
+
+---
+
+## ❌ 三、不要做的封装（避免破坏 Next.js 优势）
+
+| 错误做法                            | 问题                                  |
+| ----------------------------------- | ------------------------------------- |
+| 用 `axios` 替代 `fetch`             | ❌ 丢失自动缓存、revalidate、流式渲染 |
+| 封装成 class 并隐藏 `fetch` 调用    | ❌ 可能破坏请求去重                   |
+| 在客户端组件中频繁 `fetch` 同一资源 | ❌ 服务端组件中更好                   |
+
+> ⚠️ 如果你必须用 `axios`，请只在 **客户端组件** 中使用，并在 **服务端组件中坚持用 `fetch`**。
+
+---
+
+## ✅ 四、最佳实践：分层封装策略
+
+```ts
+// 1. 底层：原生 fetch + 增强
+// lib/fetch.ts
+export function $fetch(url: string, options?: RequestInit) {
+  return fetch(url, {
+    headers: { 'X-App-Version': '1.0' },
+    ...options,
+  });
+}
+
+// 2. 中层：业务 API 封装
+// lib/api/users.ts
+export const UserApi = {
+  list: () => $fetch('/api/users', { next: { revalidate: 60, tags: ['users'] } }),
+  get: (id: string) => $fetch(`/api/users/${id}`),
+};
+
+// 3. 上层：页面中使用
+// app/users/page.tsx
+export default async function UsersPage() {
+  const users = await UserApi.list();
+  return <UserList users={users} />;
+}
+```
+
+✅ 优势：
+
+- 保持 `fetch` 原生调用
+- 支持 `next.revalidate` 和 `tags`
+- 类型安全、易于维护
+
+---
+
+## 🎯 五、结合 Server Actions 的终极模式
+
+你甚至可以把 API 调用封装在 Server Actions 中：
+
+```ts
+// app/actions/user.ts
+'use server';
+import { $fetch } from '@/lib/fetch';
+
+export async function getUsers() {
+  return $fetch('/api/legacy-system/users', {
+    next: { revalidate: 60, tags: ['users'] }
+  });
+}
+```
+
+```tsx
+// app/users/page.tsx
+export default async function Users() {
+  const users = await getUsers();
+  return <div>{/* 渲染 */}</div>;
+}
+```
+
+✅ 完美结合：
+
+- 封装了 API 调用
+- 保留了 Next.js 缓存
+- 安全（服务端执行）
+- 支持 revalidate/tag
+
+---
+
+## ✅ 总结：如何正确二次封装 `fetch`
+
+| 原则                 | 做法                                |
+| -------------------- | ----------------------------------- |
+| ✅ 可以封装          | 统一 header、认证、错误处理、类型   |
+| ✅ 保留 `fetch` 调用 | 不要用 axios 替代（服务端）         |
+| ✅ 支持 `next` 选项  | 让调用者可以传 `revalidate`、`tags` |
+| ✅ 分层设计          | `fetch` 工具 → API 封装 → 页面使用  |
+| ✅ 服务端优先        | 尽量在 Server Components 中封装     |
+
+---
+
+🎯 **一句话建议**：
+
+> **“封装的是便利性，不是替换 `fetch`” —— 用轻量封装提升开发效率，但保留 Next.js 的核心优势。**
+
+如果你需要，我可以提供一个完整的 `lib/api.ts` 模板，包含认证、错误处理、类型定义、标签管理等 😊
+
+动态函数：cookies headers fetch(url, {cache: "no-store"})
+
+- 路由配置
+  - dynamic
+    - auto
+    - force-dynamic
+    - error
+    - force-static
+  - dynamicParams
+    - true
+    - false
+  - revalidate
+    - false
+    - 0
+    - number
+  - fetchCache
+    - auto
+    - force-cache
+    - only-cache
+    - default-no-store
+  - runtime
+    - nodejs
+    - edge
+  - preferredRegion
+    - auto
+    - home
+    - us、eu、ap
+  - maxDuration
+  - generateStaticParams
+
+| 你的需求               | 推荐配置                                            |
+| ---------------------- | --------------------------------------------------- |
+| 完全静态页面（如博客） | `dynamic = 'force-static'` + `generateStaticParams` |
+| 实时内容（如仪表盘）   | `dynamic = 'force-dynamic'`                         |
+| 内容偶尔更新           | `revalidate = 60`                                   |
+| 全球用户访问           | `runtime = 'edge'` + `preferredRegion = 'auto'`     |
+| 长时间任务             | `maxDuration = 60`（Vercel Pro）                    |
+| 安全控制路由           | `dynamicParams = false`                             |
+
+Google 三大核心网页指标
+
+- LCP
+- INP
+- CLS
+
+typescript
+mvvc
+for await
+ios android 证书
+vue2 vue3 区别
+es5 和 es6
+watch computed
+
+1. 请求记忆
+
+   React 组件树内有效(layout、 page、 generateMetaData)
+
+2. 数据缓存
+
+- 配置
+  ```js
+    {cache: ""}、 {next: {revalidata: 3500}}
+  ```
+- 按需重新验证
+
+  - 基于标签
+
+    ```js
+      {next: {tags: ["news"]}}
+    ```
+
+  - 基于路径
+
+    ```js
+      {next: {revalidata: 3500}}
+    ```
+
+3. 完整路由缓存
+
+- 仅适用于静态路由
+
+4. 路由缓存
