@@ -88,3 +88,4 @@ brew install jesseduffield/lazynpm/lazynpm
 - brew install oh-my-posh
 - zed setting
 - 洗发水
+- warp update
