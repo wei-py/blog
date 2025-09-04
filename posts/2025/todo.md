@@ -82,3 +82,9 @@ https://github.com/tangly1024/NotionNext?tab=readme-ov-file
 ## lazynpm
 
 brew install jesseduffield/lazynpm/lazynpm
+
+## terminal
+
+- brew install oh-my-posh
+- zed setting
+- 洗发水
