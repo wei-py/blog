@@ -89,3 +89,5 @@ brew install jesseduffield/lazynpm/lazynpm
 - 洗发水
 
 oh-my-posh font install
+
+eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/tokyo.omp.json)"
