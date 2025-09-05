@@ -85,7 +85,7 @@ brew install jesseduffield/lazynpm/lazynpm
 
 ## terminal
 
-- brew install oh-my-posh
 - zed setting
 - 洗发水
-- warp update
+
+oh-my-posh font install
