@@ -91,3 +91,5 @@ brew install jesseduffield/lazynpm/lazynpm
 oh-my-posh font install
 
 eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/tokyo.omp.json)"
+
+- flclash clashmi
