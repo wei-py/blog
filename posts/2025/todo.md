@@ -92,4 +92,10 @@ oh-my-posh font install
 
 eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/tokyo.omp.json)"
 
-- flclash clashmi
+## next cn blog
+
+- https://www.nextjs.cn/docs/
+
+## uni-app-x
+
+- https://uniapp.dcloud.net.cn/tutorial/run/installSimulator.html
