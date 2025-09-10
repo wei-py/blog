@@ -20,6 +20,7 @@ git config --global user.name "用户名"
 ```shell
 ssh-keygen -t rsa
 cat ~/.ssh/id_rsa.pub
+ssh-copy-id -i ~/.ssh/id_rsa.pub root@192.168.235.22
 ```
 
 ## 单远程多URL配置（懒人必备）
