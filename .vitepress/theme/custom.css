@@ -181,6 +181,10 @@ h3 {
   font-weight: 500 !important;
 }
 
+.VPNavBarTitle.has-sidebar {
+  display: none;
+}
+
 /* for aside start */
 .aside {
   position: fixed !important;
