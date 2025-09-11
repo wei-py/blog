@@ -1,3 +1,12 @@
+---
+title: next meta
+date: 2025-09-11
+category: next
+tags:
+  - next
+  - meta
+---
+
 好的，根据您提供的两份文档内容，我将对 Next.js 中基于文件的元数据（Metadata）配置进行总结。
 
 这两份文档内容实际上是重复的，都详细介绍了 Next.js 应用中通过**创建特定文件**的方式来配置元数据。这与在 `layout.js` 或 `page.js` 中导出 `metadata` 对象或 `generateMetadata` 函数的“基于配置”方式相对。

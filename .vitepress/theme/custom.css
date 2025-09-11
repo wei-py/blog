@@ -80,7 +80,7 @@ pre span {
 }
 
 .VPContent .has-sidebar {
-  margin-left: -6vw !important;
+  margin-left: -3vw !important;
 }
 
 .content-body {
@@ -181,6 +181,18 @@ h3 {
   font-weight: 500 !important;
 }
 
+.VPNav {
+  z-index: 990 !important;
+}
+
+.VPLink {
+  cursor: pointer;
+}
+
+.VPNavBarTitle.has-sidebar {
+  display: none;
+}
+
 /* for aside start */
 .aside {
   position: fixed !important;
@@ -194,9 +206,8 @@ h3 {
 
 
 .post-list {
-  padding: 14px 0 14px 25vw !important;
+  padding: 14px 0 14px 5vw !important;
 }
-
 
 
 .container {
@@ -210,8 +221,25 @@ h3 {
   position: relative;
 }
 
+
 .VPDoc.has-aside .content-container {
-  max-width: 70rem !important;
+  margin: 0 0 0 5vw;
+  /* max-width: 70rem !important; */
+}
+
+@media (min-width: 768px) {
+  .VPDoc.has-aside .content-container {
+    margin: 0 0 0 10vw;
+    /* max-width: 70rem !important; */
+  }
+
+  .post-list {
+    padding: 14px 0 14px 25vw !important
+  }
+}
+
+button.menu {
+  display: none !important;
 }
 
 @media (min-width: 768px) {
