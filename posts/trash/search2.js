@@ -1,6 +1,5 @@
 "use client";
 
-import SidebarNoteItem from "@/components/SidebarNoteItem";
 import { useSearchParams } from "next/navigation";
 
 export default function SidebarNoteListFilter({ notes }) {
