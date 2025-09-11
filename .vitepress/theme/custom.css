@@ -181,6 +181,14 @@ h3 {
   font-weight: 500 !important;
 }
 
+.VPNav {
+  z-index: 990 !important;
+}
+
+.VPLink {
+  cursor: pointer;
+}
+
 .VPNavBarTitle.has-sidebar {
   display: none;
 }
@@ -215,20 +223,23 @@ h3 {
 
 
 .VPDoc.has-aside .content-container {
-    margin: 0 0 0 5vw;
-    /* max-width: 70rem !important; */
+  margin: 0 0 0 5vw;
+  /* max-width: 70rem !important; */
 }
 
 @media (min-width: 768px) {
   .VPDoc.has-aside .content-container {
-  margin: 0 0 0 10vw;
-  /* max-width: 70rem !important; */
-}
-.post-list {
-  padding: 14px 0 14px 25vw !important
-}
-  
+    margin: 0 0 0 10vw;
+    /* max-width: 70rem !important; */
+  }
 
+  .post-list {
+    padding: 14px 0 14px 25vw !important
+  }
+}
+
+button.menu {
+  display: none !important;
 }
 
 @media (min-width: 768px) {
