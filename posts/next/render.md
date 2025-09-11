@@ -7,84 +7,58 @@ tags:
   - render
 ---
 
-以下是基于Next.js官方文档（页面路由与数据获取）及搜索结果整理的渲染机制脑图框架，结合核心概念、技术实现和适用场景进行结构化梳理：
+# Next.js 渲染策略
 
-Next.js渲染模式脑图
-中心主题：Next.js多模式渲染体系
-一、核心渲染策略
+## 预渲染 (Pre-rendering)
 
-静态生成（SSG）
+### 两种形式
 
-机制：getStaticProps在构建时预生成HTML，直接托管至CDN
-特点：
+- **静态生成 (Static Generation)**
+  - HTML 在 **构建时 (build time)** 生成
+  - 生成的文件在每次请求时被重用
+  - 可被 CDN 缓存，性能最佳
+  - **推荐** 作为首选方案
+- **服务器端渲染 (Server-side Rendering, SSR)**
+  - HTML 在 **每次请求时 (request time)** 生成
+  - 无法被 CDN 缓存，TTFB 较慢
 
-TTFB <50ms，SEO友好
-数据静态，需重新构建更新（可通过ISR优化）
+### 混合渲染
 
-适用场景：博客、文档等低频更新内容
+- Next.js 允许为每个页面单独选择渲染方式
+- 可以创建混合渲染的应用：大部分页面用静态生成，少数用服务器端渲染
 
-服务端渲染（SSR）
+## 静态生成 (Static Generation)
 
-机制：getServerSideProps每次请求时动态生成HTML
-特点：
+### 不带数据
 
-实时数据（100-500ms TTFB）
-高服务器负载，需缓存优化（如Redis）
+- 默认行为
+- 示例: 简单的 About 页面
 
-适用场景：电商详情页、用户个性化页面
+### 带数据
 
-增量静态再生（ISR）
+- 使用 `getStaticProps`
+  - 在构建时获取数据
+  - 将数据作为 props 传递给页面组件
+- 动态路由页面需配合 `getStaticPaths`
+  - 指定需要预渲染的动态路径
+  - `fallback` 选项: `false`, `true`, `'blocking'`
 
-机制：getStaticProps + revalidate定期后台更新静态页面
-特点：
+### 增量静态再生 (ISR)
 
-首次访问快，后台异步更新
-平衡性能与数据新鲜度（如新闻列表）
+- 通过 `revalidate` 属性启用
+- 在不重建整个网站的情况下，按需重新生成静态页面
+- 兼具静态网站的性能和动态内容的灵活性
 
-客户端渲染（CSR）
+## 服务器端渲染 (SSR)
 
-机制：useEffect/SWR动态获取数据，无预渲染
-特点：
+- 使用 `getServerSideProps`
+  - 在每次请求时获取数据
+  - 适用于数据频繁更新或高度个性化的页面
+- 性能考量: 仅在绝对必要时使用
 
-低TTFB（10-50ms），无SEO支持
-适合后台系统、交互密集型页面
+## 客户端渲染 (Client-side Rendering)
 
-二、关键技术支撑
-
-数据获取方法
-
-getStaticProps（SSG/ISR）
-getServerSideProps（SSR）
-getStaticPaths（动态路由预定义）
-客户端useSWR（CSR）
-
-架构特性
-
-同构渲染：服务端生成HTML + 客户端水合
-流式渲染：分块传输优先返回首屏（Suspense）
-边缘计算：Vercel边缘节点降低延迟
-
-优化手段
-
-代码分割（按路由自动拆分）
-图片优化（next/image懒加载）
-部分水合（仅激活交互组件）
-
-三、渲染流程对比
-
-模式TTFBSEO支持数据实时性优化手段SSG<50ms✅❌（静态）CDN预分发SSR100-500ms✅✅（实时）边缘计算 + 缓存ISR<50ms✅⚠️（准实时）按需再生CSR10-50ms❌✅（动态）预加载 + 懒加载
-四、混合渲染策略
-
-场景示例：
-
-首页用SSG（高性能） + 详情页用SSR（实时性） + 列表页用ISR（平衡）
-
-优先级规则：getServerSideProps存在时自动禁用SSG/ISR
-
-脑图延伸方向
-
-底层原理：React协调机制、水合过程（hydrateRoot）
-动态路由：getStaticPaths预定义路径与fallback策略
-性能监控：TTFB、FCP指标与优化工具链
-
-可通过工具（如XMind/Miro）将上述结构可视化，突出核心分支与关联性。如需更详细的实现流程（如SSR水合步骤），可参考具体技术文档。
+- 与预渲染互补
+- 适用于用户仪表盘等私有、频繁更新的页面
+- 推荐使用 **SWR** 这个 React Hook 进行数据获取
+  - 自动处理缓存、重新验证、轮询等
