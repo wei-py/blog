@@ -86,7 +86,6 @@ brew install jesseduffield/lazynpm/lazynpm
 ## terminal
 
 - zed setting
-- 洗发水
 
 oh-my-posh font install
 
@@ -99,3 +98,9 @@ eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/tokyo.om
 ## uni-app-x
 
 - https://uniapp.dcloud.net.cn/tutorial/run/installSimulator.html
+
+## rn
+
+> https://rn.new/
+
+https://docs.taro.zone/docs/react-native#%E4%BD%BF%E7%94%A8-taro-playground-app-%E8%BF%9B%E8%A1%8C%E8%B0%83%E8%AF%95
