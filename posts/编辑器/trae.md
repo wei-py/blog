@@ -2,7 +2,7 @@
 {
   "//": "VSCode 外观设置",
   "editor.tokenColorCustomizations": {
-    "[Deep Blue]": {
+    "[Vim Dark Hard]": {
       "textMateRules": [
         {
           "scope": [
@@ -915,22 +915,24 @@
     }
   },
   "workbench.colorCustomizations": {
-    "[Deep Blue]": {
+    "[Vim Light Hard]": {
       "editorCursor.foreground": "#d50000",
       // 1e1e1e
       // 262626
       // 2e3842
       // 1c2228
-      "editorLineNumber.foreground": "#191d27",
-      "editor.background": "#191d27",
-      "statusBar.background": "#191d27",
-      "activityBar.background": "#191d27",
-      "tab.inactiveBackground": "#191d27",
+      "editor.lineHighlightBackground": "#f3e7c5", // 当前光标所在行的背景色
+      // "editor.foldBackground": "#11101099",
+      "editorLineNumber.foreground": "#1e1d1d00",
+      // "editor.background": "#1e1d1d",
+      // "statusBar.background": "#1e1d1d",
+      // "activityBar.background": "#1e1d1d",
+      // "tab.inactiveBackground": "#1e1d1d",
       // "tab.activeForeground": "#40a6f5",
-      "tab.inactiveForeground": "#888",
-      "sideBar.background": "#191d27",
-      "editorGroupHeader.tabsBackground": "#191d27",
-      "titleBar.activeBackground": "#191d27"
+      // "tab.inactiveForeground": "#888",
+      // "sideBar.background": "#1e1d1d",
+      // "editorGroupHeader.tabsBackground": "#1e1d1d",
+      // "titleBar.activeBackground": "#1e1d1d"
     }
   },
   "chat.commandCenter.enabled": false,
@@ -939,9 +941,9 @@
   "editor.cursorSurroundingLines": 50,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "FiraCode Nerd Font, 霞鹜文楷 GB",
-  "terminal.integrated.fontSize": 17,
+  "terminal.integrated.fontSize": 16,
   "editor.fontLigatures": true,
-  "editor.fontSize": 18,
+  "editor.fontSize": 19,
   "editor.fontWeight": "400",
   "editor.inlineSuggest.enabled": false,
   "editor.lineHeight": 1.2,
@@ -1221,8 +1223,8 @@
     "*.xaml": "$(capture).xaml.cs"
   },
   "terminal.external.osxExec": "Warp.app",
-  "workbench.colorTheme": "Deep Blue",
-  "window.zoomLevel": 0.9,
+  "workbench.colorTheme": "Vim Light Hard",
+  "window.zoomLevel": -0.7,
   "git.openRepositoryInParentFolders": "never",
   "extensions.ignoreRecommendations": true,
   "terminal.integrated.tabs.location": "left",
