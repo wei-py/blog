@@ -99,12 +99,10 @@ eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/tokyo.om
 
 - <https://uniapp.dcloud.net.cn/tutorial/run/installSimulator.html>
 
-## rn
+## hammspooner
 
-- ios workflow
-- trae setting
+capslock + 1 => cmd + 5 ps: 翻译
 
-## act
+## mac
 
-brew install act
-gem install fastlane
+更新系统
