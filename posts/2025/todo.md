@@ -106,3 +106,17 @@ capslock + 1 => cmd + 5 ps: 翻译
 ## mac
 
 更新系统
+
+## 抛弃 utools
+
+win: quicker
+mac: Alfred
+
+https://github.com/learn-anything/alfred-workflows?tab=readme-ov-file#macos
+https://alfred.app/workflows/
+
+## hammspoon
+
+bindF13Key("e", function()
+    hs.application.launchOrFocus("Finder")
+end, true)
