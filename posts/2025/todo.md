@@ -103,3 +103,5 @@ eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/tokyo.om
 
 - ios workflow
 - trae setting
+
+https://www.microsoft.com/zh-cn/software-download/windows11
