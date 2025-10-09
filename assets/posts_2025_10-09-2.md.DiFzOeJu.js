@@ -1,0 +1,79 @@
+import{_ as a,c as n,o as p,ah as e}from"./chunks/framework.ptg7Kx6M.js";const g=JSON.parse('{"title":"log","description":"","frontmatter":{"title":"log","date":"2025-10-10T00:00:00.000Z","category":"blog","tags":["blog"]},"headers":[],"relativePath":"posts/2025/10-09-2.md","filePath":"posts/2025/10-09-2.md"}'),l={name:"posts/2025/10-09-2.md"};function c(i,s,o,t,r,h){return p(),n("div",null,s[0]||(s[0]=[e(`<p>根据你提供的文章内容，我们可以为浏览器缓存机制中的 <strong>四种缓存类型（Memory Cache、Service Worker Cache、HTTP Cache、Push Cache）</strong> 以及 <strong>HTTP 缓存内部的强缓存与协商缓存决策逻辑</strong> 分别绘制清晰的流程图。以下是文字版流程图（可直接用于绘图工具如 draw.io、Mermaid、ProcessOn 等）：</p><hr><h2 id="🌐-一、浏览器缓存整体命中流程图-按优先级" tabindex="-1">🌐 一、浏览器缓存整体命中流程图（按优先级） <a class="header-anchor" href="#🌐-一、浏览器缓存整体命中流程图-按优先级" aria-label="Permalink to &quot;🌐 一、浏览器缓存整体命中流程图（按优先级）&quot;">​</a></h2><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>开始</span></span>
+<span class="line"><span>  │</span></span>
+<span class="line"><span>  ▼</span></span>
+<span class="line"><span>是否命中 Memory Cache？</span></span>
+<span class="line"><span>  ├─ 是 ──► 从内存返回（from memory cache） ──► 结束</span></span>
+<span class="line"><span>  │</span></span>
+<span class="line"><span>  ▼ 否</span></span>
+<span class="line"><span>是否命中 Service Worker Cache？</span></span>
+<span class="line"><span>  ├─ 是 ──► 从 Service Worker 返回（from ServiceWorker） ──► 结束</span></span>
+<span class="line"><span>  │</span></span>
+<span class="line"><span>  ▼ 否</span></span>
+<span class="line"><span>是否命中 HTTP Cache（强缓存）？</span></span>
+<span class="line"><span>  ├─ 是 ──► 从 HTTP 缓存返回（200 from disk/memory cache） ──► 结束</span></span>
+<span class="line"><span>  │</span></span>
+<span class="line"><span>  ▼ 否</span></span>
+<span class="line"><span>是否命中 Push Cache（HTTP/2 Server Push）？</span></span>
+<span class="line"><span>  ├─ 是 ──► 从 Push Cache 返回 ──► 结束</span></span>
+<span class="line"><span>  │</span></span>
+<span class="line"><span>  ▼ 否</span></span>
+<span class="line"><span>发起网络请求 → 服务器</span></span>
+<span class="line"><span>  │</span></span>
+<span class="line"><span>  ▼</span></span>
+<span class="line"><span>结束</span></span></code></pre></div><blockquote><p>✅ <strong>说明</strong>：</p><ul><li>Push Cache 是最后一道防线（如原文所述）。</li><li>Service Worker 的 <code>fetch</code> 事件可拦截请求并决定是否使用缓存或走网络。</li></ul></blockquote><hr><h2 id="🔒-二、http-缓存内部决策流程图-强缓存-→-协商缓存" tabindex="-1">🔒 二、HTTP 缓存内部决策流程图（强缓存 → 协商缓存） <a class="header-anchor" href="#🔒-二、http-缓存内部决策流程图-强缓存-→-协商缓存" aria-label="Permalink to &quot;🔒 二、HTTP 缓存内部决策流程图（强缓存 → 协商缓存）&quot;">​</a></h2><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>开始：浏览器发起资源请求</span></span>
+<span class="line"><span>  │</span></span>
+<span class="line"><span>  ▼</span></span>
+<span class="line"><span>检查 Cache-Control / Expires（强缓存）</span></span>
+<span class="line"><span>  │</span></span>
+<span class="line"><span>  ├─ 若存在且未过期（如 max-age 有效）？</span></span>
+<span class="line"><span>  │     ├─ 是 ──► 直接使用缓存（200，无网络请求） ──► 结束</span></span>
+<span class="line"><span>  │     └─ 否 ──► 进入协商缓存</span></span>
+<span class="line"><span>  │</span></span>
+<span class="line"><span>  ▼</span></span>
+<span class="line"><span>协商缓存：检查 ETag / Last-Modified</span></span>
+<span class="line"><span>  │</span></span>
+<span class="line"><span>  ├─ 是否有 ETag？</span></span>
+<span class="line"><span>  │     ├─ 是 ──► 发送 If-None-Match 头到服务器</span></span>
+<span class="line"><span>  │     └─ 否 ──► 发送 If-Modified-Since（基于 Last-Modified）</span></span>
+<span class="line"><span>  │</span></span>
+<span class="line"><span>  ▼</span></span>
+<span class="line"><span>服务器比对资源是否变化</span></span>
+<span class="line"><span>  │</span></span>
+<span class="line"><span>  ├─ 未变化（304 Not Modified）？</span></span>
+<span class="line"><span>  │     ├─ 是 ──► 使用本地 HTTP 缓存 ──► 结束</span></span>
+<span class="line"><span>  │     └─ 否 ──► 返回新资源（200 + 新内容） ──► 更新缓存 ──► 结束</span></span></code></pre></div><blockquote><p>✅ <strong>优先级规则</strong>：</p><ul><li><code>Cache-Control</code> &gt; <code>Expires</code></li><li><code>ETag</code> &gt; <code>Last-Modified</code></li><li><code>no-store</code>：跳过所有缓存，强制请求</li><li><code>no-cache</code>：跳过强缓存，直接走协商缓存</li></ul></blockquote><hr><h2 id="🧠-三、cache-control-决策指南流程图-基于-chrome-官方建议" tabindex="-1">🧠 三、Cache-Control 决策指南流程图（基于 Chrome 官方建议） <a class="header-anchor" href="#🧠-三、cache-control-决策指南流程图-基于-chrome-官方建议" aria-label="Permalink to &quot;🧠 三、Cache-Control 决策指南流程图（基于 Chrome 官方建议）&quot;">​</a></h2><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>资源是否可复用？</span></span>
+<span class="line"><span>  ├─ 否 ──► Cache-Control: no-store ──► 结束</span></span>
+<span class="line"><span>  │</span></span>
+<span class="line"><span>  ▼ 是</span></span>
+<span class="line"><span>是否每次都需要验证缓存有效性？</span></span>
+<span class="line"><span>  ├─ 是 ──► Cache-Control: no-cache ──► 配置 ETag/Last-Modified ──► 结束</span></span>
+<span class="line"><span>  │</span></span>
+<span class="line"><span>  ▼ 否</span></span>
+<span class="line"><span>是否允许代理服务器缓存？</span></span>
+<span class="line"><span>  ├─ 否 ──► Cache-Control: private, max-age=xxx</span></span>
+<span class="line"><span>  ├─ 是 ──► Cache-Control: public, s-maxage=xxx, max-age=yyy</span></span>
+<span class="line"><span>  │</span></span>
+<span class="line"><span>  ▼</span></span>
+<span class="line"><span>配置 max-age（客户端有效期）和 s-maxage（代理服务器有效期）</span></span>
+<span class="line"><span>  │</span></span>
+<span class="line"><span>  ▼</span></span>
+<span class="line"><span>是否需要精准感知内容变更？</span></span>
+<span class="line"><span>  ├─ 是 ──► 启用 ETag（推荐）</span></span>
+<span class="line"><span>  └─ 否 ──► 可仅用 Last-Modified</span></span>
+<span class="line"><span>  │</span></span>
+<span class="line"><span>  ▼</span></span>
+<span class="line"><span>结束</span></span></code></pre></div><hr><h2 id="💾-四、memory-cache-存储策略-启发式规则" tabindex="-1">💾 四、Memory Cache 存储策略（启发式规则） <a class="header-anchor" href="#💾-四、memory-cache-存储策略-启发式规则" aria-label="Permalink to &quot;💾 四、Memory Cache 存储策略（启发式规则）&quot;">​</a></h2><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>资源请求到达</span></span>
+<span class="line"><span>  │</span></span>
+<span class="line"><span>  ▼</span></span>
+<span class="line"><span>资源类型是 Base64 图片？</span></span>
+<span class="line"><span>  ├─ 是 ──► 极大概率存入 Memory Cache</span></span>
+<span class="line"><span>  │</span></span>
+<span class="line"><span>  ▼ 否</span></span>
+<span class="line"><span>资源体积是否较小（如 &lt; 100KB）？</span></span>
+<span class="line"><span>  ├─ 是 ──► 可能存入 Memory Cache（JS/CSS 优先）</span></span>
+<span class="line"><span>  │</span></span>
+<span class="line"><span>  ▼ 否</span></span>
+<span class="line"><span>存入 Disk Cache（或不缓存）</span></span>
+<span class="line"><span>  │</span></span>
+<span class="line"><span>  ▼</span></span>
+<span class="line"><span>结束</span></span></code></pre></div><blockquote><p>⚠️ 注意：Memory Cache 生命周期 = Tab 进程生命周期，关闭即清空。</p></blockquote><hr><h2 id="🛰️-五、push-cache-关键特性总结-非流程-但可作决策参考" tabindex="-1">🛰️ 五、Push Cache 关键特性总结（非流程，但可作决策参考） <a class="header-anchor" href="#🛰️-五、push-cache-关键特性总结-非流程-但可作决策参考" aria-label="Permalink to &quot;🛰️ 五、Push Cache 关键特性总结（非流程，但可作决策参考）&quot;">​</a></h2><ul><li><strong>触发条件</strong>：服务器通过 HTTP/2 Server Push 主动推送资源。</li><li><strong>命中时机</strong>：仅当其他所有缓存都未命中时才检查 Push Cache。</li><li><strong>生命周期</strong>：绑定 HTTP/2 连接，连接关闭即失效。</li><li><strong>共享性</strong>：同一连接下的多个页面/请求可共享 Push Cache。</li><li><strong>浏览器兼容性差</strong>（尤其 Safari/Edge），<strong>慎用</strong>（参考 Jake Archibald 文章）。</li><li><strong>替代方案</strong>：优先使用 <code>&lt;link rel=&quot;preload&quot;&gt;</code>，更可靠、易调试。</li></ul><hr><h2 id="✅-建议-实际开发缓存策略推荐" tabindex="-1">✅ 建议：实际开发缓存策略推荐 <a class="header-anchor" href="#✅-建议-实际开发缓存策略推荐" aria-label="Permalink to &quot;✅ 建议：实际开发缓存策略推荐&quot;">​</a></h2><ol><li><p><strong>静态资源（JS/CSS/图片）</strong>：</p><ul><li>设置 <code>Cache-Control: public, max-age=31536000</code>（1年）</li><li>文件名加 hash（如 <code>app.a1b2c3.js</code>），实现“永久缓存 + 更新即换名”</li></ul></li><li><p><strong>HTML 页面</strong>：</p><ul><li>设置 <code>Cache-Control: no-cache</code>，确保每次协商最新内容</li></ul></li><li><p><strong>API 数据（JSON）</strong>：</p><ul><li>通常设 <code>Cache-Control: no-store</code> 或短 <code>max-age</code> + <code>private</code></li><li>敏感数据避免缓存</li></ul></li><li><p><strong>避免使用 HTTP/2 Push</strong>（除非你深度测试过各浏览器行为）</p><ul><li>改用 <code>&lt;link rel=&quot;preload&quot;&gt;</code> 更安全</li></ul></li></ol><hr><p>如需将上述内容转为 <strong>Mermaid 代码</strong> 或 <strong>draw.io XML</strong>，我也可以为你生成。是否需要？</p>`,24)]))}const u=a(l,[["render",c]]);export{g as __pageData,u as default};
