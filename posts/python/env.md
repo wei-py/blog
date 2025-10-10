@@ -1,3 +1,12 @@
+---
+title: Python 环境配置
+date: 2025-10-09
+category: Python
+tags:
+  - 环境配置
+  - Python
+---
+
 在 Python 开发中，**切换环境**通常是指在不同的 Python 环境之间切换，比如：
 
 - 在 **全局环境** 和 **虚拟环境（venv）** 之间切换
