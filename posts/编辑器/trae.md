@@ -8,7 +8,6 @@ tags:
 
 ```json
 {
-  "//": "VSCode 外观设置",
   "editor.tokenColorCustomizations": {
     "[Vim Dark Hard]": {
       "textMateRules": [
@@ -923,6 +922,7 @@ tags:
     }
   },
   "workbench.colorCustomizations": {
+    "tab.activeBorder": "#d50000",
     "[Vim Light Hard]": {
       "editorCursor.foreground": "#d50000",
       // 1e1e1e
@@ -931,7 +931,7 @@ tags:
       // 1c2228
       "editor.lineHighlightBackground": "#f3e7c5", // 当前光标所在行的背景色
       // "editor.foldBackground": "#11101099",
-      "editorLineNumber.foreground": "#1e1d1d00",
+      "editorLineNumber.foreground": "#1e1d1d00"
       // "editor.background": "#1e1d1d",
       // "statusBar.background": "#1e1d1d",
       // "activityBar.background": "#1e1d1d",
@@ -948,7 +948,7 @@ tags:
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.cursorSurroundingLines": 50,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.fontFamily": "FiraCode Nerd Font, 霞鹜文楷 GB",
+  "editor.fontFamily": "FiraCode Nerd Font, 手札体-简, 霞鹜文楷 GB",
   "terminal.integrated.fontSize": 16,
   "editor.fontLigatures": true,
   "editor.fontSize": 19,
@@ -1047,7 +1047,9 @@ tags:
     "<C-k>": false,
     "<C-p>": false,
     "<C-v>": false,
-    "<C-z>": false
+    "<C-z>": false,
+    "b": false,
+    "m": false
   },
   "vim.hlsearch": true,
   "vim.incsearch": true,
@@ -1059,14 +1061,7 @@ tags:
   ],
   "vim.leader": "<space>",
   "vim.normalModeKeyBindings": [
-    {
-      "before": ["g", "k"],
-      "commands": ["editor.action.marker.prev"]
-    },
-    {
-      "before": ["g", "j"],
-      "commands": ["editor.action.marker.next"]
-    }
+
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
@@ -1086,9 +1081,34 @@ tags:
       "after": ["\\"]
     },
     {
-      "before": ["<leader>", "s"],
+      "before": ["f"],
       "after": ["<leader>", "<leader>", "s"]
+    },
+    {
+      "before": ["n", "n"],
+      "commands": ["workbench.action.focusSideBar"]
+    },
+    {
+      "before": ["q", "q"],
+      "commands": ["editor.action.formatDocument"]
+    },
+    // {
+    //   "before": ["[", "["],
+    //   "commands": ["editor.gotoPreviousSymbolFromCursor"]
+    // },
+    // {
+    //   "before": ["]", "]"],
+    //   "commands": ["editor.gotoNextSymbolFromCursor"]
+    // },
+    {
+      "before": ["[", "e"],
+      "commands": ["editor.action.marker.prev"]
+    },
+    {
+      "before": ["]", "e"],
+      "commands": ["editor.action.marker.next"]
     }
+
     // {
     // "before": ["s"],
     // "after": ["f"]
@@ -1124,7 +1144,7 @@ tags:
       "commands": ["editor.action.transformToCamelcase"]
     },
     {
-      "before": ["c", "o", "m"],
+      "before": ["c", "o", "k"],
       "commands": ["editor.action.transformToKebabcase"]
     }
   ],
@@ -1231,8 +1251,6 @@ tags:
     "*.xaml": "$(capture).xaml.cs"
   },
   "terminal.external.osxExec": "Warp.app",
-  "workbench.colorTheme": "Vim Light Hard",
-  "window.zoomLevel": -0.7,
   "git.openRepositoryInParentFolders": "never",
   "extensions.ignoreRecommendations": true,
   "terminal.integrated.tabs.location": "left",
@@ -1241,6 +1259,8 @@ tags:
   },
   "workbench.editor.empty.hint": "hidden",
   "diffEditor.ignoreTrimWhitespace": true,
-  "application.extensionMarketUrl": "https://marketplace.visualstudio.com"
+  "application.extensionMarketUrl": "https://marketplace.visualstudio.com",
+  "window.zoomLevel": 0.8,
+  "workbench.colorTheme": "Dioptase (Light)"
 }
 ```
