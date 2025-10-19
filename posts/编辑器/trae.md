@@ -951,10 +951,10 @@ tags:
   "editor.fontFamily": "FiraCode Nerd Font, 手札体-简, 霞鹜文楷 GB",
   "terminal.integrated.fontSize": 16,
   "editor.fontLigatures": true,
-  "editor.fontSize": 19,
+  "editor.fontSize": 18,
   "editor.fontWeight": "400",
-  "editor.inlineSuggest.enabled": false,
-  "editor.lineHeight": 1.2,
+  "editor.inlineSuggest.enabled": true,
+  "editor.lineHeight": 1.5,
   "editor.lineNumbers": "relative",
   // "editor.minimap.size": "fit",
   "editor.smoothScrolling": true,
@@ -1260,7 +1260,8 @@ tags:
   "workbench.editor.empty.hint": "hidden",
   "diffEditor.ignoreTrimWhitespace": true,
   "application.extensionMarketUrl": "https://marketplace.visualstudio.com",
-  "window.zoomLevel": 0.8,
-  "workbench.colorTheme": "Dioptase (Light)"
+  "window.zoomLevel": 1,
+  "workbench.colorTheme": "Dioptase (Light)",
+  "editor.minimap.enabled": true
 }
 ```
