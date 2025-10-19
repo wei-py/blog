@@ -9,6 +9,6 @@ tags:
 
 > https://www.nerdfonts.com/font-downloads
 
-<!-- https://ohmyposh.dev/docs/installation/fonts -->
+> https://ohmyposh.dev/docs/installation/fonts
 
 brew install --cask font-maple-mono
