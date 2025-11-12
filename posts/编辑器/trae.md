@@ -8,8 +8,9 @@ tags:
 
 ```json
 {
+  "//": "文件嵌套配置（File Nesting）",
   "editor.tokenColorCustomizations": {
-    "[Vim Dark Hard]": {
+    "[Sublime Material Theme - Dark]": {
       "textMateRules": [
         {
           "scope": [
@@ -58,13 +59,20 @@ tags:
           }
         },
         {
-          "scope": ["comment", "punctuation.definition.comment"],
+          "scope": [
+            "comment",
+            "punctuation.definition.comment"
+          ],
           "settings": {
             "foreground": "#928374"
           }
         },
         {
-          "scope": ["constant", "support.constant", "variable.arguments"],
+          "scope": [
+            "constant",
+            "support.constant",
+            "variable.arguments"
+          ],
           "settings": {
             "foreground": "#d3869b"
           }
@@ -88,13 +96,19 @@ tags:
           }
         },
         {
-          "scope": ["entity.name.tag", "punctuation.tag"],
+          "scope": [
+            "entity.name.tag",
+            "punctuation.tag"
+          ],
           "settings": {
             "foreground": "#8ec07c"
           }
         },
         {
-          "scope": ["invalid", "invalid.illegal"],
+          "scope": [
+            "invalid",
+            "invalid.illegal"
+          ],
           "settings": {
             "foreground": "#cc241d"
           }
@@ -142,7 +156,10 @@ tags:
           }
         },
         {
-          "scope": ["storage.type", "storage.modifier"],
+          "scope": [
+            "storage.type",
+            "storage.modifier"
+          ],
           "settings": {
             "foreground": "#fe8019"
           }
@@ -284,7 +301,10 @@ tags:
           }
         },
         {
-          "scope": ["variable.this", "support.variable"],
+          "scope": [
+            "variable.this",
+            "support.variable"
+          ],
           "settings": {
             "foreground": "#d3869b"
           }
@@ -304,7 +324,10 @@ tags:
         },
         {
           "name": "Function declarations",
-          "scope": ["entity.function", "entity.name.function.static"],
+          "scope": [
+            "entity.function",
+            "entity.name.function.static"
+          ],
           "settings": {
             "foreground": "#8ec07c"
           }
@@ -358,7 +381,9 @@ tags:
           }
         },
         {
-          "scope": ["punctuation"],
+          "scope": [
+            "punctuation"
+          ],
           "settings": {
             "foreground": "#a89984"
           }
@@ -377,14 +402,21 @@ tags:
         },
         {
           "name": "URL",
-          "scope": ["*url*", "*link*", "*uri*"],
+          "scope": [
+            "*url*",
+            "*link*",
+            "*uri*"
+          ],
           "settings": {
             "fontStyle": "underline"
           }
         },
         {
           "name": "Python function",
-          "scope": ["meta.function.python", "entity.name.function.python"],
+          "scope": [
+            "meta.function.python",
+            "entity.name.function.python"
+          ],
           "settings": {
             "foreground": "#8ec07c"
           }
@@ -403,7 +435,9 @@ tags:
         },
         {
           "name": "Async keyword",
-          "scope": ["storage.type.function.async.python"],
+          "scope": [
+            "storage.type.function.async.python"
+          ],
           "settings": {
             "foreground": "#fb4934"
           }
@@ -495,7 +529,10 @@ tags:
         },
         {
           "name": "C# This",
-          "scope": ["keyword.other.this.cs", "keyword.other.base.cs"],
+          "scope": [
+            "keyword.other.this.cs",
+            "keyword.other.base.cs"
+          ],
           "settings": {
             "foreground": "#d3869b"
           }
@@ -524,7 +561,10 @@ tags:
           }
         },
         {
-          "scope": ["keyword.other.import.java", "keyword.other.package.java"],
+          "scope": [
+            "keyword.other.import.java",
+            "keyword.other.package.java"
+          ],
           "settings": {
             "foreground": "#8ec07c"
           }
@@ -681,7 +721,10 @@ tags:
           }
         },
         {
-          "scope": ["markup.inline.raw", "markup.fenced_code.block"],
+          "scope": [
+            "markup.inline.raw",
+            "markup.fenced_code.block"
+          ],
           "settings": {
             "foreground": "#8ec07c"
           }
@@ -739,74 +782,101 @@ tags:
           }
         },
         {
-          "scope": ["entity.name.tag.css"],
+          "scope": [
+            "entity.name.tag.css"
+          ],
           "settings": {
             "fontStyle": ""
           }
         },
         {
-          "scope": ["punctuation.definition.tag"],
+          "scope": [
+            "punctuation.definition.tag"
+          ],
           "settings": {
             "foreground": "#83a598"
           }
         },
         {
-          "scope": ["text.html entity.name.tag", "text.html punctuation.tag"],
+          "scope": [
+            "text.html entity.name.tag",
+            "text.html punctuation.tag"
+          ],
           "settings": {
             "foreground": "#8ec07c",
             "fontStyle": "bold"
           }
         },
         {
-          "scope": ["source.js variable.language"],
+          "scope": [
+            "source.js variable.language"
+          ],
           "settings": {
             "foreground": "#fe8019"
           }
         },
         {
-          "scope": ["source.ts variable.language"],
+          "scope": [
+            "source.ts variable.language"
+          ],
           "settings": {
             "foreground": "#fe8019"
           }
         },
         {
-          "scope": ["source.go storage.type"],
+          "scope": [
+            "source.go storage.type"
+          ],
           "settings": {
             "foreground": "#fabd2f"
           }
         },
         {
-          "scope": ["source.go entity.name.import"],
+          "scope": [
+            "source.go entity.name.import"
+          ],
           "settings": {
             "foreground": "#b8bb26"
           }
         },
         {
-          "scope": ["source.go keyword.package", "source.go keyword.import"],
+          "scope": [
+            "source.go keyword.package",
+            "source.go keyword.import"
+          ],
           "settings": {
             "foreground": "#8ec07c"
           }
         },
         {
-          "scope": ["source.go keyword.interface", "source.go keyword.struct"],
+          "scope": [
+            "source.go keyword.interface",
+            "source.go keyword.struct"
+          ],
           "settings": {
             "foreground": "#83a598"
           }
         },
         {
-          "scope": ["source.go entity.name.type"],
+          "scope": [
+            "source.go entity.name.type"
+          ],
           "settings": {
             "foreground": "#ebdbb2"
           }
         },
         {
-          "scope": ["source.go entity.name.function"],
+          "scope": [
+            "source.go entity.name.function"
+          ],
           "settings": {
             "foreground": "#d3869b"
           }
         },
         {
-          "scope": ["keyword.control.cucumber.table"],
+          "scope": [
+            "keyword.control.cucumber.table"
+          ],
           "settings": {
             "foreground": "#83a598"
           }
@@ -823,14 +893,18 @@ tags:
         },
         {
           "name": "ReasonML equals sign",
-          "scope": ["source.reason keyword.control.less"],
+          "scope": [
+            "source.reason keyword.control.less"
+          ],
           "settings": {
             "foreground": "#8ec07c"
           }
         },
         {
           "name": "ReasonML variable",
-          "scope": ["source.reason entity.name.function"],
+          "scope": [
+            "source.reason entity.name.function"
+          ],
           "settings": {
             "foreground": "#83a598"
           }
@@ -847,21 +921,27 @@ tags:
         },
         {
           "name": "Powershell member",
-          "scope": ["source.powershell variable.other.member.powershell"],
+          "scope": [
+            "source.powershell variable.other.member.powershell"
+          ],
           "settings": {
             "foreground": "#fe8019"
           }
         },
         {
           "name": "Powershell function",
-          "scope": ["source.powershell support.function.powershell"],
+          "scope": [
+            "source.powershell support.function.powershell"
+          ],
           "settings": {
             "foreground": "#fabd2f"
           }
         },
         {
           "name": "Powershell function attribute",
-          "scope": ["source.powershell support.function.attribute.powershell"],
+          "scope": [
+            "source.powershell support.function.attribute.powershell"
+          ],
           "settings": {
             "foreground": "#bdae93"
           }
@@ -913,7 +993,9 @@ tags:
         },
         {
           "name": "LaTeX packages",
-          "scope": ["support.class.latex"],
+          "scope": [
+            "support.class.latex"
+          ],
           "settings": {
             "foreground": "#8ec07c"
           }
@@ -922,25 +1004,49 @@ tags:
     }
   },
   "workbench.colorCustomizations": {
-    "tab.activeBorder": "#d50000",
-    "[Vim Light Hard]": {
+    // "tab.activeBorder": "#fbbc2e",
+    "[Sublime Material Theme - Dark]": {
       "editorCursor.foreground": "#d50000",
-      // 1e1e1e
-      // 262626
-      // 2e3842
-      // 1c2228
-      "editor.lineHighlightBackground": "#f3e7c5", // 当前光标所在行的背景色
-      // "editor.foldBackground": "#11101099",
-      "editorLineNumber.foreground": "#1e1d1d00"
-      // "editor.background": "#1e1d1d",
-      // "statusBar.background": "#1e1d1d",
-      // "activityBar.background": "#1e1d1d",
-      // "tab.inactiveBackground": "#1e1d1d",
-      // "tab.activeForeground": "#40a6f5",
-      // "tab.inactiveForeground": "#888",
-      // "sideBar.background": "#1e1d1d",
-      // "editorGroupHeader.tabsBackground": "#1e1d1d",
-      // "titleBar.activeBackground": "#1e1d1d"
+      "editorLineNumber.foreground": "#1c2228",
+      "editor.background": "#1c2228",
+      "statusBar.background": "#1c2228",
+      "activityBar.background": "#1c2228",
+      "tab.inactiveBackground": "#1c2228",
+      "tab.activeForeground": "#40a6f5",
+      "tab.inactiveForeground": "#888",
+      "sideBar.background": "#1c2228",
+      "editorGroupHeader.tabsBackground": "#1c2228",
+      "titleBar.activeBackground": "#1c2228"
+    },
+    "[Vim Dark Soft]": {
+      "editor.lineHighlightBackground": "#21201f",
+      "editorCursor.foreground": "#fbbc2e",
+      "editorLineNumber.foreground": "#32302f"
+    },
+    "[Vim Dark Hard]": {
+      "editorCursor.foreground": "#fbbc2e",
+      "editorLineNumber.foreground": "#1e2021",
+      "editor.lineHighlightBackground": "#131414"
+    },
+    "[Dioptase (Light)]": {
+      "editorLineNumber.foreground": "#e3e3e3",
+      "editor.lineHighlightBackground": "#b3b3b3",
+      "editor.lineHighlightBorder": "#e3e3e3",
+      "editor.background": "#e3e3e3",
+      "sideBar.background": "#e3e3e3",
+      "tab.inactiveForeground": "#888",
+      "editorCursor.foreground": "#00c46a",
+      "editorGroupHeader.tabsBackground": "#e3e3e3",
+      "tab.inactiveBackground": "#e3e3e3",
+    },
+    "[Light]": {
+      "editorLineNumber.foreground": "#edeff2",
+      "editor.lineHighlightBackground": "#b3b3b3",
+      "editorCursor.foreground": "#f5222d",
+      "editor.background": "#edeff2",
+      "sideBar.background": "#edeff2",
+      "tab.inactiveBackground": "#edeff2",
+      "editorGroupHeader.tabsBackground": "#edeff2",
     }
   },
   "chat.commandCenter.enabled": false,
@@ -948,26 +1054,23 @@ tags:
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.cursorSurroundingLines": 50,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.fontFamily": "FiraCode Nerd Font, 手札体-简, 霞鹜文楷 GB",
-  "terminal.integrated.fontSize": 16,
+  "editor.diffEditor.ignoreTrimWhitespace": true,
+  "editor.fontFamily": "FiraCode Nerd Font Mono, 霞鹜文楷 GB",
+  "terminal.integrated.fontSize": 15,
   "editor.fontLigatures": true,
-  "editor.fontSize": 18,
+  "editor.fontSize": 19,
   "editor.fontWeight": "400",
-  "editor.inlineSuggest.enabled": true,
-  "editor.lineHeight": 1.5,
+  "editor.inlineSuggest.enabled": false,
+  "editor.lineHeight": 1.2,
   "editor.lineNumbers": "relative",
-  // "editor.minimap.size": "fit",
   "editor.smoothScrolling": true,
   "editor.tabSize": 2,
   "editor.minimap.side": "left",
-  "//": "终端设置",
+  "editor.minimap.autohide": "none",
   "terminal.integrated.defaultProfile.windows": "Git Bash",
   "terminal.integrated.fontFamily": "FiraCode Nerd Font",
   "terminal.integrated.smoothScrolling": true,
   "explorer.autoReveal": "focusNoScroll",
-  // "explorer.decorations.badges": false,
-  // "explorer.decorations.colors": false,
-  "//": "工作区设置",
   "workbench.tree.indent": 18,
   "workbench.tree.renderIndentGuides": "none",
   "security.workspace.trust.untrustedFiles": "open",
@@ -982,13 +1085,10 @@ tags:
   "workbench.fontAliasing": "default",
   "workbench.navigationControl.enabled": false,
   "workbench.statusBar.visible": true,
-  "//": "AI 工具设置",
   "AI.toolcall.confirmMode": "autoRun",
-  "//": "语言与翻译设置",
   "Lingma.DisplayLanguage": "简体中文",
   "Lingma.PreferredLanguage for AI Chat": "简体中文",
   "Lingma.PreferredLanguage forCommitMessage": "简体中文",
-  "//": "ESLint 设置",
   "eslint.validate": [
     "javascript",
     "javascriptreact",
@@ -998,7 +1098,6 @@ tags:
     "vue",
     "html"
   ],
-  "//": "代码格式化设置 - Prettier 默认格式化器",
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -1009,7 +1108,7 @@ tags:
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.json-language-features"
   },
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -1033,7 +1132,6 @@ tags:
   "[css]": {
     "editor.defaultFormatter": "vscode.css-language-features"
   },
-  "//": "Vim 插件设置",
   "vim.easymotion": true,
   "vim.easymotionJumpToAnywhereRegex": "\\b[A-Za-z0-9]|[A-Za-z0-9]\\b|_.|#.|[a-z][A-Z]",
   "vim.foldfix": true,
@@ -1055,64 +1153,96 @@ tags:
   "vim.incsearch": true,
   "vim.insertModeKeyBindings": [
     {
-      "before": ["j", "k"],
-      "after": ["<Esc>"]
+      "before": [
+        "j",
+        "k"
+      ],
+      "after": [
+        "<Esc>"
+      ]
     }
   ],
   "vim.leader": "<space>",
-  "vim.normalModeKeyBindings": [
-
-  ],
+  "vim.normalModeKeyBindings": [],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": ["<C-n>"],
-      "commands": [":nohl"]
+      "before": [
+        "<C-n>"
+      ],
+      "commands": [
+        ":nohl"
+      ]
     },
     {
-      "before": ["H"],
-      "after": ["^"]
+      "before": [
+        "H"
+      ],
+      "after": [
+        "^"
+      ]
     },
     {
-      "before": ["L"],
-      "after": ["$"]
+      "before": [
+        "L"
+      ],
+      "after": [
+        "$"
+      ]
     },
     {
-      "before": ["f"],
-      "after": ["\\"]
+      "before": [
+        "f"
+      ],
+      "after": [
+        "\\"
+      ]
     },
     {
-      "before": ["f"],
-      "after": ["<leader>", "<leader>", "s"]
+      "before": [
+        "f"
+      ],
+      "after": [
+        "<leader>",
+        "<leader>",
+        "s"
+      ]
     },
     {
-      "before": ["n", "n"],
-      "commands": ["workbench.action.focusSideBar"]
+      "before": [
+        "n",
+        "n"
+      ],
+      "commands": [
+        "workbench.action.focusSideBar"
+      ]
     },
     {
-      "before": ["q", "q"],
-      "commands": ["editor.action.formatDocument"]
-    },
-    // {
-    //   "before": ["[", "["],
-    //   "commands": ["editor.gotoPreviousSymbolFromCursor"]
-    // },
-    // {
-    //   "before": ["]", "]"],
-    //   "commands": ["editor.gotoNextSymbolFromCursor"]
-    // },
-    {
-      "before": ["[", "e"],
-      "commands": ["editor.action.marker.prev"]
+      "before": [
+        "q",
+        "q"
+      ],
+      "commands": [
+        "editor.action.formatDocument"
+      ]
     },
     {
-      "before": ["]", "e"],
-      "commands": ["editor.action.marker.next"]
+      "before": [
+        "[",
+        "e"
+      ],
+      "commands": [
+        "editor.action.marker.prev"
+      ]
+    },
+    {
+      "before": [
+        "]",
+        "e"
+      ],
+      "commands": [
+        "editor.action.marker.next"
+      ]
     }
-
-    // {
-    // "before": ["s"],
-    // "after": ["f"]
-    // }
   ],
   "vim.sneak": false,
   "vim.surround": true,
@@ -1120,36 +1250,69 @@ tags:
   "vim.useSystemClipboard": true,
   "vim.visualModeKeyBindingsNonRecursive": [
     {
-      "before": ["H"],
-      "after": ["^"]
+      "before": [
+        "H"
+      ],
+      "after": [
+        "^"
+      ]
     },
     {
-      "before": ["L"],
-      "after": ["$"]
+      "before": [
+        "L"
+      ],
+      "after": [
+        "$"
+      ]
     },
     {
-      "before": ["S"],
-      "after": [""]
+      "before": [
+        "S"
+      ],
+      "after": [
+        ""
+      ]
     },
     {
-      "before": ["j", "k"],
-      "after": ["<Esc>"]
+      "before": [
+        "j",
+        "k"
+      ],
+      "after": [
+        "<Esc>"
+      ]
     },
     {
-      "before": ["c", "o", "s"],
-      "commands": ["editor.action.transformToSnakecase"]
+      "before": [
+        "c",
+        "o",
+        "s"
+      ],
+      "commands": [
+        "editor.action.transformToSnakecase"
+      ]
     },
     {
-      "before": ["c", "o", "c"],
-      "commands": ["editor.action.transformToCamelcase"]
+      "before": [
+        "c",
+        "o",
+        "c"
+      ],
+      "commands": [
+        "editor.action.transformToCamelcase"
+      ]
     },
     {
-      "before": ["c", "o", "k"],
-      "commands": ["editor.action.transformToKebabcase"]
+      "before": [
+        "c",
+        "o",
+        "k"
+      ],
+      "commands": [
+        "editor.action.transformToKebabcase"
+      ]
     }
   ],
-
-  "//": "文件嵌套配置（File Nesting）",
   "explorer.sortOrder": "type",
   "explorer.sortOrderReverse": true,
   "explorer.openEditors.sortOrder": "fullPath",
@@ -1259,9 +1422,31 @@ tags:
   },
   "workbench.editor.empty.hint": "hidden",
   "diffEditor.ignoreTrimWhitespace": true,
+  "window.zoomLevel": 0.5,
+  "app": {
+    "configGeneralDisplayLanguage": "zh-cn",
+    "configGeneralAiResponseLanguage": "zh-cn",
+    "configGeneralImprovementPlan": "agree",
+    "configGeneralImportSettings": "VS Code",
+    "configCompletionEnableNES": true,
+    "configChatWebToolsMode": "Ask every time",
+    "configChatAskModeUseTools": true,
+    "configChatEditFileTool": false,
+    "configChatTerminalRunMode": "askEveryTime",
+    "configChatCommandDenyList": "rm,mv,sudo,wget,curl,chown",
+    "configChatCommandAllowlist": "",
+    "configChatAutoRunMcpTools": true,
+    "configChatMethodQuickOperation": false,
+    "configChatShowSelectionToolbar": true,
+    "configQuestEnable": true,
+    "configMemoryAutoGenerate": true,
+    "configAdvancedAutoUpdate": true,
+    "configAdvancedProxyMode": "system",
+    "configAdvancedProxyURL": ""
+  },
   "application.extensionMarketUrl": "https://marketplace.visualstudio.com",
-  "window.zoomLevel": 1,
-  "workbench.colorTheme": "Dioptase (Light)",
-  "editor.minimap.enabled": true
+  "AI.toolcall.v2.ide.mcp.autoRun": "alwaysRun",
+  "AI.toolcall.v2.ide.command.mode": "blacklist",
+  "workbench.colorTheme": "Light",
 }
 ```
