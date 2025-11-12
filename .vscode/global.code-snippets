@@ -97,5 +97,26 @@
       "</tr>",
       "</table>",
     ],
+  },
+  "markdown-blog-frontmatter": {
+    "scope": "markdown,yaml",
+    "prefix": "fm",
+    "body": [
+      "---",
+      "TITLE: ${1:文章标题}",
+      "DATE: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}",
+      "CATEGORY: ${2:REACT}",
+      "TAGS:",
+      "  - ${3:ESLINT}",
+      "  - ${4:REACT}",
+      "  - ${5:代码规范}",
+      "  - ${6:TYPESCRIPT}",
+      "  - ${7:前端工程化}",
+      "---",
+      "",
+      "# ${1:文章标题}",
+      ""
+    ],
+    "description": "Blog frontmatter template (TITLE/DATE/CATEGORY/TAGS)"
   }
 }
