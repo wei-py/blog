@@ -1,6 +1,6 @@
 ---
 title: VSCode 外观设置
-date: 2025-09-09
+date: 2025-11-12
 category: 设置
 tags:
   - vscode
