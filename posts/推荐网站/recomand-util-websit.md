@@ -43,3 +43,15 @@ description:
 ## github download
 
 https://github.abskoop.workers.dev/
+
+## bt
+
+https://github.com/chinavpns/torrent-site
+
+## msdn
+
+https://msdn.itellyou.cn/
+
+## kkk
+
+https://github.com/yonggekkk/argosbx
