@@ -73,3 +73,7 @@ https://saduck.top
 ### vscode custom theme
 
 - https://themes.vscode.one/your-themes
+
+### js周报
+
+- https://javascriptweekly.com/issues
