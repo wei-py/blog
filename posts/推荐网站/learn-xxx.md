@@ -77,3 +77,11 @@ https://saduck.top
 ### js周报
 
 - https://javascriptweekly.com/issues
+
+### vue emoji
+
+- https://vue-frimousse.robertshaw.id/
+
+### node shell 脚手架编辑
+
+- https://github.com/google/zx
