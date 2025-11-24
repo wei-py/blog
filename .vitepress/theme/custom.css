@@ -79,13 +79,15 @@ pre span {
   display: none !important;
 }
 
-.VPContent .has-sidebar {
-  margin-left: -3vw !important;
+.VPContent.has-sidebar {
+  padding-left: 18vw !important;
+  /* margin-left: -10vw !important; */
 }
 
 .content-body {
   padding-right: 30px !important;
 }
+
 
 :root {
   --un-preset-theme-colors-shadow: 0 0 0;
@@ -99,6 +101,7 @@ pre span {
   --vp-c-brand-lighter: var(--vp-c-brand);
   --vp-c-brand-dark: var(--vp-c-brand);
   --vp-c-brand-darker: var(--vp-c-brand);
+
 
   /* --vp-font-family-base: "PingFang SC", "Microsoft Yahei", sans-serif; */
 
@@ -224,12 +227,16 @@ h3 {
 
 .VPDoc.has-aside .content-container {
   margin: 0 0 0 5vw;
-  /* max-width: 70rem !important; */
+  max-width: 70rem !important;
 }
+
+/* .VPDoc.has-aside .content-container .main {
+  width: 100%;
+} */
 
 @media (min-width: 768px) {
   .VPDoc.has-aside .content-container {
-    margin: 0 0 0 10vw;
+    /* margin: 0 0 0 10vw; */
     /* max-width: 70rem !important; */
   }
 
@@ -283,7 +290,7 @@ button.menu {
 }
 
 /*mobile*/
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 50vw) {
   .VPDoc {
     padding-top: 10px !important;
     padding-bottom: 20px !important;
