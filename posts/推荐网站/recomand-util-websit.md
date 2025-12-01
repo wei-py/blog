@@ -55,3 +55,7 @@ https://msdn.itellyou.cn/
 ## kkk
 
 https://github.com/yonggekkk/argosbx
+
+## ai project
+
+http://bolt.new/
