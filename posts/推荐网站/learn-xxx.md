@@ -93,3 +93,15 @@ https://swift.bootcss.com/
 ### via
 
 https://www.usevia.app/
+
+### book
+
+https://github.com/zjp-CN/mdbook-template
+
+### 加密移动端 APP
+
+https://runenc.ijiami.cn/
+
+### 苹果证书
+
+https://developer.yonyou.com/docs/Technical-Topics/Instructions-SigningCertificate-iOS#2
