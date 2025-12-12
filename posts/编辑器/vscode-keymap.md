@@ -240,7 +240,7 @@ description: vscode 配置
   {
     "key": "cmd+e",
     "command": "workbench.action.focusSideBar",
-    "when": "editorFocus"
+    "when": "!sideBarFocus"
   },
   {
     "key": "cmd+e",
@@ -254,7 +254,7 @@ description: vscode 配置
   {
     "key": "alt+e",
     "command": "workbench.action.focusSideBar",
-    "when": "editorFocus"
+    "when": "!sideBarFocus"
   },
   {
     "key": "alt+e",
@@ -284,6 +284,11 @@ description: vscode 配置
   {
     "key": "x",
     "command": "revealFileInOS",
+    "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "o",
+    "command": "list.select",
     "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
   }
 ]
