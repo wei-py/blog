@@ -1,6 +1,6 @@
 ---
 date: 2025-04-24
-title: vscode 配置
+title: vscode setting
 category: 配置
 tags:
   - vscode

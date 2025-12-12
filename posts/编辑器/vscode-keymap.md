@@ -1,6 +1,6 @@
 ---
 date: 2025-12-12
-title: vscode 配置
+title: vscode keymap
 category: 配置
 tags:
   - vscode
@@ -260,6 +260,31 @@ description: vscode 配置
     "key": "alt+e",
     "command": "workbench.action.focusActiveEditorGroup",
     "when": "sideBarFocus"
+  },
+  {
+    "key": "n",
+    "command": "explorer.newFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "a",
+    "command": "explorer.newFolder",
+    "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "shift+r",
+    "command": "renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "d",
+    "command": "deleteFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "x",
+    "command": "revealFileInOS",
+    "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
   }
 ]
 ```

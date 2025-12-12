@@ -1,3 +1,15 @@
+---
+date: 2025-12-12
+title: zed keymap
+category: 配置
+tags:
+  - zed
+  - setting
+  - keymap
+description: zed 配置
+---
+
+```json
 // Zed keymap
 //
 // For information on binding keys, see the Zed
@@ -78,3 +90,4 @@
     }
   }
 ]
+```
