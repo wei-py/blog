@@ -1,7 +1,7 @@
 ---
-title: "SwiftUI 与 Web 开发的全面对比：从 HTML、Tailwind 到原生能力"
+title: SwiftUI 与 Web 开发的全面对比：从 HTML、Tailwind 到原生能力
 date: 2025-12-02
-category: SwiftUI
+category: swift
 tags:
   - SwiftUI
   - iOS
