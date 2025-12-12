@@ -35,7 +35,8 @@
     "context": "Editor && vim_mode == insert",
     "bindings": {
       // "j k": ["workspace::SendKeystrokes", "escape"]
-      "j k": "vim::NormalBefore"
+      "j k": "vim::SwitchToNormalMode"
+      // "j k": "vim::NormalBefore"
     }
   },
   {
@@ -49,6 +50,17 @@
     "context": "!ContextEditor > (Editor && mode == full)",
     "bindings": {
       "cmd-shift-enter": "assistant::InlineAssist"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "cmd-e": null
+    }
+  },
+  {
+    "bindings": {
+      "cmd-e": "project_panel::ToggleFocus"
     }
   }
 ]
