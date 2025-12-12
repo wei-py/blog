@@ -18,7 +18,6 @@ tags:
 
 下面是一个 **HTML 元素 vs SwiftUI 视图** 的全面对照表，并附上简单示例：
 
----
 
 ### 🧱 基础结构类
 
@@ -31,7 +30,7 @@ tags:
 | `<footer>` | `VStack` 放在底部或 `Toolbar(.bottom)`                    | 底部区域                     |
 | `<main>`   | 主 `VStack` 或 `ScrollView`                               | 主内容区                     |
 
----
+
 
 ### 📝 文本与排版
 
@@ -45,7 +44,7 @@ tags:
 | `<br>`             | `\n` 或多个 `Text`                 | `Text("Line1\nLine2")`           |
 | `<hr>`             | `Divider()`                        | `Divider()`                      |
 
----
+
 
 ### 🔗 链接与交互
 
@@ -71,7 +70,7 @@ tags:
 | `<input type="radio">`    | 多个 `Picker` 或自定义 `Button` 切换         | 通常用 `Picker` 模拟                                       |
 | `<label>`                 | 直接写在控件旁边或用 `Text`                  | SwiftUI 中 label 常内联在控件中                            |
 
----
+
 
 ### 🖼️ 媒体
 
@@ -80,7 +79,7 @@ tags:
 | `<img src="...">` | `Image("name")` 或 `AsyncImage(url:)`（iOS 15+） | `Image("logo")`<br>`AsyncImage(url: url)` |
 | `<video>`         | 需用 `AVKit` 的 `VideoPlayer`（非纯 SwiftUI）    | 需导入 `AVKit`                            |
 
----
+
 
 ### 📋 列表与表格
 
@@ -90,7 +89,7 @@ tags:
 | `<li>`          | `ForEach` 中的每个 `View`                 | —                                      |
 | `<table>`       | 自定义 `HStack` + `VStack` 或 `LazyVGrid` | SwiftUI 无原生表格，需布局组合         |
 
----
+
 
 ### 🧩 其他常用
 
@@ -102,7 +101,7 @@ tags:
 | `<article>`                 | 自定义 `View` 组件                   | 封装为可复用 View          |
 | `<figure>` / `<figcaption>` | `VStack { Image; Text }`             | 图文组合                   |
 
----
+
 
 ### ✨ 布局与样式（类比 CSS）
 
@@ -121,7 +120,7 @@ SwiftUI 不使用 CSS，而是通过 **修饰符（Modifiers）** 实现样式�
 | `border`             | `.border(Color.gray)`                                      |
 | `border-radius`      | `.clipShape(RoundedRectangle(cornerRadius: 8))`            |
 
----
+
 
 ### 🔁 状态与响应式（类比 JS + DOM）
 
@@ -135,7 +134,7 @@ var body: some View {
 }
 ```
 
----
+
 
 ### ✅ 总结
 
@@ -156,7 +155,7 @@ var body: some View {
 
 下面我将 **以 Tailwind CSS 常用类为参照**，逐一对应到 **SwiftUI 的等效写法**，并给出完整可运行的代码示例，帮助你快速迁移思维。
 
----
+
 
 ## 🧩 基本原则：Tailwind → SwiftUI
 
@@ -166,7 +165,7 @@ var body: some View {
 | 响应式/状态类（如 `hover:`）  | SwiftUI 有限支持（如 `.onHover`）或需自定义 | 原生交互逻辑不同   |
 | 自定义主题（`theme.spacing`） | 使用 `@Environment` 或自定义常量            | 可封装复用         |
 
----
+
 
 ## 📏 1. 间距（Spacing） —— `p-*`, `m-*`
 
@@ -189,7 +188,7 @@ HStack {
 .padding(.horizontal, 16) // ← 相当于 px-4
 ```
 
----
+
 
 ## 🎨 2. 颜色（Color） —— `bg-*`, `text-*`
 
@@ -223,7 +222,7 @@ extension Color {
 }
 ```
 
----
+
 
 ## 📐 3. 尺寸（Sizing） —— `w-*`, `h-*`, `max-w-*`
 
@@ -262,7 +261,7 @@ Text("Button")
   .clipShape(RoundedRectangle(cornerRadius: 8)) // rounded-lg
 ```
 
----
+
 
 ## 📰 5. 文本样式（Typography） —— `text-*`, `font-*`
 
@@ -286,7 +285,7 @@ Text("Bold Title")
 
 > ✅ 建议优先使用语义化字体：`.font(.headline)`, `.font(.subheadline)`, `.font(.caption)` 等。
 
----
+
 
 ## 🧱 6. 布局（Layout） —— `flex`, `flex-col`, `items-center`, `justify-between`
 
@@ -312,7 +311,7 @@ VStack(alignment: .center, spacing: 16) {
 .frame(maxHeight: .infinity) // 需放在有高度的容器中
 ```
 
----
+
 
 ## 🖼️ 7. 背景与遮罩 —— `bg-cover`, `bg-center`
 
@@ -331,7 +330,7 @@ Image("background")
   .clipped() // 裁剪超出部分
 ```
 
----
+
 
 ## 🖱️ 8. 交互状态（有限支持） —— `hover:`, `focus:`
 
@@ -351,7 +350,7 @@ Text("Hover me")
 - `.onTapGesture` ≈ `@click`
 - `.onChange` / `.onAppear` ≈ 生命周期
 
----
+
 
 ## 🧪 9. 可视性与条件渲染 —— `hidden`, `invisible`
 
@@ -371,7 +370,7 @@ Text("Invisible")
   .hidden()
 ```
 
----
+
 
 ## 🎯 10. 响应式（Responsive）
 
@@ -396,7 +395,7 @@ GeometryReader { geometry in
 }
 ```
 
----
+
 
 ## ✅ 总结：Tailwind → SwiftUI 思维转换表
 
@@ -413,7 +412,7 @@ GeometryReader { geometry in
 | 条件渲染   | `class="{{ hidden ? 'hidden' : '' }}"` | `if visible { Text(...) }`                      |
 | 自定义主题 | `tailwind.config.js`                   | 自定义 `Color`、`Font` 扩展或常量               |
 
----
+
 
 ## 💡 建议
 
@@ -421,7 +420,7 @@ GeometryReader { geometry in
 2. **多用语义化修饰符**：如 `.font(.title)` 比 `.font(.system(size: 20))` 更好。
 3. **封装可复用组件**：比如 `PrimaryButton`、`CardView`，就像你在 Tailwind 中用 `@apply`。
 
----
+
 
 # 组件 目录 路由
 
@@ -433,7 +432,7 @@ GeometryReader { geometry in
 - ✅ **状态管理（State Management）**
 - ✅ **与 Web（如 Vue/SwiftUI）的思维对比**
 
----
+
 
 ## 一、组件（Components）— 类比 Vue/React 组件
 
@@ -480,7 +479,7 @@ var body: some View {
 > - 无 `template`，`body` 就是 UI 声明。
 > - 支持 `@State`, `@Binding`, `@ObservedObject` 等响应式状态。
 
----
+
 
 ## 二、导航与“路由”（Navigation / Routing）
 
@@ -579,7 +578,7 @@ var body: some View {
 > }
 > ```
 
----
+
 
 ## 三、典型目录结构（Project Structure）
 
@@ -660,7 +659,7 @@ struct FormView: View {
 > ✅ `@StateObject`：用于 **创建** ViewModel（类似 `provide/inject` 或根级 store）
 > ✅ `@ObservedObject`：用于 **接收** 已存在的 ViewModel
 
----
+
 
 ## 五、与 Web 开发的思维对比总结
 
@@ -675,7 +674,7 @@ struct FormView: View {
 | 响应式   | `ref`, `reactive`          | `@State`, `@Published`               |
 | 生命周期 | `onMounted`, `onUnmounted` | `.onAppear`, `.onDisappear`          |
 
----
+
 
 ## ✅ 下一步
 
@@ -691,7 +690,7 @@ struct FormView: View {
 
 4. **了解 `Task { }`**：替代 `onAppear` 中的异步调用（Swift 5.5+）。
 
----
+
 
 # 原生
 
@@ -705,7 +704,7 @@ struct FormView: View {
 - 🌐 网络与后台任务
 - 📦 应用生命周期与权限管理
 
----
+
 
 ## 一、App 应用基础：入口与生命周期
 
@@ -825,7 +824,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
 }
 ```
 
----
+
 
 ### 2. 📸 **相机与照片库（UIImagePickerController / PhotosUI）**
 
@@ -868,7 +867,7 @@ struct CameraView: View {
 
 > ✅ 支持拍照、选图、多选、视频等。
 
----
+
 
 ### 3. 🔊 **音频播放（AVFoundation）**
 
@@ -936,7 +935,7 @@ func scheduleNotification() {
 }
 ```
 
----
+
 
 ### 2. 🔑 **安全存储（Keychain） & 偏好设置**
 
@@ -948,7 +947,7 @@ func scheduleNotification() {
 
 - **敏感数据（密码、token）** → 使用 **Keychain**（推荐封装或用 [SwiftKeychainWrapper](https://github.com/jrendel/SwiftKeychainWrapper)）
 
----
+
 
 ### 3. 👆 **生物认证（Face ID / Touch ID）**
 
@@ -983,7 +982,7 @@ func authenticate() {
 | **Core Data**      | 本地数据库（关系型）          | Xcode 创建模型 + `@FetchRequest`                         |
 | **SQLite / Realm** | 第三方数据库                  | 需引入库                                                 |
 
----
+
 
 ## 五、网络与后台任务
 
@@ -1023,7 +1022,7 @@ func application(_ application: UIApplication, performFetchWithCompletionHandler
 
 > ⚠️ iOS 对后台限制严格，仅用于必要场景。
 
----
+
 
 ## 六、权限管理（Privacy Manifest）
 
@@ -1058,7 +1057,7 @@ func application(_ application: UIApplication, performFetchWithCompletionHandler
 > ✅ **优势**：SwiftUI 调用原生 API **零桥接开销**，性能更好，功能更全。
 > ❌ **劣势**：需处理权限、生命周期、平台差异（iOS vs macOS）。
 
----
+
 
 ## ✅ 总结：你该怎么做？
 
@@ -1067,5 +1066,3 @@ func application(_ application: UIApplication, performFetchWithCompletionHandler
 3. **权限先行**：在 `Info.plist` 中提前声明！
 4. **封装常用服务**：如 `LocationService`, `AuthService`，便于复用。
 5. **测试真机**：模拟器不支持 Face ID、部分传感器。
-
----
