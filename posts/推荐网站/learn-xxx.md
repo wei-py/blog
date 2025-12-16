@@ -113,3 +113,7 @@ https://ext.dcloud.net.cn/plugin?id=24497
 ### 9png
 
 https://romannurik.github.io/AndroidAssetStudio/nine-patches.html#source.type=image&sourceDensity=240&name=123156456
+
+### tv
+
+http://ysjf.com/r/tvsetting
