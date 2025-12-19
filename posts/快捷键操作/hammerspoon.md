@@ -135,9 +135,8 @@ F13HotkeyBinding = nil
 local function remapCapsLockToF13()
     -- 将 CapsLock (0x700000039) 重映射到 F13 (0x700000068)
     local command =
-        "hidutil property --set '{\"UserKeyMapping\":[{\"HIDKeyboardModifierMappingSrc\": 0x700000039, \"HIDKeyboardModifierMappingDst\": 0x700000068}]}'"
+    "hidutil property --set '{\"UserKeyMapping\":[{\"HIDKeyboardModifierMappingSrc\": 0x700000039, \"HIDKeyboardModifierMappingDst\": 0x700000068}]}'"
     local success = os.execute(command)
-
     if success then
         -- hs.alert.show("CapsLock 映射为 F13")
         notify.success("CapsLock 映射为 F13")
@@ -148,6 +147,7 @@ local function remapCapsLockToF13()
     end
 
     F13HotkeyBinding = hs.hotkey.bind({}, 'f13', function()
+        -- notify.success("CapsLock 映射为 F13")
         F13Modal:enter()
     end, function()
         F13Modal:exit()
@@ -181,23 +181,23 @@ local function bindF13Key(key, fn, shouldRepeat)
     shouldRepeat = shouldRepeat or false
     if shouldRepeat then
         F13Modal:bind({}, key, -- pressedfn (按下时触发)
-        function()
-            fn()
-        end, -- releasedfn (松开时触发)
-        function()
-        end, -- repeatfn (重复时触发)
-        function()
-            fn()
-        end)
+            function()
+                fn()
+            end, -- releasedfn (松开时触发)
+            function()
+            end, -- repeatfn (重复时触发)
+            function()
+                fn()
+            end)
     else
         F13Modal:bind({}, key, -- pressedfn (按下时触发)
-        function()
-            fn()
-        end, -- releasedfn (松开时触发)
-        function()
-        end, -- repeatfn (重复时触发)
-        function()
-        end)
+            function()
+                fn()
+            end, -- releasedfn (松开时触发)
+            function()
+            end, -- repeatfn (重复时触发)
+            function()
+            end)
     end
 end
 
@@ -228,11 +228,19 @@ end
 
 ------------------ cmd ⬇️ ------------------
 local function bindCMDKey(key, fn)
-    hs.hotkey.bind({"cmd"}, key, function()
+    hs.hotkey.bind({ "cmd" }, key, function()
         fn()
     end)
 end
 ------------------ cmd ⬆️ ------------------
+
+------------------ option ⬇️ ------------------
+local function bindOptKey(key, fn)
+    hs.hotkey.bind({ "option" }, key, function()
+        fn()
+    end)
+end
+------------------ option ⬆️ ------------------
 
 ------------------ 改变窗口布局 ⬇️ ------------------
 local function changeWindowLayout(mode)
@@ -255,9 +263,9 @@ local function changeWindowLayout(mode)
     elseif mode == "maximize" then
         win:maximize()
     elseif mode == "left" then
-        win:moveToUnit({0, 0, 0.5, 1})
+        win:moveToUnit({ 0, 0, 0.5, 1 })
     elseif mode == "right" then
-        win:moveToUnit({0.5, 0, 0.5, 1})
+        win:moveToUnit({ 0.5, 0, 0.5, 1 })
     end
 end
 ------------------ 改变窗口布局 ⬆️ ------------------
@@ -271,12 +279,12 @@ end
 ------------------ 标签页相关 ⬇️ ------------------
 -- 上一个标签页
 local function prevTab()
-    sendKey({"ctrl", "shift"}, "tab")
+    sendKey({ "ctrl", "shift" }, "tab")
 end
 
 -- 下一个标签页
 local function nextTab()
-    sendKey({"ctrl"}, "tab")
+    sendKey({ "ctrl" }, "tab")
 end
 
 ------------------ 标签页相关 ⬆️ ------------------
@@ -346,7 +354,7 @@ ShiftStateCorrectionTimer = nil
 -- 单击shift切换输入法
 local function clickShiftSwitchInputMethod()
     -- 监听修饰键更改事件
-    ShiftDownEvent = hs.eventtap.new({hs.eventtap.event.types.flagsChanged}, function(event)
+    ShiftDownEvent = hs.eventtap.new({ hs.eventtap.event.types.flagsChanged }, function(event)
         local keyCode = event:getProperty(hs.eventtap.event.properties.keyboardEventKeycode)
 
         -- keyCode = 56(left shift), 60(right shift)
@@ -370,7 +378,7 @@ local function clickShiftSwitchInputMethod()
     ShiftDownEvent:start()
 
     -- 监听修饰键以外的按键按下事件
-    KeyDownEvent = hs.eventtap.new({hs.eventtap.event.types.keyDown}, function(event)
+    KeyDownEvent = hs.eventtap.new({ hs.eventtap.event.types.keyDown }, function(event)
         OtherKeyDownFlag = true
         -- 不阻止默认的事件
         return false
@@ -437,27 +445,47 @@ remapCapsLockToF13()
 bindF13Key("d", function()
     sendKey({}, "delete")
 end, true)
-
 bindF13Key("i", function()
-    launchApp("/Applications/zen.app")
+    launchApp("/Applications/Google Chrome.app")
 end)
+-- bindF13Key("i", function()
+--     launchApp("/Applications/ChatGPT Atlas.app")
+-- end)
+-- bindF13Key("i", function()
+--     launchApp("/Applications/comet.app")
+-- end)
+-- bindF13Key("o", function()
+--     launchApp("/Applications/Qoder.app")
+-- end)
+-- bindF13Key("o", function()
+--     launchApp("/Applications/Visual Studio Code.app")
+-- end)
+-- bindF13Key("o", function()
+--    launchApp("/Applications/TRAE.app")
+-- end)
 bindF13Key("o", function()
-    launchApp("/Applications/Visual Studio Code.app")
+    launchApp("/Applications/Zed.app")
 end)
-bindF13Key("u", function()
-    launchApp("/Applications/ziniaobrowser.app")
+bindF13Key("p", function()
+    launchApp("/Applications/HBuilderX.app")
 end)
 bindF13Key("y", function()
-    launchApp("/Applications/Obsidian.app")
+    launchApp("/Applications/Wechat Dev tools.app")
 end)
+-- bindF13Key("y", function()
+--     launchApp("/Applications/IntelliJ IDEA.app")
+-- end)
 bindF13Key("m", function()
     launchApp("/Applications/NeteaseMusic.app")
 end)
 bindF13Key("b", function()
     launchApp("/Applications/WeChat.app")
 end)
-bindF13Key("n", function()
+bindF13Key("u", function()
     launchApp("/Applications/Warp.app")
+end)
+bindF13Key("e", function()
+    hs.application.launchOrFocusByBundleID("com.apple.finder")
 end)
 
 -- 实现支持重复的 Vim 风格方向键
@@ -475,13 +503,15 @@ bindF13Key("l", function()
 end, true)
 
 -- 切换标签页
-bindF13Key("1", prevTab)
-bindF13Key("2", nextTab)
+bindF13Key("1", function ()
+    sendKey({ "cmd" }, "5")
+end)
+-- bindF13Key("2", nextTab)
 bindCMDKey("1", prevTab)
 bindCMDKey("2", nextTab)
 
 bindF13Key("r", function()
-    sendKey({"cmd"}, "`")
+    sendKey({ "cmd" }, "`")
 end, true)
 bindF13Key("0", function()
     hs.spaces.toggleLaunchPad()
@@ -492,6 +522,12 @@ end, true)
 bindF13Key("8", function()
     hs.spaces.toggleMissionControl()
 end, true)
+bindF13Key("c", function()
+    hs.eventtap.keyStroke({ "ctrl" }, "c")
+end)
+bindOptKey("d", function()
+    hs.eventtap.keyStroke({ "ctrl" }, "d")
+end)
 
 -- 单击shift切换输入法
 clickShiftSwitchInputMethod()
@@ -520,9 +556,34 @@ bindF13Key("-", function()
     setVolumn(false)
 end, true)
 
+------------------ 媒体控制 ⬇️ ------------------
+-- 下一首
+bindF13Key("]", function()
+    hs.eventtap.event.newSystemKeyEvent("NEXT", true):post()
+    hs.eventtap.event.newSystemKeyEvent("NEXT", false):post()
+end)
+
+-- 上一首
+bindF13Key("[", function()
+    hs.eventtap.event.newSystemKeyEvent("PREVIOUS", true):post()
+    hs.eventtap.event.newSystemKeyEvent("PREVIOUS", false):post()
+end)
+
+-- 播放/暂停
+bindF13Key("\\", function()
+    hs.eventtap.event.newSystemKeyEvent("PLAY", true):post()
+    hs.eventtap.event.newSystemKeyEvent("PLAY", false):post()
+end)
+------------------ 媒体控制 ⬆️ ------------------
+
+-- bindOptKey("c", function()
+--     sendKey({ "ctrl" }, "c")
+-- end, true)
+
 -- 在Hammerspoon退出时执行相关操作
 hs.shutdownCallback = function()
     -- 撤销 CapsLock 映射到 F13
     removeCapsLockToF13()
 end
+
 ```
