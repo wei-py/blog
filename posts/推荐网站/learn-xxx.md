@@ -117,3 +117,7 @@ https://romannurik.github.io/AndroidAssetStudio/nine-patches.html#source.type=im
 ### tv
 
 http://ysjf.com/r/tvsetting
+
+## cross-zip-cli
+
+npm -g i cross-zip-cli
