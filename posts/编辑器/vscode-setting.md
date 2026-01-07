@@ -11,57 +11,85 @@ description: vscode 配置
 
 ```json
 {
-  "//": "VSCode 外观设置",
-  "workbench.colorTheme": "Vim Dark Hard",
-  "window.zoomLevel": -0.5,
+  "workbench.colorCustomizations": {
+    "gitlens.trailingLineForegroundColor": "#666",
+    "[Vim Dark Hard]": {
+      "editorCursor.foreground": "#fbbc2e",
+      "editorLineNumber.foreground": "#1e2021",
+      "editor.lineHighlightBackground": "#131414"
+    },
+    "[dawn2_pure]": {
+      "editorLineNumber.activeForeground": "#ff7043",
+      "editorCursor.foreground": "#ff7043",
+      "editorLineNumber.foreground": "#fdf6e3",
+      // "tab.activeBackground": "#fff",
+      "editorGroupHeader.tabsBackground": "#eee8d5",
+      "tab.inactiveBackground": "#eee8d5",
+      "statusBar.background": "#fdf6e3",
+    },
+    "[Visual Studio Light]": {
+      "editorCursor.foreground": "#000",
+      "editor.background": "#ddd",
+      "sideBar.background": "#ddd",
+      "editorLineNumber.activeForeground": "#666",
+      "tab.inactiveBackground": "#ddd",
+      "tab.activeBackground": "#fff",
+      "editorLineNumber.foreground": "#ddd",
+      "tab.activeBorder": "#000",
+      "tab.border": "#ddd",
+      "list.inactiveSelectionBackground": "#666",
+      "list.activeSelectionBackground": "#666",
+      "list.inactiveFocusOutline": "#666",
+      "list.focusAndSelectionOutline": "#666",
+      "list.inactiveSelectionForeground": "#ddd",
+      "editor.selectionBackground": "#666",
+      "editor.selectionHighlightBackground": "#66666666",
+      "editor.lineHighlightBackground": "#999",
+      "statusBar.background": "#ddd",
+      "statusBar.foreground": "#000",
+      "editorGroupHeader.tabsBackground": "#ddd"
+    }
+  },
   "chat.commandCenter.enabled": false,
   "editor.accessibilitySupport": "on",
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.cursorSurroundingLines": 50,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   "editor.diffEditor.ignoreTrimWhitespace": true,
   "editor.fontFamily": "FiraCode Nerd Font, 霞鹜文楷 GB",
-  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.fontSize": 15,
   "editor.fontLigatures": true,
-  "editor.fontSize": 19,
+  "editor.fontSize": 16.5,
   "editor.fontWeight": "400",
   "editor.inlineSuggest.enabled": false,
-  "editor.lineHeight": 1.2,
+  "editor.lineHeight": 1.5,
   "editor.lineNumbers": "relative",
-  // "editor.minimap.size": "fit",
   "editor.smoothScrolling": true,
   "editor.tabSize": 2,
   "editor.minimap.side": "left",
-  "//": "终端设置",
+  "editor.minimap.autohide": "none",
   "terminal.integrated.defaultProfile.windows": "Git Bash",
   "terminal.integrated.fontFamily": "FiraCode Nerd Font",
   "terminal.integrated.smoothScrolling": true,
   "explorer.autoReveal": "focusNoScroll",
-  // "explorer.decorations.badges": false,
-  // "explorer.decorations.colors": false,
-  "//": "工作区设置",
   "workbench.tree.indent": 18,
   "workbench.tree.renderIndentGuides": "none",
   "security.workspace.trust.untrustedFiles": "open",
   "window.commandCenter": false,
   "window.density.editorTabHeight": "default",
   "window.titleBarStyle": "custom",
-  "workbench.activityBar.location": "bottom",
+  "workbench.activityBar.location": "top",
   "workbench.editor.tabSizingFixedMaxWidth": 80,
   "workbench.iconTheme": "material-icon-theme",
   "workbench.layoutControl.enabled": false,
   "workbench.list.smoothScrolling": true,
   "workbench.fontAliasing": "default",
   "workbench.navigationControl.enabled": false,
-  "workbench.sideBar.location": "left",
   "workbench.statusBar.visible": true,
-  "//": "AI 工具设置",
   "AI.toolcall.confirmMode": "autoRun",
-  "//": "语言与翻译设置",
   "Lingma.DisplayLanguage": "简体中文",
   "Lingma.PreferredLanguage for AI Chat": "简体中文",
   "Lingma.PreferredLanguage forCommitMessage": "简体中文",
-  "//": "ESLint 设置",
   "eslint.validate": [
     "javascript",
     "javascriptreact",
@@ -71,18 +99,17 @@ description: vscode 配置
     "vue",
     "html"
   ],
-  "//": "代码格式化设置 - Prettier 默认格式化器",
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "[javascriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.json-language-features"
   },
   "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.json-language-features"
   },
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -91,80 +118,171 @@ description: vscode 配置
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[vue]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "Vue.volar"
   },
-  "[markdown]": {
+  "[mardown]": {
     "diffEditor.ignoreTrimWhitespace": false,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[scss]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.css-language-features"
   },
-  "//": "Vim 插件设置",
+  "dance.modes": {
+    "normal": {
+      "lineNumbers": "relative"
+    }
+  },
   "vim.easymotion": true,
   "vim.easymotionJumpToAnywhereRegex": "\\b[A-Za-z0-9]|[A-Za-z0-9]\\b|_.|#.|[a-z][A-Z]",
   "vim.foldfix": true,
   "vim.handleKeys": {
     "<C-a>": false,
     "<C-b>": false,
-    "<C-c>": false,
     "<C-d>": false,
     "<C-f>": false,
     "<C-j>": false,
-    "<C-k>": false,
+    "<C->": false,
     "<C-p>": false,
     "<C-v>": false,
-    "<C-z>": false
+    "<C-z>": false,
+    "b": false,
+    "m": false
   },
   "vim.hlsearch": true,
   "vim.incsearch": true,
   "vim.insertModeKeyBindings": [
     {
-      "before": ["j", "k"],
-      "after": ["<Esc>"]
+      "before": [
+        "j",
+        "k"
+      ],
+      "after": [
+        "<Esc>"
+      ]
     }
   ],
-  "vim.leader": ";",
-  "vim.normalModeKeyBindings": [
-    {
-      "before": ["<leader>", "m"],
-      "commands": ["bookmarks.toggle"]
-    },
-    {
-      "before": ["<leader>", "b"],
-      "commands": ["bookmarks.list"]
-    },
-    {
-      "before": ["leader", "w"],
-      "commands": ["workbench.action.files.save"]
-    }
-  ],
+  "vim.leader": "<space>",
+  "vim.normalModeKeyBindings": [],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": ["<C-n>"],
-      "commands": [":nohl"]
+      "before": [
+        "<C-n>"
+      ],
+      "commands": [
+        ":nohl"
+      ]
     },
     {
-      "before": ["H"],
-      "after": ["^"]
+      "before": [
+        "H"
+      ],
+      "after": [
+        "^"
+      ]
     },
     {
-      "before": ["L"],
-      "after": ["$"]
+      "before": [
+        "L"
+      ],
+      "after": [
+        "$"
+      ]
     },
     {
-      "before": ["f"],
-      "after": ["\\"]
+      "before": [
+        "f"
+      ],
+      "after": [
+        "\\"
+      ]
     },
     {
-      "before": ["s"],
-      "after": ["f"]
+      "before": [
+        "f"
+      ],
+      "after": [
+        "<leader>",
+        "<leader>",
+        "s"
+      ]
+    },
+    {
+      "before": [
+        "n",
+        "n"
+      ],
+      "commands": [
+        "workbench.action.focusSideBar"
+      ]
+    },
+    {
+      "before": [
+        "q",
+        "q"
+      ],
+      "commands": [
+        "editor.action.formatDocument"
+      ]
+    },
+    {
+      "before": [
+        "[",
+        "e"
+      ],
+      "commands": [
+        "editor.action.marker.prev"
+      ]
+    },
+    {
+      "before": [
+        "]",
+        "e"
+      ],
+      "commands": [
+        "editor.action.marker.next"
+      ]
+    },
+    {
+      "before": [
+        "[",
+        "d"
+      ],
+      "commands": [
+        "editor.action.marker.prev"
+      ]
+    },
+    {
+      "before": [
+        "]",
+        "d"
+      ],
+      "commands": [
+        "editor.action.marker.next"
+      ]
+    },
+    {
+      "before": [
+        "[",
+        "D"
+      ],
+      "commands": [
+        "editor.action.marker.first"
+      ]
+    },
+    {
+      "before": [
+        "]",
+        "D"
+      ],
+      "commands": [
+        "editor.action.marker.last"
+      ]
     }
   ],
   "vim.sneak": false,
@@ -173,38 +291,72 @@ description: vscode 配置
   "vim.useSystemClipboard": true,
   "vim.visualModeKeyBindingsNonRecursive": [
     {
-      "before": ["H"],
-      "after": ["^"]
+      "before": [
+        "H"
+      ],
+      "after": [
+        "^"
+      ]
     },
     {
-      "before": ["L"],
-      "after": ["$"]
+      "before": [
+        "L"
+      ],
+      "after": [
+        "$"
+      ]
     },
     {
-      "before": ["S"],
-      "after": [""]
+      "before": [
+        "S"
+      ],
+      "after": [
+        ""
+      ]
     },
     {
-      "before": ["j", "k"],
-      "after": ["<Esc>"]
+      "before": [
+        "j",
+        "k"
+      ],
+      "after": [
+        "<Esc>"
+      ]
     },
     {
-      "before": ["c", "r", "s"],
-      "commands": ["editor.action.transformToSnakecase"]
+      "before": [
+        "c",
+        "o",
+        "s"
+      ],
+      "commands": [
+        "editor.action.transformToSnakecase"
+      ]
     },
     {
-      "before": ["c", "r", "c"],
-      "commands": ["editor.action.transformToCamelcase"]
+      "before": [
+        "c",
+        "o",
+        "c"
+      ],
+      "commands": [
+        "editor.action.transformToCamelcase"
+      ]
     },
     {
-      "before": ["c", "r", "m"],
-      "commands": ["editor.action.transformToKebabcase"]
+      "before": [
+        "c",
+        "o",
+        "k"
+      ],
+      "commands": [
+        "editor.action.transformToKebabcase"
+      ]
     }
   ],
-  "workbench.colorCustomizations": {
-    "editorCursor.foreground": "#d83b01"
-  },
-  "//": "文件嵌套配置（File Nesting）",
+  "explorer.sortOrder": "type",
+  "explorer.sortOrderReverse": true,
+  "explorer.openEditors.sortOrder": "fullPath",
   "explorer.compactFolders": false,
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
@@ -302,18 +454,45 @@ description: vscode 配置
     "*.wat": "$(capture).wasm",
     "*.xaml": "$(capture).xaml.cs"
   },
-  // "gitlens.ai.model": "gitkraken",
-  // "gitlens.ai.gitkraken.model": "gemini:gemini-2.0-flash",
-  // 动画
-  "animations.Install-Method": "Custom UI Style",
-  "animations.Enabled": true,
-  "animations.CursorAnimation": true,
-  "animations.UseCursorColorForCursorAnimation": true,
-  "vscode_custom_css.imports": [],
-  "custom-ui-style.external.imports": [
-    "file:///Users/bto/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.7/dist/updateHandler.js"
-  ],
-  "custom-ui-style.webview.enable": true,
-  "Lingma.aI Chat.mcpToolsInAgentMode": true
+  "terminal.external.osxExec": "Warp.app",
+  "git.openRepositoryInParentFolders": "never",
+  "extensions.ignoreRecommendations": true,
+  "terminal.integrated.tabs.location": "left",
+  "files.associations": {
+    "*.uvue": "uvue",
+    "*.vue": "vue"
+  },
+  "workbench.editor.empty.hint": "hidden",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "claudeCode.preferredLocation": "panel",
+  "Lingma.aI Chat.mcpToolsInAgentMode": true,
+  "ets.sdkPath": "/Users/wx/OpenHarmony/10",
+  "redhat.telemetry.enabled": true,
+  "git.confirmSync": false,
+  "app": {
+    "configGeneralDisplayLanguage": "en-us",
+    "configGeneralAiResponseLanguage": "en-us",
+    "configGeneralImprovementPlan": "agree",
+    "configGeneralImportSettings": "VS Code",
+    "configCompletionEnableNES": true,
+    "configCompletionDisabledLanguages": [],
+    "configCompletionTriggerInComment": true,
+    "configCompletionAutoImport": true,
+    "configChatWebToolsMode": "Ask every time",
+    "configChatAskModeUseTools": true,
+    "configChatEditFileTool": false,
+    "configChatTerminalRunMode": "askEveryTime",
+    "configChatCommandDenyList": "rm,mv,sudo,wget,curl,chown",
+    "configChatCommandAllowlist": "",
+    "configChatAutoRunMcpTools": true,
+    "configChatMethodQuickOperation": false,
+    "configChatShowSelectionToolbar": true,
+    "configQuestEnable": true,
+    "configMemoryAutoGenerate": true,
+    "configAdvancedAutoUpdate": true,
+    "configAdvancedProxyMode": "system",
+    "configAdvancedProxyURL": ""
+  },
+  "workbench.colorTheme": "dawn2_pure"
 }
 ```
