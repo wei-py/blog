@@ -66,8 +66,7 @@ description: vscode 配置
   "editor.lineNumbers": "relative",
   "editor.smoothScrolling": true,
   "editor.tabSize": 2,
-  "editor.minimap.side": "left",
-  "editor.minimap.autohide": "none",
+  "editor.minimap.side": "right",
   "terminal.integrated.defaultProfile.windows": "Git Bash",
   "terminal.integrated.fontFamily": "FiraCode Nerd Font",
   "terminal.integrated.smoothScrolling": true,
@@ -470,8 +469,8 @@ description: vscode 配置
   "redhat.telemetry.enabled": true,
   "git.confirmSync": false,
   "app": {
-    "configGeneralDisplayLanguage": "en-us",
-    "configGeneralAiResponseLanguage": "en-us",
+    "configGeneralDisplayLanguage": "zh-cn",
+    "configGeneralAiResponseLanguage": "zh-cn",
     "configGeneralImprovementPlan": "agree",
     "configGeneralImportSettings": "VS Code",
     "configCompletionEnableNES": true,
@@ -493,6 +492,8 @@ description: vscode 配置
     "configAdvancedProxyMode": "system",
     "configAdvancedProxyURL": ""
   },
-  "workbench.colorTheme": "dawn2_pure"
+  "workbench.colorTheme": "dawn2_pure",
+  "editor.minimap.enabled": true,
+  "editor.minimap.autohide": true
 }
 ```
