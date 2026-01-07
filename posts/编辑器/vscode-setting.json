@@ -9,33 +9,38 @@
     "[dawn2_pure]": {
       "editorLineNumber.activeForeground": "#ff7043",
       "editorCursor.foreground": "#ff7043",
-      "editorLineNumber.foreground": "#fdf6e3",
+      "editorLineNumber.foreground": "#eee8d5",
       // "tab.activeBackground": "#fff",
+      // d9d3c4
+      "editor.background": "#eee8d5",
       "editorGroupHeader.tabsBackground": "#eee8d5",
       "tab.inactiveBackground": "#eee8d5",
       "statusBar.background": "#fdf6e3",
+      "editor.lineHighlightBackground": "#999588"
     },
     "[Visual Studio Light]": {
-      "editorCursor.foreground": "#000",
-      "editor.background": "#ddd",
-      "sideBar.background": "#ddd",
-      "editorLineNumber.activeForeground": "#666",
-      "tab.inactiveBackground": "#ddd",
-      "tab.activeBackground": "#fff",
-      "editorLineNumber.foreground": "#ddd",
+      "titleBar.activeBackground": "#eee8d5",
+      "editorCursor.foreground": "#ff7043",
+      "editor.background": "#eee8d5",
+      "sideBar.background": "#eee8d5",
+      "editorLineNumber.activeForeground": "#ff7043",
+      "tab.inactiveBackground": "#eee8d5",
+      "tab.activeBackground": "#999",
+      // "tab.activeForeground": "#999",
+      "editorLineNumber.foreground": "#eee8d5",
       "tab.activeBorder": "#000",
-      "tab.border": "#ddd",
+      "tab.border": "#eee8d5",
       "list.inactiveSelectionBackground": "#666",
       "list.activeSelectionBackground": "#666",
       "list.inactiveFocusOutline": "#666",
       "list.focusAndSelectionOutline": "#666",
-      "list.inactiveSelectionForeground": "#ddd",
+      "list.inactiveSelectionForeground": "#eee8d5",
       "editor.selectionBackground": "#666",
       "editor.selectionHighlightBackground": "#66666666",
       "editor.lineHighlightBackground": "#999",
-      "statusBar.background": "#ddd",
+      "statusBar.background": "#eee8d5",
       "statusBar.foreground": "#000",
-      "editorGroupHeader.tabsBackground": "#ddd"
+      "editorGroupHeader.tabsBackground": "#eee8d5"
     }
   },
   "chat.commandCenter.enabled": false,
@@ -47,7 +52,7 @@
   "editor.fontFamily": "FiraCode Nerd Font, 霞鹜文楷 GB",
   "terminal.integrated.fontSize": 15,
   "editor.fontLigatures": true,
-  "editor.fontSize": 16.5,
+  "editor.fontSize": 18,
   "editor.fontWeight": "400",
   "editor.inlineSuggest.enabled": false,
   "editor.lineHeight": 1.5,
@@ -480,7 +485,7 @@
     "configAdvancedProxyMode": "system",
     "configAdvancedProxyURL": ""
   },
-  "workbench.colorTheme": "dawn2_pure",
+  "workbench.colorTheme": "Visual Studio Light",
   "editor.minimap.enabled": true,
   "editor.minimap.autohide": true
 }
