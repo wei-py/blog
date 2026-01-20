@@ -1,1 +1,0 @@
-import{_ as t,c as e,o as s}from"./chunks/framework.ptg7Kx6M.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"posts/2025/12-11.md","filePath":"posts/2025/12-11.md"}'),a={name:"posts/2025/12-11.md"};function o(r,c,n,p,_,d){return s(),e("div")}const f=t(a,[["render",o]]);export{m as __pageData,f as default};

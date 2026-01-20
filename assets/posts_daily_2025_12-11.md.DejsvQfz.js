@@ -1,0 +1,1 @@
+import{_ as t,c as e,o as a}from"./chunks/framework.ptg7Kx6M.js";const l=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"posts/daily/2025/12-11.md","filePath":"posts/daily/2025/12-11.md"}'),s={name:"posts/daily/2025/12-11.md"};function o(r,c,n,p,d,i){return a(),e("div")}const m=t(s,[["render",o]]);export{l as __pageData,m as default};
