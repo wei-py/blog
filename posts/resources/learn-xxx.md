@@ -121,3 +121,7 @@ http://ysjf.com/r/tvsetting
 ## cross-zip-cli
 
 npm -g i cross-zip-cli
+
+## 应用图标
+
+https://easyappicon.com/
