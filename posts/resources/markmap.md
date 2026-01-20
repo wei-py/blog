@@ -10,8 +10,8 @@ tags:
 
 ## 语义化标签
 
-![语义化标签](./语义化标签.md){mindmap}
+![语义化标签](../frontend/html/semantic-tags.md){mindmap}
 
 ## 浏览器事件
 
-![浏览器事件](./浏览器事件.md){mindmap}
+![浏览器事件](../frontend/browser/browser-events.md){mindmap}
