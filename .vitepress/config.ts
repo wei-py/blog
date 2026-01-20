@@ -1,9 +1,7 @@
 import withMindMap from "@dhlx/vitepress-plugin-mindmap";
-import AutoNav from "vite-plugin-vitepress-auto-nav";
-// import VitePressPluginAutoNavSidebar from '@movk-repo/vitepress-plugin-auto-nav-sidebar'
 import { defineConfig } from "vitepress";
 
-import { getFolder, getPosts } from "./theme/serverUtils";
+import { getPosts, getSidebar } from "./theme/serverUtils";
 
 // 每页的文章数量
 const pageSize = 10;
@@ -30,13 +28,14 @@ export default withMindMap(defineConfig({
       issueTerm: "pathname",
     },
     nav: [
-      { text: "首页", link: "/", collapsed: true },
-      { text: "分类", link: "/pages/category", collapsed: true },
-      { text: "归档", link: "/pages/archives", collapsed: true },
-      { text: "标签", link: "/pages/tags", collapsed: true },
-      // { text: 'About', link: '/pages/about' }
-      // { text: 'Airene', link: 'http://airene.net' }  -- External link test
+      { text: "首页", link: "/", activeMatch: "^/$" },
+      { text: "前端", link: "/posts/frontend/html/semantic-tags", activeMatch: "^/posts/frontend/" },
+      { text: "后端", link: "/posts/backend/database/mysql", activeMatch: "^/posts/backend/" },
+      { text: "算法", link: "/posts/algorithm/", activeMatch: "^/posts/algorithm/" },
+      { text: "归档", link: "/pages/archives" },
+      { text: "关于", link: "/pages/about" },
     ],
+    sidebar: await getSidebar(),
     search: {
       provider: "local",
     },
@@ -54,16 +53,7 @@ export default withMindMap(defineConfig({
   vite: {
     // build: { minify: false }
     server: { port: 5000 },
-    plugins: [
-      AutoNav({
-        itemsSetting: {
-          ...(await getFolder()),
-        },
-      }) as any,
-      // VitePressPluginAutoNavSidebar({
-      //   documentRootPath: "/posts/",
-      // }) as any,
-    ],
+    plugins: [],
   },
   // optimizeDeps: {
   //   keepNames: true
